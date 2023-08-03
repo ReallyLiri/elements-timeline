@@ -18,14 +18,10 @@ const StyledMap = styled(ComposableMap)`
   }
 `
 
-const StyledMarker = styled.div`
-  height: 8px;
-  width: 8px;
-`
 
 const App = () => {
     const { width, height } = useWindowSize()
-    const [translation, setTranslation] = useState<Translation[]>([])
+    const [, setTranslation] = useState<Translation[]>([])
     const [cities, setCities] = useState<Record<string, Point>>({})
 
     useEffect(() => {
@@ -57,9 +53,15 @@ const App = () => {
             {
                 Object.keys(cities).map(cityName => <Marker key={ cityName } coordinates={ cities[cityName] }>
                     <>
-                        <circle  r={ 8 } fill="#F53"/>
-                        <line  style={{stroke: "grey", strokeWidth: 100}}/>
-                        <text  style={{stroke: "white", strokeWidth: "0.5em", fill: "black", paintOrder: "stroke", strokeLinejoin: "round"}}>{cityName}</text>
+                        <circle r={ 8 } fill="#F53"/>
+                        <line style={ { stroke: "grey", strokeWidth: 100 } }/>
+                        <text style={ {
+                            stroke: "white",
+                            strokeWidth: "0.5em",
+                            fill: "black",
+                            paintOrder: "stroke",
+                            strokeLinejoin: "round"
+                        } }>{ cityName }</text>
 
                     </>
                 </Marker>)
