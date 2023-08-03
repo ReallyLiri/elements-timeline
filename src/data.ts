@@ -1,5 +1,5 @@
 import Papa from 'papaparse';
-import { reduce, trim, uniq } from 'lodash'
+import { reduce } from 'lodash'
 import { Point } from "react-simple-maps";
 
 export type Translation = {
