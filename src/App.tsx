@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ComposableMap, Geographies, Geography, Marker, Point } from "react-simple-maps"
 import styled from "styled-components";
 import { useHover, useWindowSize } from "usehooks-ts";
 import { loadDataAsync, Translation } from "./data";
-import { sortBy } from "lodash";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json"
 
