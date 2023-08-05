@@ -15,15 +15,17 @@ import { useElementSize } from "./data/useElementSize";
 import { useWindowSize } from "usehooks-ts";
 import {
   LAND_COLOR,
-  MARKER_1,
-  MARKER_5,
   PANE_BORDER,
   PANE_COLOR,
   SEA_COLOR,
   TRANSPARENT_WHITE,
 } from "./data/colors";
-import { MdDoubleArrow, MdClose } from "react-icons/md";
-import { randomUUID } from "crypto";
+import { MdClose, MdDoubleArrow } from "react-icons/md";
+import {
+  TOOLTIP_CLOSE_DETAILS,
+  TOOLTIP_FILTERS_HIDE,
+  TOOLTIP_FILTERS_SHOW,
+} from "./components/Tooltips";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json";
 
@@ -62,6 +64,7 @@ const MapSection = styled.div`
 
 const ExpandFiltersButton = styled.div`
   position: relative;
+  width: fit-content;
   height: 0;
   left: 1rem;
   top: 1rem;
@@ -136,7 +139,8 @@ const App = () => {
         <Pane borderRight={true}>
           <CollapseFiltersButton
             onClick={() => setFilterOpen(false)}
-            title="Collapse Filters"
+            data-tooltip-id={TOOLTIP_FILTERS_HIDE}
+            data-tooltip-content="Hide Filters"
           >
             <MdDoubleArrowFlipped />
           </CollapseFiltersButton>
@@ -147,7 +151,8 @@ const App = () => {
         {!filterOpen && (
           <ExpandFiltersButton
             onClick={() => setFilterOpen(true)}
-            title="Expand Filters"
+            data-tooltip-id={TOOLTIP_FILTERS_SHOW}
+            data-tooltip-content="Show Filters"
           >
             <MdDoubleArrow />
           </ExpandFiltersButton>
@@ -194,7 +199,8 @@ const App = () => {
         <Pane borderRight={false}>
           <CollapseFiltersButton
             onClick={() => setSelectedCity(undefined)}
-            title="Close"
+            data-tooltip-id={TOOLTIP_CLOSE_DETAILS}
+            data-tooltip-content="Close"
           >
             <MdClose />
           </CollapseFiltersButton>
