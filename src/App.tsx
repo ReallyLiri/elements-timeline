@@ -8,9 +8,10 @@ import {
 } from "react-simple-maps";
 import styled from "styled-components";
 import { useHover, useWindowSize } from "usehooks-ts";
-import { loadCitiesAsync, loadDataAsync, Translation } from "./data";
-import { groupByMap } from "./util";
+import { loadCitiesAsync, loadDataAsync, Translation } from "./data/data";
+import { groupByMap } from "./data/util";
 import { groupBy } from "lodash";
+import { CityMarkers } from "./components/Markers";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json";
 
@@ -43,37 +44,17 @@ const Wrapper = styled.div`
   }
 `;
 
-const CityMarker = ({ city, count }: { city: string; count: number }) => {
-  const ref = useRef(null);
-  const isHover = useHover(ref);
-  return (
-    <>
-      <circle ref={ref} r={8} />
-      {isHover && (
-        <>
-          <text x={-8} y={-12}>
-            {city}
-          </text>
-          <text x={-20} y={12}>
-            {count}
-          </text>
-        </>
-      )}
-    </>
-  );
-};
-
 const App = () => {
   const { width, height } = useWindowSize();
-  const [translations, setTranslations] = useState<Translation[]>([]);
+  const [data, setData] = useState<Translation[]>([]);
   const [cities, setCities] = useState<Record<string, Point>>({});
 
   useEffect(() => {
-    loadDataAsync().then(setTranslations);
+    loadDataAsync().then(setData);
     loadCitiesAsync().then(setCities);
   }, []);
 
-  const filteredTranslations = translations; // TODO
+  const filteredTranslations = data; // TODO
   const translationByCity: Record<string, Translation[]> = useMemo(
     () => groupBy(filteredTranslations, (t) => t.city),
     [filteredTranslations],
@@ -98,15 +79,7 @@ const App = () => {
             ))
           }
         </Geographies>
-
-        {Object.keys(cities).map((city) => (
-          <Marker key={city} coordinates={cities[city]}>
-            <CityMarker
-              city={city}
-              count={translationByCity[city]?.length || 0}
-            />
-          </Marker>
-        ))}
+        <CityMarkers cities={cities} data={translationByCity} />
       </ComposableMap>
     </Wrapper>
   );
