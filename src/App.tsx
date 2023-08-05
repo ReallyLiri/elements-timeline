@@ -8,11 +8,22 @@ import {
 } from "react-simple-maps";
 import styled from "styled-components";
 import { loadCitiesAsync, loadDataAsync, Translation } from "./data/data";
-import { groupBy, isEmpty } from "lodash";
+import { groupBy, isEmpty, uniqueId } from "lodash";
 import { CityMarkers } from "./components/Markers";
 import { ZoomControls } from "./components/ZoomControls";
 import { useElementSize } from "./data/useElementSize";
 import { useWindowSize } from "usehooks-ts";
+import {
+  LAND_COLOR,
+  MARKER_1,
+  MARKER_5,
+  PANE_BORDER,
+  PANE_COLOR,
+  SEA_COLOR,
+  TRANSPARENT_WHITE,
+} from "./data/colors";
+import { MdDoubleArrow, MdClose } from "react-icons/md";
+import { randomUUID } from "crypto";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json";
 
@@ -30,29 +41,12 @@ const MapWrapper = styled.div`
   svg {
     display: inline-block;
     vertical-align: middle;
-    background-color: #465966;
+    background-color: ${SEA_COLOR};
   }
 
   path {
-    fill: #c7b1ae;
-  }
-
-  circle {
-    stroke: #dec97c;
-    stroke-width: 0.2em;
-    fill: #433c21;
-    cursor: pointer;
-  }
-
-  text {
-    stroke: #dec97c;
-    stroke-width: 0.5em;
-    fill: #433c21;
-    font-weight: bold;
-    paint-order: stroke;
-    stroke-linejoin: round;
-    cursor: pointer;
-  }
+    fill: ${LAND_COLOR};
+  }=
 `;
 
 const StyledZoomControls = styled(ZoomControls)`
@@ -66,6 +60,48 @@ const MapSection = styled.div`
   height: 100vh;
 `;
 
+const ExpandFiltersButton = styled.div`
+  position: relative;
+  height: 0;
+  left: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  svg {
+    background-color: ${TRANSPARENT_WHITE};
+    border-radius: 20%;
+    color: ${SEA_COLOR};
+  }
+`;
+
+const CollapseFiltersButton = styled.div`
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 20%;
+  background-color: ${TRANSPARENT_WHITE};
+  color: ${SEA_COLOR};
+  align-self: center;
+`;
+
+const MdDoubleArrowFlipped = styled(MdDoubleArrow)`
+  transform: rotate(180deg);
+`;
+
+const Pane = styled.div<{ borderRight: boolean }>`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: auto;
+  width: fit-content;
+  min-width: 10%;
+  background-color: ${PANE_COLOR};
+  padding: 1rem;
+  ${({ borderRight }) =>
+    borderRight ? "border-right" : "border-left"}: 2px ${PANE_BORDER} solid;
+`;
+
 const MAX_ZOOM = 10;
 const DEFAULT_POSITION: Point = [12, 49.3];
 
@@ -76,7 +112,8 @@ const App = () => {
   const [zoom, setZoom] = useState<number>(1);
   const [mapSectionRef, { width }, refreshSize] = useElementSize();
   const [position, setPosition] = useState<Point>(DEFAULT_POSITION);
-  const [selectedCity, setSelectedCity] = useState<string>();
+  const [selectedCity, setSelectedCity] = useState<string | undefined>();
+  const [filterOpen, setFilterOpen] = useState<boolean>(true);
 
   useEffect(() => {
     loadDataAsync().then(setData);
@@ -95,8 +132,26 @@ const App = () => {
 
   return (
     <Wrapper>
-      <div>Filter</div>
+      {filterOpen && (
+        <Pane borderRight={true}>
+          <CollapseFiltersButton
+            onClick={() => setFilterOpen(false)}
+            title="Collapse Filters"
+          >
+            <MdDoubleArrowFlipped />
+          </CollapseFiltersButton>
+          <div>Filter TBD</div>
+        </Pane>
+      )}
       <MapSection ref={mapSectionRef}>
+        {!filterOpen && (
+          <ExpandFiltersButton
+            onClick={() => setFilterOpen(true)}
+            title="Expand Filters"
+          >
+            <MdDoubleArrow />
+          </ExpandFiltersButton>
+        )}
         <MapWrapper>
           <ComposableMap
             height={height}
@@ -123,6 +178,7 @@ const App = () => {
               <CityMarkers
                 cities={cities}
                 data={translationByCity}
+                selectedCity={selectedCity}
                 setSelectedCity={setSelectedCity}
               />
             </ZoomableGroup>
@@ -134,7 +190,22 @@ const App = () => {
           resetCenter={() => setPosition(DEFAULT_POSITION)}
         />
       </MapSection>
-      {!isEmpty(selectedCity) && <div>{selectedCity}</div>}
+      {!isEmpty(selectedCity) && (
+        <Pane borderRight={false}>
+          <CollapseFiltersButton
+            onClick={() => setSelectedCity(undefined)}
+            title="Close"
+          >
+            <MdClose />
+          </CollapseFiltersButton>
+          <div>{selectedCity}</div>
+          {translationByCity[selectedCity!].map((translation) => (
+            <div key={uniqueId()}>
+              {translation.type} {translation.year}
+            </div>
+          ))}
+        </Pane>
+      )}
     </Wrapper>
   );
 };

@@ -1,5 +1,4 @@
 import Papa from "papaparse";
-import { reduce } from "lodash";
 import { Point } from "react-simple-maps";
 import { groupByMap } from "./util";
 

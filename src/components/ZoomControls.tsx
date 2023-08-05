@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { MdMyLocation, MdZoomInMap, MdZoomOutMap } from "react-icons/md";
 import styled from "styled-components";
+import { SEA_COLOR, TRANSPARENT_WHITE } from "../data/colors";
 
 type ZoomControlsProps = {
   className?: string;
@@ -16,11 +17,11 @@ const StyledDiv = styled.div`
   gap: 1rem;
 
   div {
-    height: 24px;
-    width: 24px;
-    font-size: 24px;
-    background-color: rgba(255, 255, 255, 0.65);
-    color: #465966;
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1.5rem;
+    background-color: ${TRANSPARENT_WHITE};
+    color: ${SEA_COLOR};
     border-radius: 20%;
     padding: 0.4rem;
     cursor: pointer;
