@@ -1,6 +1,7 @@
 import Papa from 'papaparse';
 import { reduce } from 'lodash'
 import { Point } from "react-simple-maps";
+import { groupByMap } from "./util";
 
 export type Translation = {
     type: string
@@ -20,15 +21,11 @@ const parseCsvAsync = async <T>(url: string) => {
     return Papa.parse<T>(data.trim(), { header: true }).data
 }
 
-export const loadDataAsync = async (): Promise<[Record<string, Point>, Translation[]]> => {
-    const [translations, cities] = await Promise.all([
-        parseCsvAsync<Translation>("/data.csv"),
-        parseCsvAsync<City>("/cities.csv")
-    ])
-    const cityToLocation: Record<string, Point> = reduce(
-        cities,
-        (acc, { city, lon, lat }) => ( { ...acc, [city]: [lon, lat] } ),
-        {}
-    )
-    return [cityToLocation, translations]
+export const loadCitiesAsync = async (): Promise<Record<string, Point>> => {
+    const cities = await parseCsvAsync<City>("/cities.csv")
+    return groupByMap(cities, city => city.city, city => [city.lon, city.lat])
+}
+
+export const loadDataAsync = async (): Promise<Translation[]> => {
+    return await parseCsvAsync<Translation>("/data.csv")
 }

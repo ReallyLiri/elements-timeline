@@ -1,8 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ComposableMap, Geographies, Geography, Marker, Point } from "react-simple-maps"
 import styled from "styled-components";
 import { useHover, useWindowSize } from "usehooks-ts";
-import { loadDataAsync, Translation } from "./data";
+import { loadCitiesAsync, loadDataAsync, Translation } from "./data";
+import { groupByMap } from "./util";
+import { groupBy } from "lodash";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json"
 
@@ -35,60 +37,62 @@ const Wrapper = styled.div`
   }
 `
 
-const CityMarker = ({city}: {city: string}) => {
+const CityMarker = ({ city, count }: { city: string, count: number }) => {
     const ref = useRef(null)
     const isHover = useHover(ref)
     return <>
-            <circle ref={ref} r={ 8 }/>
-            {
-                isHover && <text x={-8} y={-12}>{ city }</text>
-            }
-        </>
+        <circle ref={ ref } r={ 8 }/>
+        {
+            isHover && <>
+            <text x={ -8 } y={ -12 }>{ city }</text>
+            <text x={ -20 } y={ 12 }>{ count }</text>
+          </>
+        }
+    </>
 }
 
 
 const App = () => {
     const { width, height } = useWindowSize()
-    const [, setTranslation] = useState<Translation[]>([])
+    const [translations, setTranslations] = useState<Translation[]>([])
     const [cities, setCities] = useState<Record<string, Point>>({})
 
     useEffect(() => {
-        loadDataAsync().then(([c, t]) => {
-            setCities(c)
-            setTranslation(t)
-        })
+        loadDataAsync().then(setTranslations)
+        loadCitiesAsync().then(setCities)
     }, [])
 
-    console.error(Object.keys(cities))
+    const filteredTranslations = translations // TODO
+    const translationByCity: Record<string, Translation[]> = useMemo(() => groupBy(filteredTranslations, t => t.city), [filteredTranslations])
 
     return (
-           <Wrapper>
-               <ComposableMap
-                   width={ width }
-                   height={ height }
-                   projection="geoAzimuthalEqualArea"
-                   projectionConfig={ {
-                       rotate: [-40.0, -48.0, 0],
-                       center: [-20, 2],
-                       scale: 2600,
-                   } }
-               >
-                   <Geographies geography={ geoUrl }>
-                       { ({ geographies }) =>
-                           geographies.map((geo) => (
-                               <Geography key={ geo.rsmKey } geography={ geo }/>
-                           ))
-                       }
-                   </Geographies>
+        <Wrapper>
+            <ComposableMap
+                width={ width }
+                height={ height }
+                projection="geoAzimuthalEqualArea"
+                projectionConfig={ {
+                    rotate: [-40.0, -48.0, 0],
+                    center: [-20, 2],
+                    scale: 2600,
+                } }
+            >
+                <Geographies geography={ geoUrl }>
+                    { ({ geographies }) =>
+                        geographies.map((geo) => (
+                            <Geography key={ geo.rsmKey } geography={ geo }/>
+                        ))
+                    }
+                </Geographies>
 
-                   {
-                       Object.keys(cities)
-                           .map(city => <Marker key={ city } coordinates={ cities[city] }>
-                           <CityMarker city={city}/>
-                       </Marker>)
-                   }
-               </ComposableMap>
-           </Wrapper>
+                {
+                    Object.keys(cities)
+                        .map(city => <Marker key={ city } coordinates={ cities[city] }>
+                            <CityMarker city={ city } count={ translationByCity[city]?.length || 0 }/>
+                        </Marker>)
+                }
+            </ComposableMap>
+        </Wrapper>
     );
 };
 
