@@ -2,7 +2,6 @@ import React, { useCallback } from "react";
 import { MdMyLocation, MdZoomInMap, MdZoomOutMap } from "react-icons/md";
 import styled from "styled-components";
 import { SEA_COLOR, TRANSPARENT_WHITE } from "../data/colors";
-import { Tooltip } from "react-tooltip";
 import { TOOLTIP_RESET, TOOLTIP_ZOOMIN, TOOLTIP_ZOOMOUT } from "./Tooltips";
 
 type ZoomControlsProps = {
