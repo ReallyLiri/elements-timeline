@@ -13,6 +13,7 @@
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
     "react-scripts": "5.0.1",
     "react-simple-maps": "^3.0.0",
     "styled-components": "^6.0.6",
@@ -47,6 +48,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/lodash": "^4.14.196",
     "@types/papaparse": "^5.3.7",
+    "@types/react-icons": "^3.0.0",
     "@types/react-simple-maps": "^3.0.0",
     "prettier": "^3.0.1"
   }

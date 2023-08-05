@@ -5,9 +5,14 @@ import { Translation } from "../data/data";
 type CityMarkersProps = {
   cities: Record<string, Point>;
   data: Record<string, Translation[]>;
+  setSelectedCity: React.Dispatch<React.SetStateAction<string | undefined>>;
 };
 
-export const CityMarkers = ({ cities, data }: CityMarkersProps) => {
+export const CityMarkers = ({
+  cities,
+  data,
+  setSelectedCity,
+}: CityMarkersProps) => {
   const refsByCity = useRef<Record<string, SVGCircleElement | null>>({});
   const [hoveredCity, setHoveredCity] = useState<string | undefined>();
 
@@ -29,6 +34,7 @@ export const CityMarkers = ({ cities, data }: CityMarkersProps) => {
     [],
   );
 
+  const reffedCities = Object.keys(refsByCity);
   useEffect(() => {
     const circles = Object.values(refsByCity.current).filter((c) => c);
     circles.forEach((circle) => {
@@ -41,13 +47,19 @@ export const CityMarkers = ({ cities, data }: CityMarkersProps) => {
         circle!.removeEventListener("mouseleave", handleCircleHoverStop);
       });
     };
-  }, [handleCircleHover, handleCircleHoverStop]);
+  }, [reffedCities, handleCircleHover, handleCircleHoverStop]);
 
   return (
     <>
       {Object.keys(cities).map((city) => (
         <Marker key={`${city}_circle`} coordinates={cities[city]}>
-          <circle id={city} ref={(element) => setRef(element, city)} r={8} />;
+          <circle
+            onClick={() => setSelectedCity(city)}
+            id={city}
+            ref={(element) => setRef(element, city)}
+            r={8}
+          />
+          ;
         </Marker>
       ))}
       {hoveredCity && (
