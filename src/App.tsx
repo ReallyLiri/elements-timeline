@@ -131,7 +131,7 @@ const App = () => {
 
   useEffect(() => {
     refreshSize();
-  }, [refreshSize, selectedCity]);
+  }, [refreshSize, selectedCity, filterOpen]);
 
   return (
     <Wrapper>
