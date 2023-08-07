@@ -18,29 +18,14 @@ import {
 } from "../data/colors";
 import { uniq } from "lodash";
 import styled from "styled-components";
+import { getHeatColor } from "./HeatMap";
 
 type CityMarkersProps = {
+  topLengths: number[];
   cities: Record<string, Point>;
   data: Record<string, Translation[]>;
   selectedCity: string | undefined;
   setSelectedCity: React.Dispatch<React.SetStateAction<string | undefined>>;
-};
-
-const TOP_N = 5;
-
-const COLORS_HIT_MAP = [MARKER_1, MARKER_2, MARKER_3, MARKER_4, MARKER_5];
-
-if (COLORS_HIT_MAP.length !== TOP_N) {
-  throw Error("hit map is outdated");
-}
-
-const getHitColor = (value: number, topN: number[]): string => {
-  for (let i = 0; i < TOP_N - 1; i++) {
-    if (value >= topN[i]) {
-      return COLORS_HIT_MAP[i];
-    }
-  }
-  return COLORS_HIT_MAP[TOP_N - 1];
 };
 
 const StyledCircle = styled.circle<{ selected: boolean; hovered: boolean }>`
@@ -62,6 +47,7 @@ const StyledText = styled.text`
 `;
 
 export const CityMarkers = ({
+  topLengths,
   cities,
   data,
   selectedCity,
@@ -88,16 +74,8 @@ export const CityMarkers = ({
     [],
   );
 
-  const topLengths = useMemo(
-    () =>
-      uniq(Object.values(data).map((arr) => arr.length))
-        .sort((a, b) => b - a)
-        .slice(0, TOP_N),
-    [data],
-  );
-
   const getFillColor = useCallback(
-    (value: number) => getHitColor(value, topLengths),
+    (value: number) => getHeatColor(value, topLengths),
     [topLengths],
   );
 

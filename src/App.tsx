@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Point } from "react-simple-maps";
 import styled from "styled-components";
 import { loadCitiesAsync, loadDataAsync, Translation } from "./data/data";
-import { groupBy, isEmpty, uniqueId } from "lodash";
+import { groupBy, isEmpty, uniq, uniqueId } from "lodash";
 import { CityMarkers } from "./components/Markers";
 import { ZoomControls } from "./components/ZoomControls";
 import { useElementSize } from "./data/useElementSize";
@@ -22,6 +22,7 @@ import {
 } from "./components/Tooltips";
 import { CitiesMap, DEFAULT_POSITION, MAX_ZOOM } from "./components/CitiesMap";
 import { Timeline } from "./components/Timeline";
+import { getTopLengths, HeatLegend } from "./components/HeatMap";
 
 const Wrapper = styled.div`
   display: flex;
@@ -139,6 +140,11 @@ const App = () => {
     [filteredTranslations],
   );
 
+  const topLengths = useMemo(
+    () => getTopLengths(translationByCity),
+    [translationByCity],
+  );
+
   useEffect(() => {
     refreshSize();
   }, [refreshSize, selectedCity, filterOpen]);
@@ -176,6 +182,7 @@ const App = () => {
             setPosition={setPosition}
             markers={
               <CityMarkers
+                topLengths={topLengths}
                 cities={cities}
                 data={translationByCity}
                 selectedCity={selectedCity}
@@ -184,6 +191,7 @@ const App = () => {
             }
           />
         </MapWrapper>
+        <HeatLegend topLengths={topLengths} />
         <ControlsRow>
           <ZoomControls
             setZoom={setZoom}
