@@ -9,8 +9,7 @@ import {
   TRANSPARENT_WHITE,
 } from "../data/colors";
 import { TOOLTIP_TIMELINE_BUTTON } from "./Tooltips";
-import { min } from "lodash";
-import { useTimeout } from "usehooks-ts";
+import { useLocalStorage } from "usehooks-ts";
 
 type TimelineProps = {
   minYear: number;
@@ -69,18 +68,25 @@ const PLAY_STEP_YEARS = 10;
 const PLAY_STEP_SEC = 2;
 
 export const Timeline = ({ minYear, maxYear, rangeChanged }: TimelineProps) => {
-  const [value, setValue] = useState([0, 0]);
+  const [value, setValue] = useLocalStorage<[number, number]>(
+    "timeline",
+    [0, 0],
+  );
   const [isPlay, setPlay] = useState<boolean>(false);
   const rangeChangedRef = useRef(rangeChanged);
 
   useEffect(() => {
-    setValue([minYear, Math.round((minYear * 3 + maxYear) / 4)]);
-  }, [maxYear, minYear]);
+    setValue(([from, to]) =>
+      from > 0 && to > 0
+        ? [from, to]
+        : [minYear, Math.round((minYear * 3 + maxYear) / 4)],
+    );
+  }, [maxYear, minYear, setValue]);
 
   const playStep = useCallback(
     () =>
       setValue(([from, to]) => [from, Math.min(maxYear, to + PLAY_STEP_YEARS)]),
-    [maxYear],
+    [maxYear, setValue],
   );
 
   useEffect(() => {

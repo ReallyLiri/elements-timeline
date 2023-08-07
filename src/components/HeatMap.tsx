@@ -4,7 +4,6 @@ import {
   MARKER_3,
   MARKER_4,
   MARKER_5,
-  MARKER_STROKE,
   TRANSPARENT_WHITE,
 } from "../data/colors";
 import { uniq } from "lodash";
