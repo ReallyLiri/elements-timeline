@@ -74,12 +74,12 @@ export const Timeline = ({ minYear, maxYear, rangeChanged }: TimelineProps) => {
   const rangeChangedRef = useRef(rangeChanged);
 
   useEffect(() => {
-    setValue([minYear, maxYear]);
+    setValue([minYear, Math.round((minYear * 3 + maxYear) / 4)]);
   }, [maxYear, minYear]);
 
   const playStep = useCallback(
     () =>
-      setValue(([from, to]) => [Math.min(maxYear, from + PLAY_STEP_YEARS), to]),
+      setValue(([from, to]) => [from, Math.min(maxYear, to + PLAY_STEP_YEARS)]),
     [maxYear],
   );
 
