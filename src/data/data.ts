@@ -2,10 +2,16 @@ import Papa from "papaparse";
 import { Point } from "react-simple-maps";
 import { groupByMap } from "./util";
 
-export type Translation = {
+type RawTranslation = {
   type: string;
   city: string;
   year: string;
+};
+
+export type Translation = {
+  type: string;
+  city: string;
+  year: number;
 };
 
 type City = {
@@ -30,5 +36,8 @@ export const loadCitiesAsync = async (): Promise<Record<string, Point>> => {
 };
 
 export const loadDataAsync = async (): Promise<Translation[]> => {
-  return await parseCsvAsync<Translation>("/data.csv");
+  return (await parseCsvAsync<RawTranslation>("/data.csv")).map((t) => ({
+    ...t,
+    year: parseInt(t.year),
+  }));
 };

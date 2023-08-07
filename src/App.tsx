@@ -1,11 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  Point,
-  ZoomableGroup,
-} from "react-simple-maps";
+import { Point } from "react-simple-maps";
 import styled from "styled-components";
 import { loadCitiesAsync, loadDataAsync, Translation } from "./data/data";
 import { groupBy, isEmpty, uniqueId } from "lodash";
@@ -26,8 +20,8 @@ import {
   TOOLTIP_FILTERS_HIDE,
   TOOLTIP_FILTERS_SHOW,
 } from "./components/Tooltips";
-
-const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json";
+import { CitiesMap, DEFAULT_POSITION, MAX_ZOOM } from "./components/CitiesMap";
+import { Timeline } from "./components/Timeline";
 
 const Wrapper = styled.div`
   display: flex;
@@ -48,13 +42,19 @@ const MapWrapper = styled.div`
 
   path {
     fill: ${LAND_COLOR};
-  }=
+  }
+
+=
 `;
 
-const StyledZoomControls = styled(ZoomControls)`
+const ControlsRow = styled.div`
   position: relative;
-  left: 32px;
-  bottom: 64px;
+  left: 2rem;
+  bottom: 4rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
 `;
 
 const MapSection = styled.div`
@@ -70,6 +70,7 @@ const ExpandFiltersButton = styled.div`
   top: 1rem;
   font-size: 1.5rem;
   cursor: pointer;
+
   svg {
     background-color: ${TRANSPARENT_WHITE};
     border-radius: 20%;
@@ -105,9 +106,6 @@ const Pane = styled.div<{ borderRight: boolean }>`
     borderRight ? "border-right" : "border-left"}: 2px ${PANE_BORDER} solid;
 `;
 
-const MAX_ZOOM = 10;
-const DEFAULT_POSITION: Point = [12, 49.3];
-
 const App = () => {
   const { height } = useWindowSize();
   const [data, setData] = useState<Translation[]>([]);
@@ -117,13 +115,25 @@ const App = () => {
   const [position, setPosition] = useState<Point>(DEFAULT_POSITION);
   const [selectedCity, setSelectedCity] = useState<string | undefined>();
   const [filterOpen, setFilterOpen] = useState<boolean>(true);
+  const [range, setRange] = useState<[number, number]>([0, 0]);
 
   useEffect(() => {
     loadDataAsync().then(setData);
     loadCitiesAsync().then(setCities);
   }, []);
 
-  const filteredTranslations = data; // TODO
+  const [minYear, maxYear] = useMemo(() => {
+    const years = data.map((t) => t.year);
+    return [Math.min(...years), Math.max(...years)];
+  }, [data]);
+
+  const filteredTranslations = useMemo(
+    () =>
+      range[0] > 0 && range[1] > 0
+        ? data.filter((t) => t.year >= range[0] && t.year <= range[1])
+        : data,
+    [data, range],
+  );
   const translationByCity: Record<string, Translation[]> = useMemo(
     () => groupBy(filteredTranslations, (t) => t.city),
     [filteredTranslations],
@@ -158,42 +168,38 @@ const App = () => {
           </ExpandFiltersButton>
         )}
         <MapWrapper>
-          <ComposableMap
+          <CitiesMap
             height={height}
             width={width}
-            projection="geoAzimuthalEqualArea"
-            projectionConfig={{
-              rotate: [-40.0, -48.0, 0],
-              scale: 2200,
-            }}
-          >
-            <ZoomableGroup
-              zoom={zoom}
-              maxZoom={MAX_ZOOM}
-              center={position}
-              onMoveEnd={(e) => setPosition(e.coordinates)}
-            >
-              <Geographies geography={geoUrl}>
-                {({ geographies }) =>
-                  geographies.map((geo) => (
-                    <Geography key={geo.rsmKey} geography={geo} />
-                  ))
-                }
-              </Geographies>
+            zoom={zoom}
+            position={position}
+            setPosition={setPosition}
+            markers={
               <CityMarkers
                 cities={cities}
                 data={translationByCity}
                 selectedCity={selectedCity}
                 setSelectedCity={setSelectedCity}
               />
-            </ZoomableGroup>
-          </ComposableMap>
+            }
+          />
         </MapWrapper>
-        <StyledZoomControls
-          setZoom={setZoom}
-          maxZoom={MAX_ZOOM}
-          resetCenter={() => setPosition(DEFAULT_POSITION)}
-        />
+        <ControlsRow>
+          <ZoomControls
+            setZoom={setZoom}
+            maxZoom={MAX_ZOOM}
+            resetCenter={() => {
+              setPosition(DEFAULT_POSITION);
+              setZoom(1);
+            }}
+          />
+          <div />
+          <Timeline
+            minYear={minYear}
+            maxYear={maxYear}
+            rangeChanged={(from, to) => setRange([from, to])}
+          />
+        </ControlsRow>
       </MapSection>
       {!isEmpty(selectedCity) && (
         <Pane borderRight={false}>

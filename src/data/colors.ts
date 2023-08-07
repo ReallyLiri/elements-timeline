@@ -15,3 +15,16 @@ export const TRANSPARENT_WHITE = css`rgba(255, 255, 255, 0.65)`;
 
 export const PANE_COLOR = "#d5c99e";
 export const PANE_BORDER = "#615730FF";
+
+export const RANGE_FILL = "#282722";
+
+export const ButtonStyle = css`
+  height: 1.5rem;
+  width: 1.5rem;
+  font-size: 1.5rem;
+  background-color: ${TRANSPARENT_WHITE};
+  color: ${SEA_COLOR};
+  border-radius: 20%;
+  padding: 0.4rem;
+  cursor: pointer;
+`;

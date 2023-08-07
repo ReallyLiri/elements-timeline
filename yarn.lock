@@ -3267,6 +3267,11 @@ cliui@^7.0.2:
     strip-ansi "^6.0.0"
     wrap-ansi "^7.0.0"
 
+clsx@^1.1.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
+  integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
@@ -3436,7 +3441,7 @@ core-js-pure@^3.23.3:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.32.0.tgz#5d79f85da7a4373e9a06494ccbef995a4c639f8b"
   integrity sha512-qsev1H+dTNYpDUEURRuOXMvpdtAnNEvQWS/FMJ2Vb5AY8ZP4rAPQldkE27joykZPJTe0+IVgHZYh1P5Xu1/i1g==
 
-core-js@^3.19.2:
+core-js@^3.19.2, core-js@^3.22.4:
   version "3.32.0"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.32.0.tgz#7643d353d899747ab1f8b03d2803b0312a0fb3b6"
   integrity sha512-rd4rYZNlF3WuoYuRIDEmbR/ga9CeuWX9U05umAvgrrZoHY4Z++cp/xwPQMvUpBB4Ag6J8KfD80G0zwCyaSxDww==
@@ -7645,6 +7650,14 @@ react-is@^18.0.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
+
+react-range-slider-input@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/react-range-slider-input/-/react-range-slider-input-3.0.7.tgz#88ceb118b33d7eb0550cec1f77fc3e60e0f880f9"
+  integrity sha512-yAJDDMUNkILOcZSCLCVbwgnoAM3v0AfdDysTCMXDwY/+ZRNRlv98TyHbVCwPFEd7qiI8Ca/stKb0GAy//NybYw==
+  dependencies:
+    clsx "^1.1.1"
+    core-js "^3.22.4"
 
 react-refresh@^0.11.0:
   version "0.11.0"

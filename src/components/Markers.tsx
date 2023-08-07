@@ -118,20 +118,22 @@ export const CityMarkers = ({
 
   return (
     <>
-      {Object.keys(cities).map((city) => (
-        <Marker key={`${city}_circle`} coordinates={cities[city]}>
-          <StyledCircle
-            fill={getFillColor(data[city]?.length || 0)}
-            selected={city === hoveredCity}
-            hovered={city === selectedCity}
-            onClick={() => setSelectedCity(city)}
-            id={city}
-            ref={(element) => setRef(element, city)}
-            r={8}
-          />
-          ;
-        </Marker>
-      ))}
+      {Object.keys(cities)
+        .filter((city) => data[city]?.length > 0)
+        .map((city) => (
+          <Marker key={`${city}_circle`} coordinates={cities[city]}>
+            <StyledCircle
+              fill={getFillColor(data[city]?.length || 0)}
+              selected={city === hoveredCity}
+              hovered={city === selectedCity}
+              onClick={() => setSelectedCity(city)}
+              id={city}
+              ref={(element) => setRef(element, city)}
+              r={8}
+            />
+            ;
+          </Marker>
+        ))}
       {hoveredCity && (
         <Marker key={`${hoveredCity}_hover`} coordinates={cities[hoveredCity]}>
           <StyledText x={-8} y={-12}>

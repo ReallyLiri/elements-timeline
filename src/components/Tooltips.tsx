@@ -6,6 +6,7 @@ export const TOOLTIP_ZOOMOUT = "zoomout";
 export const TOOLTIP_CLOSE_DETAILS = "close-details";
 export const TOOLTIP_FILTERS_HIDE = "filters-hide";
 export const TOOLTIP_FILTERS_SHOW = "filters-show";
+export const TOOLTIP_TIMELINE_BUTTON = "timeline-button";
 
 export const Tooltips = () => (
   <>
@@ -15,5 +16,6 @@ export const Tooltips = () => (
     <Tooltip id={TOOLTIP_CLOSE_DETAILS} />
     <Tooltip id={TOOLTIP_FILTERS_HIDE} />
     <Tooltip id={TOOLTIP_FILTERS_SHOW} offset={32} />
+    <Tooltip id={TOOLTIP_TIMELINE_BUTTON} />
   </>
 );

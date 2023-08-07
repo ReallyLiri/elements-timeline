@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { MdMyLocation, MdZoomInMap, MdZoomOutMap } from "react-icons/md";
 import styled from "styled-components";
-import { SEA_COLOR, TRANSPARENT_WHITE } from "../data/colors";
+import { ButtonStyle, SEA_COLOR, TRANSPARENT_WHITE } from "../data/colors";
 import { TOOLTIP_RESET, TOOLTIP_ZOOMIN, TOOLTIP_ZOOMOUT } from "./Tooltips";
 
 type ZoomControlsProps = {
@@ -18,14 +18,7 @@ const StyledDiv = styled.div`
   gap: 1rem;
 
   div {
-    height: 1.5rem;
-    width: 1.5rem;
-    font-size: 1.5rem;
-    background-color: ${TRANSPARENT_WHITE};
-    color: ${SEA_COLOR};
-    border-radius: 20%;
-    padding: 0.4rem;
-    cursor: pointer;
+    ${ButtonStyle};
   }
 `;
 
