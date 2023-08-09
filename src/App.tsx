@@ -16,7 +16,8 @@ import {
 } from "./data/colors";
 import { MdClose, MdDoubleArrow } from "react-icons/md";
 import {
-  TOOLTIP_CLOSE_DETAILS,
+  TOOLTIP_CLOSE_CITY_DETAILS,
+  TOOLTIP_CLOSE_RECORD_DETAILS,
   TOOLTIP_FILTERS_HIDE,
   TOOLTIP_FILTERS_SHOW,
 } from "./components/Tooltips";
@@ -25,6 +26,8 @@ import { Timeline } from "./components/Timeline";
 import { getTopLengths, HeatLegend } from "./components/HeatMap";
 import { FiltersGroup } from "./components/FiltersGroup";
 import { FilterValue } from "./components/Filter";
+import { CityDetails } from "./components/CityDetails";
+import { RecordDetails } from "./components/RecordDetails";
 
 const Wrapper = styled.div`
   display: flex;
@@ -98,10 +101,12 @@ const Pane = styled.div<{ borderRight: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: auto;
+  height: calc(100vh - 2rem);
   width: 16%;
+  overflow-x: auto;
   background-color: ${PANE_COLOR};
   padding: 1rem;
+  margin-bottom: 10rem;
   ${({ borderRight }) =>
     borderRight ? "border-right" : "border-left"}: 2px ${PANE_BORDER} solid;
 `;
@@ -125,13 +130,19 @@ const filterRecord = (
 };
 
 const App = () => {
-  const { height } = useWindowSize();
+  const { height, width: windowWidth } = useWindowSize();
   const [data, setData] = useState<Translation[]>([]);
   const [cities, setCities] = useState<Record<string, Point>>({});
   const [zoom, setZoom] = useState<number>(1);
-  const [mapSectionRef, { width }, refreshSize] = useElementSize();
+  const [mapSectionRef, { width: mapWidth }, refreshSize] = useElementSize();
   const [position, setPosition] = useState<Point>(DEFAULT_POSITION);
-  const [selectedCity, setSelectedCity] = useState<string | undefined>();
+  const [selectedCity, setSelectedCity] = useLocalStorage<string | undefined>(
+    "selected-city",
+    undefined,
+  );
+  const [selectedRecordId, setSelectedRecordId] = useLocalStorage<
+    string | undefined
+  >("selected-record", undefined);
   const [filterOpen, setFilterOpen] = useState<boolean>(true);
   const [range, setRange] = useState<[number, number]>([0, 0]);
   const [filters, setFilters] = useLocalStorage<
@@ -163,9 +174,17 @@ const App = () => {
     [translationByCity],
   );
 
+  const selectedRecord = useMemo(
+    () =>
+      selectedRecordId
+        ? data.filter((d) => d.id === selectedRecordId)[0]
+        : undefined,
+    [data, selectedRecordId],
+  );
+
   useEffect(() => {
     refreshSize();
-  }, [refreshSize, selectedCity, filterOpen]);
+  }, [refreshSize, selectedCity, selectedRecordId, filterOpen]);
 
   return (
     <Wrapper>
@@ -180,7 +199,7 @@ const App = () => {
           </CollapseFiltersButton>
           <FiltersGroup
             data={data}
-            fields={["city", "type"]}
+            fields={["city", "type", "language", "translator"]}
             filters={filters}
             setFilters={setFilters}
           />
@@ -199,7 +218,7 @@ const App = () => {
         <MapWrapper>
           <CitiesMap
             height={height}
-            width={width}
+            width={mapWidth}
             zoom={zoom}
             position={position}
             setPosition={setPosition}
@@ -214,7 +233,6 @@ const App = () => {
             }
           />
         </MapWrapper>
-        <HeatLegend topLengths={topLengths} />
         <ControlsRow>
           <ZoomControls
             setZoom={setZoom}
@@ -231,22 +249,43 @@ const App = () => {
             rangeChanged={(from, to) => setRange([from, to])}
           />
         </ControlsRow>
+        <HeatLegend
+          offsetRight={
+            Math.min((selectedCity ? 1 : 0) + (selectedRecord ? 1 : 0), 1.75) *
+            0.14 *
+            windowWidth
+          }
+          total={filteredTranslations?.length || 0}
+          topLengths={topLengths}
+        />
       </MapSection>
       {!isEmpty(selectedCity) && (
         <Pane borderRight={false}>
           <CollapseFiltersButton
             onClick={() => setSelectedCity(undefined)}
-            data-tooltip-id={TOOLTIP_CLOSE_DETAILS}
+            data-tooltip-id={TOOLTIP_CLOSE_CITY_DETAILS}
             data-tooltip-content="Close"
           >
             <MdClose />
           </CollapseFiltersButton>
-          <div>{selectedCity}</div>
-          {translationByCity[selectedCity!].map((translation) => (
-            <div key={uniqueId()}>
-              {translation.type} {translation.year}
-            </div>
-          ))}
+          <CityDetails
+            city={selectedCity!}
+            data={translationByCity[selectedCity!]}
+            selectedRecordId={selectedRecordId}
+            setSelectedRecordId={setSelectedRecordId}
+          />
+        </Pane>
+      )}
+      {!isEmpty(selectedRecord) && (
+        <Pane borderRight={false}>
+          <CollapseFiltersButton
+            onClick={() => setSelectedRecordId(undefined)}
+            data-tooltip-id={TOOLTIP_CLOSE_RECORD_DETAILS}
+            data-tooltip-content="Close"
+          >
+            <MdClose />
+          </CollapseFiltersButton>
+          <RecordDetails data={selectedRecord} />
         </Pane>
       )}
     </Wrapper>

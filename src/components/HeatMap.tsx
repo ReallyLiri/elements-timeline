@@ -33,9 +33,9 @@ export const getTopLengths = (data: Record<string, Translation[]>) =>
     .sort((a, b) => b - a)
     .slice(0, TOP_N);
 
-const Legend = styled.div`
+const Legend = styled.div<{ offsetRight: number }>`
   position: absolute;
-  right: 1rem;
+  right: calc(1rem + ${({ offsetRight }) => offsetRight}px);
   bottom: calc(2rem - 4px);
   display: flex;
   flex-direction: column;
@@ -61,13 +61,31 @@ const Row = styled.div`
 `;
 
 const Title = styled.div`
-  font-weight: bold;
+  font-weight: bolder;
   padding-bottom: 0.5rem;
 `;
 
-export const HeatLegend = ({ topLengths }: { topLengths: number[] }) => (
-  <Legend>
+const TotalLabel = styled.div`
+  background-color: ${MARKER_1};
+  color: white;
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+`;
+
+export const HeatLegend = ({
+  total,
+  topLengths,
+  offsetRight,
+}: {
+  total: number;
+  topLengths: number[];
+  offsetRight: number;
+}) => (
+  <Legend offsetRight={offsetRight}>
     <Title>No. of Records</Title>
+    <TotalLabel>{total}</TotalLabel>
+    <Title>Heatmap Legend</Title>
     {topLengths.map((len) => (
       <Row key={len}>
         <Circle color={getHeatColor(len, topLengths)} />

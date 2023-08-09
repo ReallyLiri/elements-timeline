@@ -1,74 +1,154 @@
-type,city,year
-CAMPANUS,Venice,1482
-CAMPANUS,Venice,1505
-CAMPANUS,Basel,1533
-CAMPANUS,Paris,1536
-CAMPANUS,Strasbourg,1538
-CAMPANUS,Paris,1545
-CAMPANUS,Rome,1545
-CAMPANUS,Leipzig,1549
-CAMPANUS,Basel,1550
-CAMPANUS,Augsburg,1555
-CAMPANUS,Basel,1562
-CAMPANUS,Wittenberg,1564
-CAMPANUS,Seville,1576
-CAMPANUS,Ansbach,1610
-CAMPANUS,London,1620
-CAMPANUS,Alcala,1637
-CAMPANUS,Paris,1516
-CAMPANUS,Basel,1537
-CAMPANUS,Venice,1543
-CAMPANUS,Cologne,1556
-CAMPANUS,Lyon,1557
-MONDORÉ,Paris,1551a
-MONDORÉ,Paris,1557
-MONDORÉ,Paris,1564
-MONDORÉ,Strasbourg,1564
-MONDORÉ,Arnhem,1603
-MONDORÉ,Paris,1610
-MONDORÉ,Bologna,1651
-MONDORÉ,Milan,1671
-FOIX,Paris,1566
-FOIX,London,1570
-FOIX,Paris,1598a
-FOIX,Paris,1626
-FOIX,Paris,1644c
-COMMANDINO,Pesaro,1572
-COMMANDINO,Ingolstadt,1617
-COMMANDINO,Leiden,1617
-COMMANDINO,Paris,1622
-COMMANDINO,Hamburg,1633
-COMMANDINO,Madrid,1665
-CLAVIUS,Rome,1574
-CLAVIUS,Wittenberg,1609
-CLAVIUS,Paris,1612
-CLAVIUS,Douai,1620
-CLAVIUS,Ferrara,1628
-CLAVIUS,Paris,1634
-CLAVIUS,Paris,1643
-CLAVIUS,Genoa,1644
-CLAVIUS,Antwerp,1645
-CLAVIUS,Lyon,1660
-CLAVIUS,London,1661
-CLAVIUS,Würzburg,1661
-CLAVIUS,Leiden,1673
-CLAVIUS,Paris,1682a
-CLAVIUS,Bologna,1684
-CLAVIUS,Florence,1690
-CLAVIUS,Leiden,1691
-CLAVIUS,Siena,1691
-CLAVIUS,Paris,1693
-CLAVIUS,Vienna,1694
-CLAVIUS,Amsterdam,1695
-MAUROLICUS,Venice,1575
-MAUROLICUS,Rome,1594
-DOU,Leiden,1606
-DOU,London,1651
-TACQUET,Antwerp,1654
-TACQUET,Brussels,1688
-TACQUET,Brussels,1689
-TACQUET,Kiel,1697
-TACQUET,Paris,1634
-TACQUET,Cambridge,1655
-TACQUET,London,1680
-GREGORY,Oxford,1703
+id,type,city,year,translator,language,books
+1,CAMPANUS,Venice,1482,Ratdolt,Latin,1-15
+2,CAMPANUS,Vicenza,1491,Achates,Latin,1-15
+3,CAMPANUS,Frankfurt,1506,Lacher,Latin,1-4
+4,CAMPANUS,Venice,1509,Scipio Vegio,Latin,1-15
+5,ZAMBERTI/GRYNAEUS (THEON),Venice,1505,Zamberti,Latin,1-15
+6,ZAMBERTI/GRYNAEUS (THEON),Venice,1510,Zamberti,Latin,1-15
+7,ZAMBERTI/GRYNAEUS (THEON),Basel,1533,Grynaeus,Greek,1-15
+8,ZAMBERTI/GRYNAEUS (THEON),Paris,1536,Fine,Latin and Greek,1-6
+9,ZAMBERTI/GRYNAEUS (THEON),Paris,1544,Fine,Latin and Greek,1-6
+10,ZAMBERTI/GRYNAEUS (THEON),Paris,1551,Fine,Latin and Greek,1-6
+11,ZAMBERTI/GRYNAEUS (THEON),Strasbourg,1538,Rihel,Greek,1
+12,ZAMBERTI/GRYNAEUS (THEON),Strasbourg,1559,Rihel,Greek,1
+13,ZAMBERTI/GRYNAEUS (THEON),Paris,1545,Ramus,Latin,1-15
+14,ZAMBERTI/GRYNAEUS (THEON),Paris,1549,Ramus,Latin,1-15
+15,ZAMBERTI/GRYNAEUS (THEON),Paris,1558,Ramus,Latin,1-15
+16,ZAMBERTI/GRYNAEUS (THEON),Rome,1545,Cajani,Latin,1-15
+17,ZAMBERTI/GRYNAEUS (THEON),Rome,1545,Cajani,Italian,1-15
+18,ZAMBERTI/GRYNAEUS (THEON),Leipzig,1549,Rhaeticus/Camerarius,Latin and Greek,1-6
+19,ZAMBERTI/GRYNAEUS (THEON),Leipzig,1577,Camerarius/Steinmetz,Latin and Greek,1-6
+20,ZAMBERTI/GRYNAEUS (THEON),Basel,1550,Scheybl,Latin,1-6
+21,ZAMBERTI/GRYNAEUS (THEON),Augsburg,1555,Scheybl,German,7-9
+22,ZAMBERTI/GRYNAEUS (THEON),Basel,1562,Holzman,German,1-6
+23,ZAMBERTI/GRYNAEUS (THEON),Wittenberg,1564,Sthen,Latin and Greek,7
+24,ZAMBERTI/GRYNAEUS (THEON),Seville,1576,Zamorano,Spanish,1-6
+25,ZAMBERTI/GRYNAEUS (THEON),Ansbach,1610,Marius,German,1-6
+26,ZAMBERTI/GRYNAEUS (THEON),London,1620,Briggs,Latin and Greek,1-6
+27,ZAMBERTI/GRYNAEUS (THEON),Alcala,1637,Carduchi,Spanish,1-6
+28,D’ÉTAPLES,Paris,1516,d’Etaples,Latin,1-15
+29,D’ÉTAPLES,Basel,1537,Herlin,Latin,1-15
+30,D’ÉTAPLES,Venice,1543,Tartaglia,Latin,1-15
+31,D’ÉTAPLES,Venice,1565,Tartaglia,Latin,1-15 + De levi
+32,D’ÉTAPLES,Venice,1569,Tartaglia,Latin,1-15
+33,D’ÉTAPLES,Venice,1585,Tartaglia,Latin,1-15
+34,D’ÉTAPLES,Venice,1586,Tartaglia,Latin,1-15
+35,D’ÉTAPLES,Cologne,1556,Nabod,Latin,1 and selection from 2–15
+36,D’ÉTAPLES,Lyon,1557,Peletier,Latin,1-6
+37,D’ÉTAPLES,Geneva,1610,Peletier,Latin and Greek,1-6
+38,D’ÉTAPLES,Geneva,1611,de Tournes,French,1-6
+39,D’ÉTAPLES,Geneva,1628,de Tournes,French,1-6
+40,MONDORÉ,Paris,1551,Mondoré,Latin,10
+41,MONDORÉ,Paris,1552,Mondoré,Latin,10
+42,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1557,Gracilis/Magnienus,Latin and Greek,1-15
+43,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1558,Gracilis/Magnienus,Latin and Greek,1-15
+44,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1573,Gracilis/Magnienus,Latin and Greek,1-15
+45,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1598,Gracilis/Magnienus,Latin and Greek,1-15
+46,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1564,Gracilis/Magnienus,Latin and Greek,1-15
+47,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1580,Gracilis/Magnienus,Latin,1-15
+48,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1587,Gracilis/Magnienus,Latin,1-15
+49,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1600,Gracilis/Magnienus,Latin,1-15
+50,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1612,Gracilis/Magnienus,Latin,1-15
+51,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1607,Gracilis/Magnienus,Latin,1-16
+52,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1627,Gracilis/Magnienus,Latin,1-15
+53,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1564,Forcadel,French,1-6
+54,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1565,Forcadel,French,7-9
+55,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1566,Forcadel,French,1-6
+56,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1564,Dasypodius,Latin and Greek,1-13
+57,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1564,Dasypodius,Latin and Greek,1-13
+58,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1564,Dasypodius,Latin and Greek,1-13
+59,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1566,Herlin and Dasypodius,Latin and Greek,1-6
+60,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1570,Dasypodius,Latin and Greek,1
+61,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1571,Dasypodius,Latin and Greek,1
+62,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1570,Dasypodius,Latin and Greek,1-15
+63,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1571,Dasypodius,Latin and Greek,1-15
+64,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1599,Dasypodius,Latin and Greek,1
+65,MAGNIENUS/GRACILIS and DASYPODIUS,Arnhem,1603,Dybvad,Latin,1-6
+66,MAGNIENUS/GRACILIS and DASYPODIUS,Arnhem,1605,Dybvad,Latin,7-9
+67,MAGNIENUS/GRACILIS and DASYPODIUS,Arnhem,1605,Dybvad,Latin,10
+68,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1610,Dounot,French,1-15
+69,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1613,Dounot,French,1-15
+70,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1615,Henrion,French,1-15
+71,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1621,Henrion,French,1-15
+72,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1623,Henrion,French,1-15
+73,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1630,Henrion,French,1-6
+74,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1631,Henrion,French,1-15
+75,MAGNIENUS/GRACILIS and DASYPODIUS,Rouen,1649,Henrion,French,1-15
+76,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1632,Henrion,French,1-15
+77,MAGNIENUS/GRACILIS and DASYPODIUS,Rouen,1676,Henrion,French,1-15
+78,MAGNIENUS/GRACILIS and DASYPODIUS,Rouen and Paris,1677,Henrion,French,1-15
+79,MAGNIENUS/GRACILIS and DASYPODIUS,Rouen and Paris,1683,Henrion,French,1-15
+80,MAGNIENUS/GRACILIS and DASYPODIUS,Rouen and Paris,1685,Henrion,French,1-15
+81,MAGNIENUS/GRACILIS and DASYPODIUS,Bologna,1651,Ricci,Italian,1-6
+82,MAGNIENUS/GRACILIS and DASYPODIUS,Bologna,1651,Ricci,Italian,1-6
+83,MAGNIENUS/GRACILIS and DASYPODIUS,Bologna,1686,Ricci,Italian,1-6
+84,MAGNIENUS/GRACILIS and DASYPODIUS,Milan,1671,Caravaggi,Italian,1-6
+85,MAGNIENUS/GRACILIS and DASYPODIUS,Milan,1702,Caravaggi,Italian,1-6
+86,FOIX,Paris,1566,Foix,Latin,1-16
+87,FOIX,Paris,1678,Foix,Latin,1-18
+88,FOIX,Cologne,1602,Foix,Latin,1-18
+89,FOIX,Paris,1602,Foix,Latin,1-18
+90,FOIX,London,1570,Billingsley,English,1-16
+91,FOIX,Paris,1598,Errard,French,1-6
+92,FOIX,Paris,1605,Errard,French,1-9
+93,FOIX,Paris,1629,Errard,French,1-9
+94,FOIX,Paris,1626,Mersenne (?),Latin,1-18
+95,FOIX,Paris,1644,Mersenne,Latin,1-18
+96,COMMANDINO,Pesaro,1572,Commandino,Latin,1-15
+97,COMMANDINO,Pesaro,1619,Commandino,Latin,1-15
+98,COMMANDINO,Naples,1679,Commandino,Latin,1-6
+99,COMMANDINO,Oxford,1701,Keill,Latin,"1-6, 11-12"
+100,COMMANDINO,Naples,1702,Porpora,Latin,1-6
+101,COMMANDINO,Urbino,1575,Commandino/Spacciuoli,Italian,1-15
+102,COMMANDINO,Pesaro,1619,Commandino/Spacciuoli,Italian,1-15
+103,COMMANDINO,Naples,1679,Fioravanti,Italian,1-6
+104,COMMANDINO,Ingolstadt,1617,Lanz,Latin,1-6
+105,COMMANDINO,Bologna,1629,Lanz,Latin,1-6
+106,COMMANDINO,Leiden,1617,van Schooten,Dutch,1-15
+107,COMMANDINO,Amsterdam,1662,van Schooten,Dutch,1-16
+108,COMMANDINO,Paris,1622,le Mardelé,French,1-15
+109,COMMANDINO,Paris,1632,le Mardelé,French,1-15
+110,COMMANDINO,Lyon,1645,le Mardelé,French,1-15
+111,COMMANDINO,Lyon,1646,le Mardelé,French,1-15
+112,COMMANDINO,Hamburg,1633,Willemszen,Dutch,1-6
+113,COMMANDINO,Hamburg,1638,Willemszen,Dutch,1-6
+114,COMMANDINO,Amsterdam,1660,Willemszen,Dutch,1-6
+115,COMMANDINO,Madrid,1665,Najera and Rocha,Spanish,"5, 7"
+116,CLAVIUS,Rome,1574,Clavius,Latin,1-16
+117,CLAVIUS,Beijing,1607,Ricci and Xu Guangqi,Chinese,1-6
+118,CLAVIUS,Beijing,1611,Ricci and Xu Guangqi,Chinese,1-6
+119,CLAVIUS,Beijing,1629,Ricci and Xu Guangqi,Chinese,1-6
+120,CLAVIUS,Rome,1589,Clavius,Latin,1-16
+121,CLAVIUS,Cologne,1591,Clavius,Latin,1-16
+122,CLAVIUS,Rome,1603,Clavius,Latin,1-16
+123,CLAVIUS,Frankfurt,1607,Clavius,Latin,1-16
+124,CLAVIUS,Frankfurt,1654,Clavius,Latin,1-16
+125,CLAVIUS,Mainz,1611,Clavius,Latin,1-16
+126,CLAVIUS,Rome,1629,Grienberger,Latin,1-6
+127,CLAVIUS,Graz,1636,Grienberger,Latin,1-6
+128,CLAVIUS,Rome,1655,Grienberger,Latin,1-6
+129,CLAVIUS,n.p.,1650,anonymous,Latin,1-6
+130,CLAVIUS,Wittenberg,1609,Rhodius,Latin,1-13
+131,CLAVIUS,Wittenberg,1634,Rhodius,Latin,1-13
+132,CLAVIUS,Wittenberg,1661,Rhodius,Latin,1-13
+133,CLAVIUS,Paris,1612,Puteanus,Latin,10
+134,CLAVIUS,Douai,1620,Montensis after Clavius,Latin,1-6
+135,CLAVIUS,Douai,1625,Montensis after Clavius,Latin,1-6
+136,CLAVIUS,Douai,1633,Montensis after Clavius,Latin,1-6
+137,CLAVIUS,Ferrara,1628,Doino after Clavius,Latin,1-6
+138,CLAVIUS,Venice,1641,Doino after Clavius,Latin,1-6
+139,CLAVIUS,Venice,1647,Doino after Clavius,Latin,1-6
+140,CLAVIUS,Paris,1634,Hérigone,French,1-15
+141,CLAVIUS,Paris,1639,Hérigone,French,1-6
+142,CLAVIUS,Paris,1644,Hérigone,French,1-6
+143,CLAVIUS,Paris,1644,Hérigone,French,1-15
+144,CLAVIUS,Paris,1643,Fournier after Clavius,Latin,1-6
+145,CLAVIUS,Paris,1644,Fournier after Clavius,Latin,1-6
+146,CLAVIUS,Paris,1654,Fournier after Clavius,Latin,1-6
+147,CLAVIUS,London,1654,Fournier after Clavius,Latin,1-6
+148,CLAVIUS,Cambridge,1665,Fournier after Clavius,Latin,1-6
+149,CLAVIUS,Paris,1654,Fournier after Clavius,French,1-6
+150,CLAVIUS,Genoa,1644,anonymous after Clavius,Latin,1-6
+151,CLAVIUS,Antwerp,1645,Richard after Clavius,Latin,1-16
+152,CLAVIUS,Utrecht,n.d.,Nienrode,Dutch,1-15
+153,CLAVIUS,Lyon,1660,Dechales after Clavius,Latin,"1-6, 11-12"

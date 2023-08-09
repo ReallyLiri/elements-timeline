@@ -2,15 +2,20 @@ import Papa from "papaparse";
 import { Point } from "react-simple-maps";
 import { groupByMap } from "./util";
 
+const BLANK_CITY = "n.p.";
+const BLANK_YEAR = "n.d.";
+
 type RawTranslation = {
+  id: string;
   type: string;
   city: string;
   year: string;
+  translator: string;
+  language: string;
+  books: string;
 };
 
-export type Translation = {
-  type: string;
-  city: string;
+export type Translation = Omit<RawTranslation, "year"> & {
   year: number;
 };
 
@@ -36,8 +41,15 @@ export const loadCitiesAsync = async (): Promise<Record<string, Point>> => {
 };
 
 export const loadDataAsync = async (): Promise<Translation[]> => {
-  return (await parseCsvAsync<RawTranslation>("/data.csv")).map((t) => ({
-    ...t,
-    year: parseInt(t.year),
-  }));
+  return (await parseCsvAsync<RawTranslation>("/data.csv"))
+    .filter(
+      (t) =>
+        t.city !== BLANK_CITY &&
+        !t.city.includes(" and ") &&
+        t.year !== BLANK_YEAR,
+    )
+    .map((t) => ({
+      ...t,
+      year: parseInt(t.year),
+    }));
 };
