@@ -1,12 +1,12 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Point } from "react-simple-maps";
 import styled from "styled-components";
 import { loadCitiesAsync, loadDataAsync, Translation } from "./data/data";
-import { groupBy, isEmpty, uniq, uniqueId } from "lodash";
+import { get, groupBy, isEmpty, isNil, set, uniqueId } from "lodash";
 import { CityMarkers } from "./components/Markers";
 import { ZoomControls } from "./components/ZoomControls";
 import { useElementSize } from "./data/useElementSize";
-import { useWindowSize } from "usehooks-ts";
+import { useLocalStorage, useWindowSize } from "usehooks-ts";
 import {
   LAND_COLOR,
   PANE_BORDER,
@@ -23,6 +23,8 @@ import {
 import { CitiesMap, DEFAULT_POSITION, MAX_ZOOM } from "./components/CitiesMap";
 import { Timeline } from "./components/Timeline";
 import { getTopLengths, HeatLegend } from "./components/HeatMap";
+import { FiltersGroup } from "./components/FiltersGroup";
+import { FilterValue } from "./components/Filter";
 
 const Wrapper = styled.div`
   display: flex;
@@ -44,8 +46,6 @@ const MapWrapper = styled.div`
   path {
     fill: ${LAND_COLOR};
   }
-
-=
 `;
 
 const ControlsRow = styled.div`
@@ -99,13 +99,30 @@ const Pane = styled.div<{ borderRight: boolean }>`
   flex-direction: column;
   gap: 1rem;
   height: auto;
-  width: fit-content;
-  min-width: 10%;
+  width: 16%;
   background-color: ${PANE_COLOR};
   padding: 1rem;
   ${({ borderRight }) =>
     borderRight ? "border-right" : "border-left"}: 2px ${PANE_BORDER} solid;
 `;
+
+const filterRecord = (
+  t: Translation,
+  range: [number, number],
+  filters: Record<string, FilterValue[] | undefined>,
+): boolean => {
+  if (
+    range[0] > 0 &&
+    range[1] > 0 &&
+    (t.year < range[0] || t.year > range[1])
+  ) {
+    return false;
+  }
+  return Object.keys(filters).every((field) => {
+    const values = filters[field]?.map((v) => v.value);
+    return isEmpty(values) || values!.includes(get(t, field).toString());
+  });
+};
 
 const App = () => {
   const { height } = useWindowSize();
@@ -117,6 +134,9 @@ const App = () => {
   const [selectedCity, setSelectedCity] = useState<string | undefined>();
   const [filterOpen, setFilterOpen] = useState<boolean>(true);
   const [range, setRange] = useState<[number, number]>([0, 0]);
+  const [filters, setFilters] = useLocalStorage<
+    Record<string, FilterValue[] | undefined>
+  >("filters", {});
 
   useEffect(() => {
     loadDataAsync().then(setData);
@@ -129,12 +149,10 @@ const App = () => {
   }, [data]);
 
   const filteredTranslations = useMemo(
-    () =>
-      range[0] > 0 && range[1] > 0
-        ? data.filter((t) => t.year >= range[0] && t.year <= range[1])
-        : data,
-    [data, range],
+    () => data.filter((t) => filterRecord(t, range, filters)),
+    [data, range, filters],
   );
+
   const translationByCity: Record<string, Translation[]> = useMemo(
     () => groupBy(filteredTranslations, (t) => t.city),
     [filteredTranslations],
@@ -160,7 +178,12 @@ const App = () => {
           >
             <MdDoubleArrowFlipped />
           </CollapseFiltersButton>
-          <div>Filter TBD</div>
+          <FiltersGroup
+            data={data}
+            fields={["city", "type"]}
+            filters={filters}
+            setFilters={setFilters}
+          />
         </Pane>
       )}
       <MapSection ref={mapSectionRef}>
