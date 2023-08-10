@@ -1,4 +1,4 @@
-import { Translation } from "../data/data";
+import { FLOATING_CITY, Translation } from "../data/data";
 import { sortBy } from "lodash";
 import React, { useMemo } from "react";
 import styled from "styled-components";
@@ -30,11 +30,6 @@ const Subtitle = styled.div`
   font-size: 0.8rem;
 `;
 
-const DeLys = styled.span`
-  font-size: 2rem;
-  padding-bottom: 4px;
-`;
-
 const RowTitle = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,6 +45,9 @@ const RowTitle = styled.div`
   }
 `;
 
+export const CityName = (city: string) =>
+  city === FLOATING_CITY ? "Uncategorized" : city;
+
 export const CityDetails = ({
   city,
   data,
@@ -58,15 +56,17 @@ export const CityDetails = ({
   const sortedData = useMemo(() => sortBy(data, "year"), [data]);
   return (
     <>
-      <Title className="gothic">{city}</Title>
+      <Title className="gothic">{CityName(city)}</Title>
       <Subtitle>{data?.length || 0} records</Subtitle>
       {sortedData.map((translation) => (
         <>
           <div key={translation.id}>
             <Separator />
             <RowTitle onClick={() => setSelectedRecordId(translation.id)}>
-              <div className="gothic">{translation.year}</div>
-              <div>
+              <div className="gothic" title="Year">
+                {translation.year || translation.rawCity || "Unknown"}
+              </div>
+              <div title="Translator">
                 <span className="gothic">{translation.translator[0]}</span>
                 {translation.translator.substring(1)}
               </div>

@@ -1,4 +1,7 @@
 import React, {
+  ComponentPropsWithoutRef,
+  ReactElement,
+  ReactNode,
   useCallback,
   useEffect,
   useMemo,
@@ -6,7 +9,7 @@ import React, {
   useState,
 } from "react";
 import { Marker, Point } from "react-simple-maps";
-import { Translation } from "../data/data";
+import { FLOATING_CITY, Translation } from "../data/data";
 import {
   MARKER_1,
   MARKER_2,
@@ -19,6 +22,7 @@ import {
 import { uniq } from "lodash";
 import styled from "styled-components";
 import { getHeatColor, getTopLengths } from "./HeatMap";
+import { CityName } from "./CityDetails";
 
 type CityMarkersProps = {
   cities: Record<string, Point>;
@@ -115,7 +119,7 @@ export const CityMarkers = ({
       {hoveredCity && (
         <Marker key={`${hoveredCity}_hover`} coordinates={cities[hoveredCity]}>
           <StyledText x={-8} y={-12}>
-            {hoveredCity} · {data[hoveredCity]?.length || 0}
+            {CityName(hoveredCity)} · {data[hoveredCity]?.length || 0}
           </StyledText>
         </Marker>
       )}

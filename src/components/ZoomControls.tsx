@@ -29,11 +29,11 @@ export const ZoomControls = ({
   resetCenter,
 }: ZoomControlsProps) => {
   const handleZoomIn = useCallback(() => {
-    setZoom((z) => Math.min(z + 1, maxZoom));
+    setZoom((z) => Math.min(z < 1 ? z + 0.1 : z + 1, maxZoom));
   }, [maxZoom, setZoom]);
 
   const handleZoomOut = useCallback(() => {
-    setZoom((z) => Math.max(z - 1, 1));
+    setZoom((z) => Math.max(z > 1 ? z - 1 : z - 0.1, 0.1));
   }, [setZoom]);
 
   return (

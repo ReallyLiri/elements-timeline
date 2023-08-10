@@ -30,6 +30,13 @@ type City = {
   lat: number;
 };
 
+export const FLOATING_CITY = "-";
+const FLOATING_CITY_ENTRY: City = {
+  city: FLOATING_CITY,
+  lon: -22,
+  lat: 50,
+};
+
 const parseCsvAsync = async <T>(url: string) => {
   const response = await fetch(url);
   const data = await response.text();
@@ -38,6 +45,7 @@ const parseCsvAsync = async <T>(url: string) => {
 
 export const loadCitiesAsync = async (): Promise<Record<string, Point>> => {
   const cities = await parseCsvAsync<City>("/data/cities.csv");
+  cities.push(FLOATING_CITY_ENTRY);
   return groupByMap(
     cities,
     (city) => city.city,
@@ -52,7 +60,10 @@ export const loadDataAsync = async (): Promise<Translation[]> => {
     return {
       ...t,
       rawCity: city || "Unknown",
-      city: city?.split(" and ")[0].split("/")[0],
+      city:
+        !city || !year
+          ? FLOATING_CITY_ENTRY.city
+          : city.split(" and ")[0].split("/")[0],
       translator: trimEnd(t.translator, " (?)"),
       rawYear: year || "Unknown",
       year: year ? parseInt(t.year) : undefined,

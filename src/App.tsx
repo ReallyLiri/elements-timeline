@@ -1,7 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Point } from "react-simple-maps";
 import styled from "styled-components";
-import { loadCitiesAsync, loadDataAsync, Translation } from "./data/data";
+import {
+  FLOATING_CITY,
+  loadCitiesAsync,
+  loadDataAsync,
+  Translation,
+} from "./data/data";
 import { get, groupBy, isEmpty } from "lodash";
 import { CityMarkers } from "./components/Markers";
 import { ZoomControls } from "./components/ZoomControls";
@@ -9,7 +14,6 @@ import { useElementSize } from "./data/useElementSize";
 import { useLocalStorage, useWindowSize } from "usehooks-ts";
 import {
   LAND_COLOR,
-  MARKER_STROKE,
   PANE_BORDER,
   PANE_COLOR,
   PANE_COLOR_ALT,
@@ -25,7 +29,7 @@ import {
 } from "./components/Tooltips";
 import { CitiesMap, DEFAULT_POSITION, MAX_ZOOM } from "./components/CitiesMap";
 import { Timeline } from "./components/Timeline";
-import { getTopLengths, HeatLegend } from "./components/HeatMap";
+import { HeatLegend } from "./components/HeatMap";
 import { FiltersGroup } from "./components/FiltersGroup";
 import { FilterValue } from "./components/Filter";
 import { CityDetails } from "./components/CityDetails";
@@ -122,13 +126,13 @@ const filterRecord = (
   range: [number, number],
   filters: Record<string, FilterValue[] | undefined>,
 ): boolean => {
-  if (!t.year || !t.city) {
-    return false;
+  if (t.city === FLOATING_CITY) {
+    return true;
   }
   if (
     range[0] > 0 &&
     range[1] > 0 &&
-    (t.year < range[0] || t.year > range[1])
+    (t.year! < range[0] || t.year! > range[1])
   ) {
     return false;
   }
@@ -142,9 +146,12 @@ const App = () => {
   const { height, width: windowWidth } = useWindowSize();
   const [data, setData] = useState<Translation[]>([]);
   const [cities, setCities] = useState<Record<string, Point>>({});
-  const [zoom, setZoom] = useState<number>(1);
+  const [zoom, setZoom] = useLocalStorage<number>("zoom", 1);
   const [mapSectionRef, { width: mapWidth }, refreshSize] = useElementSize();
-  const [position, setPosition] = useState<Point>(DEFAULT_POSITION);
+  const [position, setPosition] = useLocalStorage<Point>(
+    "position",
+    DEFAULT_POSITION,
+  );
   const [selectedCity, setSelectedCity] = useLocalStorage<string | undefined>(
     "selected-city",
     undefined,
@@ -152,7 +159,10 @@ const App = () => {
   const [selectedRecordId, setSelectedRecordId] = useLocalStorage<
     string | undefined
   >("selected-record", undefined);
-  const [filterOpen, setFilterOpen] = useState<boolean>(true);
+  const [filterOpen, setFilterOpen] = useLocalStorage<boolean>(
+    "filters-open",
+    true,
+  );
   const [range, setRange] = useState<[number, number]>([0, 0]);
   const [filters, setFilters] = useLocalStorage<
     Record<string, FilterValue[] | undefined>
@@ -255,8 +265,8 @@ const App = () => {
         <HeatLegend
           offsetRight={
             Math.min(
-              (selectedCity ? 1.2 : 0) + (selectedRecord ? 1.9 : 0),
-              2.6,
+              (selectedCity ? 1.35 : 0) + (selectedRecord ? 2.15 : 0),
+              2.9,
             ) *
             0.14 *
             windowWidth
