@@ -23,6 +23,7 @@ import { uniq } from "lodash";
 import styled from "styled-components";
 import { getHeatColor, getTopLengths } from "./HeatMap";
 import { CityName } from "./CityDetails";
+import { CITY_MARKER_ID } from "./Tour";
 
 type CityMarkersProps = {
   cities: Record<string, Point>;
@@ -103,7 +104,11 @@ export const CityMarkers = ({
       {Object.keys(cities)
         .filter((city) => data[city]?.length > 0)
         .map((city) => (
-          <Marker key={`${city}_circle`} coordinates={cities[city]}>
+          <Marker
+            key={`${city}_circle`}
+            id={`${CITY_MARKER_ID}${city}`}
+            coordinates={cities[city]}
+          >
             <StyledCircle
               fill={getFillColor(data[city]?.length || 0)}
               selected={city === hoveredCity}

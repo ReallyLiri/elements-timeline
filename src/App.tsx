@@ -9,7 +9,7 @@ import {
 } from "./data/data";
 import { get, groupBy, isEmpty } from "lodash";
 import { CityMarkers } from "./components/Markers";
-import { ZoomControls } from "./components/ZoomControls";
+import { MapControls } from "./components/MapControls";
 import { useElementSize } from "./data/useElementSize";
 import { useLocalStorage, useWindowSize } from "usehooks-ts";
 import {
@@ -34,6 +34,8 @@ import { FiltersGroup } from "./components/FiltersGroup";
 import { FilterValue } from "./components/Filter";
 import { CityDetails } from "./components/CityDetails";
 import { RecordDetails } from "./components/RecordDetails";
+import { COLLAPSE_FILTER_BUTTON_ID } from "./components/Tour";
+import { useTour } from "@reactour/tour";
 
 const Wrapper = styled.div`
   display: flex;
@@ -167,6 +169,15 @@ const App = () => {
   const [filters, setFilters] = useLocalStorage<
     Record<string, FilterValue[] | undefined>
   >("filters", {});
+  const [toured, setToured] = useLocalStorage<boolean>("toured", false);
+  const { setIsOpen: setTourOpen } = useTour();
+
+  useEffect(() => {
+    if (!toured) {
+      setToured(true);
+      setTourOpen(true);
+    }
+  }, [setTourOpen, setToured, toured]);
 
   useEffect(() => {
     loadDataAsync().then(setData);
@@ -205,6 +216,7 @@ const App = () => {
       {filterOpen && (
         <Pane borderRight={true} widthPercentage={16}>
           <CollapseFiltersButton
+            id={COLLAPSE_FILTER_BUTTON_ID}
             onClick={() => setFilterOpen(false)}
             data-tooltip-id={TOOLTIP_FILTERS_HIDE}
             data-tooltip-content="Hide Filters"
@@ -247,13 +259,14 @@ const App = () => {
           />
         </MapWrapper>
         <ControlsRow>
-          <ZoomControls
+          <MapControls
             setZoom={setZoom}
             maxZoom={MAX_ZOOM}
             resetCenter={() => {
               setPosition(DEFAULT_POSITION);
               setZoom(1);
             }}
+            openTour={() => setTourOpen(true)}
           />
           <div />
           <Timeline

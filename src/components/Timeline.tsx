@@ -10,6 +10,7 @@ import {
 } from "../data/colors";
 import { TOOLTIP_TIMELINE_BUTTON } from "./Tooltips";
 import { useLocalStorage } from "usehooks-ts";
+import { TIMELINE_PLAY_ID } from "./Tour";
 
 type TimelineProps = {
   minYear: number;
@@ -104,6 +105,7 @@ export const Timeline = ({ minYear, maxYear, rangeChanged }: TimelineProps) => {
   return (
     <>
       <PlayButton
+        id={TIMELINE_PLAY_ID}
         onClick={() => setPlay((p) => !p)}
         data-tooltip-id={TOOLTIP_TIMELINE_BUTTON}
         data-tooltip-content={isPlay ? "Pause" : "Play"}

@@ -4,6 +4,7 @@ import { capitalize, get, uniq } from "lodash";
 import { Filter, FilterValue } from "./Filter";
 import { ReactComponent as Deco } from "../svg/deco2.svg";
 import styled from "styled-components";
+import { FILTER_INDEXED_ID } from "./Tour";
 
 type FiltersGroupProps = {
   data: Translation[];
@@ -37,8 +38,9 @@ export const FiltersGroup = ({
 
   return (
     <>
-      {fields.map((field) => (
+      {fields.map((field, index) => (
         <Filter
+          id={`${FILTER_INDEXED_ID}${index}`}
           key={field}
           label={capitalize(field)}
           value={filters[field]}

@@ -1,14 +1,26 @@
 import React, { useCallback } from "react";
-import { MdMyLocation, MdZoomInMap, MdZoomOutMap } from "react-icons/md";
+import {
+  MdMyLocation,
+  MdZoomInMap,
+  MdZoomOutMap,
+  MdQuestionMark,
+} from "react-icons/md";
 import styled from "styled-components";
 import { ButtonStyle, SEA_COLOR, TRANSPARENT_WHITE } from "../data/colors";
-import { TOOLTIP_RESET, TOOLTIP_ZOOMIN, TOOLTIP_ZOOMOUT } from "./Tooltips";
+import {
+  TOOLTIP_HELP,
+  TOOLTIP_RESET,
+  TOOLTIP_ZOOMIN,
+  TOOLTIP_ZOOMOUT,
+} from "./Tooltips";
+import { ZOOM_CONTROLS_ID } from "./Tour";
 
 type ZoomControlsProps = {
   className?: string;
   setZoom: React.Dispatch<React.SetStateAction<number>>;
   maxZoom: number;
   resetCenter: () => void;
+  openTour: () => void;
 };
 
 const StyledDiv = styled.div`
@@ -22,11 +34,12 @@ const StyledDiv = styled.div`
   }
 `;
 
-export const ZoomControls = ({
+export const MapControls = ({
   className,
   setZoom,
   maxZoom,
   resetCenter,
+  openTour,
 }: ZoomControlsProps) => {
   const handleZoomIn = useCallback(() => {
     setZoom((z) => Math.min(z < 1 ? z + 0.1 : z + 1, maxZoom));
@@ -37,7 +50,14 @@ export const ZoomControls = ({
   }, [setZoom]);
 
   return (
-    <StyledDiv className={className}>
+    <StyledDiv id={ZOOM_CONTROLS_ID} className={className}>
+      <div
+        onClick={openTour}
+        data-tooltip-id={TOOLTIP_HELP}
+        data-tooltip-content="Help"
+      >
+        <MdQuestionMark />
+      </div>
       <div
         onClick={resetCenter}
         data-tooltip-id={TOOLTIP_RESET}
