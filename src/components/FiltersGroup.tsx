@@ -23,7 +23,7 @@ export const FiltersGroup = ({
     fields.forEach((field) => {
       byFilter[field] = uniq(
         data
-          .map((t) => get(t, field).toString())
+          .map((t) => get(t, field)?.toString() || "")
           .filter((v) => v)
           .sort(),
       ).map((v) => ({ label: v, value: v }));

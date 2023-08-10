@@ -152,3 +152,80 @@ id,type,city,year,translator,language,books
 151,CLAVIUS,Antwerp,1645,Richard after Clavius,Latin,1-16
 152,CLAVIUS,Utrecht,n.d.,Nienrode,Dutch,1-15
 153,CLAVIUS,Lyon,1660,Dechales after Clavius,Latin,"1-6, 11-12"
+154,CLAVIUS,Lyon,1672,Dechales after Clavius,French,"1-6, 11-12"
+155,CLAVIUS,Lyon,1674,Dechales after Clavius,Latin,"1-6, 11-12"
+156,CLAVIUS,Lyon,1690,Dechales after Clavius,Latin,1-14
+157,CLAVIUS,Lyon,1675,Dechales after Clavius,Latin,"1-6, 11-12"
+158,CLAVIUS,Paris,1677,Dechales after Clavius,French,"1-6, 11-12"
+159,CLAVIUS,Paris,1682,Dechales after Clavius,French,"1-6, 11-12"
+160,CLAVIUS,Paris,1683,Dechales after Clavius,French,"1-6, 11-12"
+161,CLAVIUS,Paris,1690,Dechales after Clavius,French,"1-6, 11-12"
+162,CLAVIUS,Amsterdam,1700,Dechales after Clavius,French,"1-6, 11-12"
+163,CLAVIUS,London,1685,Williams,English,"1-6, 11-12"
+164,CLAVIUS,London,1703,Williams,English,"1-6, 11-12"
+165,CLAVIUS,Oxford,1685,anonymous,English,"1-6, 11-12"
+166,CLAVIUS,London,1696,anonymous,English,"1-6, 11-12"
+167,CLAVIUS,Oxford/London,1700,anonymous,English,"1-6, 11-12"
+168,CLAVIUS,London,1661,Leeke and Serle,English,1-16
+169,CLAVIUS,Würzburg,1661,Schott,Latin,1-6
+170,CLAVIUS,Frankfurt,1674,Schott,Latin,1-6
+171,CLAVIUS,Bamberg,1677,Schott,Latin,1-6
+172,CLAVIUS,Leiden/Amsterdam,1673,Melder,Latin,1-6
+173,CLAVIUS,Paris,1682,Rohault,French,1-6
+174,CLAVIUS,Paris,1690,Rohault,French,1-6
+175,CLAVIUS,Bologna,1684,anonymous after Clavius,Latin,1-6
+176,CLAVIUS,Florence,1690,anonymous,Italian,"1-6, 11-12"
+177,CLAVIUS,Leiden,1691,Coetsius,Latin,1-6
+178,CLAVIUS,Leiden,1692,Coetsius,Latin,1-6
+179,CLAVIUS,Amsterdam,1691,Coetsius,Dutch,1-6
+180,CLAVIUS,Siena,1691,Astorinus,Latin,1-15
+181,CLAVIUS,Naples,1701,Astorinus,Latin,1-15
+182,CLAVIUS,Paris,1693,Ozanam,French,"1-6, 11-12"
+183,CLAVIUS,Paris,1697,Ozanam,French,"1-6, 11-12"
+184,CLAVIUS,Amsterdam,1697,Ozanam,French,"1-6, 11-12"
+185,CLAVIUS,Vienna,1694,Pirckenstein,German,"1-6, 11-12"
+186,CLAVIUS,Lübeck,1699,Pirckenstein,German,"1-6, 11-12"
+187,CLAVIUS,Amsterdam,1695,Vooght,Dutch,1-16
+188,MAUROLICUS,Venice,1575,Maurolicus,Latin,13-15
+189,ps-TUSI,Rome,1594,ps-Tusi,Arabic,1-13
+190,DOU,Leiden,1606,Dou,Dutch,1-6
+191,DOU,Leiden,1607,Dou,Dutch,1-6
+192,DOU,Amsterdam,1616,Dou,Dutch,1-6
+193,DOU,Amsterdam,1626,Dou,Dutch,1-6
+194,DOU,Rotterdam,1632,Dou,Dutch,1-6
+195,DOU,Rotterdam/Utrecht,1647,Dou,Dutch,1-6
+196,DOU,Rotterdam,1661,Dou,Dutch,1-6
+197,DOU,Rotterdam,1681,Dou,Dutch,1-6
+198,DOU,Amsterdam,1700,Dou,Dutch,1-6
+199,DOU,Amsterdam,1701,Dou,Dutch,1-6
+200,DOU,Amsterdam,1618,Curtius,German,1-6
+201,DOU,Amsterdam,1634,Curtius,German,1-6
+202,DOU,London,1651,Rudd,English,1-6
+203,TACQUET,Antwerp,1654,Tacquet,Latin,"1-6, 11-12"
+204,TACQUET,Antwerp,1665,Tacquet,Latin,"1-6, 11-12"
+205,TACQUET,Antwerp,1672,Tacquet,Latin,"1-6, 11-12"
+206,TACQUET,Antwerp,1683,Tacquet,Latin,"1-6, 11-12"
+207,TACQUET,Amsterdam,1701,Tacquet,Latin,"1-6, 11-12"
+208,TACQUET,Pauda,1694,Tacquet,Latin,"1-6, 11-12"
+209,TACQUET,Cambridge,1703,Whiston,Latin,"1-6, 11-12"
+210,TACQUET,Brussels,1688,Fernandez,Spanish,"1-6, 11-12"
+211,TACQUET,Brussels,1701,Fernandez,Spanish,"1-6, 11-12"
+212,TACQUET,Brussels,1689,Kresa,Spanish,"1-6, 11-12"
+213,TACQUET,Kiel,1697,Reyher,German,1-6
+214,TACQUET,Kiel,1699,Reyher,German,1-6
+215,HÉRIGONE/BARROW,Paris,1634,Hérigone,Latin,1-15
+216,HÉRIGONE/BARROW,Paris,1644,Hérigone,Latin,1-15
+217,HÉRIGONE/BARROW,Cambridge,1655,Barrow,Latin,1-15
+218,HÉRIGONE/BARROW,London,1659,Barrow,Latin,1-15
+219,HÉRIGONE/BARROW,London,1678,Barrow,Latin,1-15
+220,HÉRIGONE/BARROW,London,1685,Barrow,Latin,1-15
+221,HÉRIGONE/BARROW,London,1687,Barrow,Latin,1-15
+222,HÉRIGONE/BARROW,Osnabrück,1676,Barrow,Latin,1-15
+223,HÉRIGONE/BARROW,London,1660,Barrow,English,1-15
+224,HÉRIGONE/BARROW,London,1660,Barrow,English,1-15
+225,HÉRIGONE/BARROW,London,1686,Barrow,English,1-15
+226,HÉRIGONE/BARROW,London,1705,Barrow,English,1-15
+227,HÉRIGONE/BARROW,London,1732,Barrow,English,1-15
+228,HÉRIGONE/BARROW,London,1751,Barrow,English,1-15
+229,HÉRIGONE/BARROW,London,1680-1681,Perkins,English,"1-6, 11-12"
+230,GREGORY,Oxford,1703,Gregory,Latin and Greek,1-15

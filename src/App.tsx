@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Point } from "react-simple-maps";
 import styled from "styled-components";
 import { loadCitiesAsync, loadDataAsync, Translation } from "./data/data";
-import { get, groupBy, isEmpty, isNil, set, uniqueId } from "lodash";
+import { get, groupBy, isEmpty } from "lodash";
 import { CityMarkers } from "./components/Markers";
 import { ZoomControls } from "./components/ZoomControls";
 import { useElementSize } from "./data/useElementSize";
@@ -116,6 +116,9 @@ const filterRecord = (
   range: [number, number],
   filters: Record<string, FilterValue[] | undefined>,
 ): boolean => {
+  if (!t.year || !t.city) {
+    return false;
+  }
   if (
     range[0] > 0 &&
     range[1] > 0 &&
@@ -155,7 +158,7 @@ const App = () => {
   }, []);
 
   const [minYear, maxYear] = useMemo(() => {
-    const years = data.map((t) => t.year);
+    const years = data.filter((t) => !!t.year).map((t) => t.year!!);
     return [Math.min(...years), Math.max(...years)];
   }, [data]);
 

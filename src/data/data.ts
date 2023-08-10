@@ -1,6 +1,7 @@
 import Papa from "papaparse";
 import { Point } from "react-simple-maps";
 import { groupByMap } from "./util";
+import { trimEnd } from "lodash";
 
 const BLANK_CITY = "n.p.";
 const BLANK_YEAR = "n.d.";
@@ -15,8 +16,11 @@ type RawTranslation = {
   books: string;
 };
 
-export type Translation = Omit<RawTranslation, "year"> & {
-  year: number;
+export type Translation = Omit<RawTranslation, "year" | "city"> & {
+  rawCity: string;
+  city: string | undefined;
+  year: number | undefined;
+  booksExpanded: number[];
 };
 
 type City = {
@@ -32,7 +36,7 @@ const parseCsvAsync = async <T>(url: string) => {
 };
 
 export const loadCitiesAsync = async (): Promise<Record<string, Point>> => {
-  const cities = await parseCsvAsync<City>("/cities.csv");
+  const cities = await parseCsvAsync<City>("/data/cities.csv");
   return groupByMap(
     cities,
     (city) => city.city,
@@ -41,15 +45,35 @@ export const loadCitiesAsync = async (): Promise<Record<string, Point>> => {
 };
 
 export const loadDataAsync = async (): Promise<Translation[]> => {
-  return (await parseCsvAsync<RawTranslation>("/data.csv"))
-    .filter(
-      (t) =>
-        t.city !== BLANK_CITY &&
-        !t.city.includes(" and ") &&
-        t.year !== BLANK_YEAR,
-    )
-    .map((t) => ({
+  return (await parseCsvAsync<RawTranslation>("/data/data.csv")).map((t) => {
+    const city = t.city === BLANK_CITY ? undefined : t.city;
+    return {
       ...t,
-      year: parseInt(t.year),
-    }));
+      rawCity: city || "Unknown",
+      city: city?.split(" and ")[0].split("/")[0],
+      translator: trimEnd(t.translator, " (?)"),
+      year: t.year === BLANK_YEAR ? undefined : parseInt(t.year),
+      booksExpanded: parseRange(t.books),
+    };
+  });
+};
+
+const parseRange = (range: string): number[] => {
+  const parts = range.split(/[ ,]+/);
+  const result: number[] = [];
+
+  for (const part of parts) {
+    if (part.includes("-")) {
+      const range = part.split("-");
+      const start = parseInt(range[0]);
+      const end = parseInt(range[1]);
+      for (let i = start; i <= end; i++) {
+        result.push(i);
+      }
+    } else if (part !== "") {
+      result.push(parseInt(part));
+    }
+  }
+
+  return result;
 };
