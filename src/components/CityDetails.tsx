@@ -2,7 +2,8 @@ import { FLOATING_CITY, Translation } from "../data/data";
 import { sortBy } from "lodash";
 import React, { useMemo } from "react";
 import styled from "styled-components";
-import { PANE_COLOR } from "../data/colors";
+import { PANE_COLOR, TRANSPARENT_BLACK } from "../data/colors";
+import { ReactComponent as Deco } from "../svg/deco3.svg";
 
 type CityDetailsProps = {
   city: string;
@@ -12,11 +13,12 @@ type CityDetailsProps = {
 };
 
 const Title = styled.div`
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: ${TRANSPARENT_BLACK};
   color: ${PANE_COLOR};
-  width: fit-content;
+  width: calc(100% - 1rem);
   padding: 0.5rem;
   border-radius: 0.5rem;
+  text-align: center;
 `;
 
 const Separator = styled.div`
@@ -40,9 +42,15 @@ const RowTitle = styled.div`
   border-radius: 0.5rem;
   padding: 0.5rem;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: ${TRANSPARENT_BLACK};
     color: ${PANE_COLOR};
   }
+`;
+
+const StyledDeco = styled(Deco)`
+  transform: rotate(180deg);
+  fill: rgba(0, 0, 0, 0.6);
+  margin-top: -0.8rem;
 `;
 
 export const CityName = (city: string) =>
@@ -57,6 +65,7 @@ export const CityDetails = ({
   return (
     <>
       <Title className="gothic">{CityName(city)}</Title>
+      <StyledDeco height={64} />
       <Subtitle>{data?.length || 0} records</Subtitle>
       {sortedData.map((translation) => (
         <>

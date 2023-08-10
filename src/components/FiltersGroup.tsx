@@ -2,6 +2,8 @@ import { Translation } from "../data/data";
 import React, { useMemo } from "react";
 import { capitalize, get, uniq } from "lodash";
 import { Filter, FilterValue } from "./Filter";
+import { ReactComponent as Deco } from "../svg/deco2.svg";
+import styled from "styled-components";
 
 type FiltersGroupProps = {
   data: Translation[];
@@ -11,6 +13,8 @@ type FiltersGroupProps = {
     React.SetStateAction<Record<string, FilterValue[] | undefined>>
   >;
 };
+
+const StyledDeco = styled(Deco)``;
 
 export const FiltersGroup = ({
   data,
@@ -47,6 +51,7 @@ export const FiltersGroup = ({
           options={optionsByFilter[field]}
         />
       ))}
+      <StyledDeco />
     </>
   );
 };
