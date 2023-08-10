@@ -140,7 +140,15 @@ const filterRecord = (
   }
   return Object.keys(filters).every((field) => {
     const values = filters[field]?.map((v) => v.value);
-    return isEmpty(values) || values!.includes(get(t, field).toString());
+    if (isEmpty(values)) {
+      return true;
+    }
+    if (field === "books") {
+      return values!
+        .map((v) => parseInt(v))
+        .every((n) => t.booksExpanded.includes(n));
+    }
+    return values!.includes(get(t, field).toString());
   });
 };
 
@@ -225,7 +233,7 @@ const App = () => {
           </CollapseFiltersButton>
           <FiltersGroup
             data={data}
-            fields={["city", "type", "language", "translator"]}
+            fields={["city", "type", "language", "translator", "books"]}
             filters={filters}
             setFilters={setFilters}
           />

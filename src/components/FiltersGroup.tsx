@@ -17,6 +17,8 @@ type FiltersGroupProps = {
 
 const StyledDeco = styled(Deco)``;
 
+const toOption = (v: string) => ({ label: v, value: v });
+
 export const FiltersGroup = ({
   data,
   fields,
@@ -26,12 +28,21 @@ export const FiltersGroup = ({
   const optionsByFilter = useMemo(() => {
     const byFilter: Record<string, FilterValue[]> = {};
     fields.forEach((field) => {
-      byFilter[field] = uniq(
-        data
-          .map((t) => get(t, field)?.toString() || "")
-          .filter((v) => v)
-          .sort(),
-      ).map((v) => ({ label: v, value: v }));
+      if (field === "books") {
+        byFilter[field] = uniq(
+          data
+            .flatMap((t) => t.booksExpanded)
+            .sort((a, b) => a - b)
+            .map((n) => n.toString()),
+        ).map(toOption);
+      } else {
+        byFilter[field] = uniq(
+          data
+            .map((t) => get(t, field)?.toString() || "")
+            .filter((v) => v)
+            .sort(),
+        ).map(toOption);
+      }
     });
     return byFilter;
   }, [data, fields]);

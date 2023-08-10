@@ -85,7 +85,10 @@ const parseRange = (range: string): number[] => {
         result.push(i);
       }
     } else if (part !== "") {
-      result.push(parseInt(part));
+      const num = parseInt(part);
+      if (!isNaN(num)) {
+        result.push(num);
+      }
     }
   }
 
