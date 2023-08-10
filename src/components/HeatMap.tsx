@@ -4,6 +4,7 @@ import {
   MARKER_3,
   MARKER_4,
   MARKER_5,
+  SEA_COLOR,
   TRANSPARENT_WHITE,
 } from "../data/colors";
 import { uniq } from "lodash";
@@ -15,13 +16,15 @@ export const TOP_N = 5;
 
 const COLORS_HEAT_MAP = [MARKER_1, MARKER_2, MARKER_3, MARKER_4, MARKER_5];
 
+const RANGES = [40, 15, 5, 3, 0];
+
 if (COLORS_HEAT_MAP.length !== TOP_N) {
   throw Error("hit map is outdated");
 }
 
 export const getHeatColor = (value: number, topN: number[]): string => {
   for (let i = 0; i < TOP_N - 1; i++) {
-    if (value >= topN[i]) {
+    if (value >= RANGES[i]) {
       return COLORS_HEAT_MAP[i];
     }
   }
@@ -65,37 +68,46 @@ const Title = styled.div`
   padding-bottom: 0.5rem;
 `;
 
-const TotalLabel = styled.div`
-  background-color: ${MARKER_1};
+const TotalLabel = styled.span`
+  background-color: ${SEA_COLOR};
   color: white;
   width: fit-content;
   padding: 0.5rem;
   border-radius: 0.5rem;
 `;
 
+const HeatEntry = ({ index, label }: { index: number; label: string }) => (
+  <Row>
+    <Circle color={COLORS_HEAT_MAP[index]} />
+    <div>{label}</div>
+  </Row>
+);
+
+const getLabel = (index: number) => {
+  if (index === 0) {
+    return `${RANGES[0]} or more`;
+  }
+  if (index === TOP_N - 1) {
+    return `${RANGES[TOP_N - 2] - 1} or less`;
+  }
+  return `${RANGES[index]}-${RANGES[index - 1] - 1}`;
+};
+
 export const HeatLegend = ({
   total,
-  topLengths,
   offsetRight,
 }: {
   total: number;
-  topLengths: number[];
   offsetRight: number;
 }) => (
   <Legend offsetRight={offsetRight}>
-    <Title>No. of Records</Title>
-    <TotalLabel>{total}</TotalLabel>
-    <Title>Heatmap Legend</Title>
-    {topLengths.map((len) => (
-      <Row key={len}>
-        <Circle color={getHeatColor(len, topLengths)} />
-        <div>
-          {topLengths.length === TOP_N &&
-          len === topLengths[topLengths.length - 1]
-            ? `${len} or less`
-            : len}
-        </div>
-      </Row>
+    <div>
+      Total: <TotalLabel>{total}</TotalLabel>
+    </div>
+    <div />
+    <Title>Heatmap Legend:</Title>
+    {RANGES.map((value, index) => (
+      <HeatEntry key={value} index={index} label={getLabel(index)} />
     ))}
   </Legend>
 );

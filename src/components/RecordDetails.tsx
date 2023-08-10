@@ -6,9 +6,10 @@ type RecordDetailsProps = {
   data: Translation;
 };
 
-const Paragraph = styled.div`
-  padding: 0.5rem;
-  line-height: 120%;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 `;
 
 const Highlight = styled.span`
@@ -17,15 +18,27 @@ const Highlight = styled.span`
   width: fit-content;
   padding: 0 2px;
   border-radius: 2px;
+  margin-left: 0.5rem;
 `;
+
+const Row = ({ title, value }: { title: string; value: string }) => (
+  <div>
+    <div className="gothic" title={title}>
+      {title}
+    </div>
+    <Highlight title={value}>{value}</Highlight>
+  </div>
+);
 
 export const RecordDetails = ({ data }: RecordDetailsProps) => {
   return (
-    <Paragraph>
-      A <Highlight>{data.language}</Highlight> translation of type{" "}
-      <Highlight>{data.type}</Highlight>. Published in{" "}
-      <Highlight>{data.year}</Highlight> at <Highlight>{data.city}</Highlight>{" "}
-      by <Highlight>{data.translator}</Highlight>.
-    </Paragraph>
+    <Wrapper>
+      <Row title="Year" value={data.rawYear} />
+      <Row title="Language" value={data.language} />
+      <Row title="Translator" value={data.translator} />
+      <Row title="City" value={data.rawCity} />
+      <Row title="Books" value={data.books} />
+      <Row title="Type" value={data.type} />
+    </Wrapper>
   );
 };

@@ -18,10 +18,9 @@ import {
 } from "../data/colors";
 import { uniq } from "lodash";
 import styled from "styled-components";
-import { getHeatColor } from "./HeatMap";
+import { getHeatColor, getTopLengths } from "./HeatMap";
 
 type CityMarkersProps = {
-  topLengths: number[];
   cities: Record<string, Point>;
   data: Record<string, Translation[]>;
   selectedCity: string | undefined;
@@ -47,7 +46,6 @@ const StyledText = styled.text`
 `;
 
 export const CityMarkers = ({
-  topLengths,
   cities,
   data,
   selectedCity,
@@ -73,6 +71,8 @@ export const CityMarkers = ({
     (event: Event) => setHoveredCity(undefined),
     [],
   );
+
+  const topLengths = useMemo(() => getTopLengths(data), [data]);
 
   const getFillColor = useCallback(
     (value: number) => getHeatColor(value, topLengths),

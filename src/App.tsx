@@ -9,8 +9,10 @@ import { useElementSize } from "./data/useElementSize";
 import { useLocalStorage, useWindowSize } from "usehooks-ts";
 import {
   LAND_COLOR,
+  MARKER_STROKE,
   PANE_BORDER,
   PANE_COLOR,
+  PANE_COLOR_ALT,
   SEA_COLOR,
   TRANSPARENT_WHITE,
 } from "./data/colors";
@@ -90,21 +92,25 @@ const CollapseFiltersButton = styled.div`
   border-radius: 20%;
   background-color: ${TRANSPARENT_WHITE};
   color: ${SEA_COLOR};
-  align-self: center;
+  align-self: start;
 `;
 
 const MdDoubleArrowFlipped = styled(MdDoubleArrow)`
   transform: rotate(180deg);
 `;
 
-const Pane = styled.div<{ borderRight: boolean }>`
+const Pane = styled.div<{
+  borderRight: boolean;
+  widthPercentage?: number;
+  backgroundColor?: string;
+}>`
   display: flex;
   flex-direction: column;
   gap: 1rem;
   height: calc(100vh - 2rem);
-  width: 16%;
+  width: ${({ widthPercentage }) => widthPercentage || 20}%;
   overflow-x: auto;
-  background-color: ${PANE_COLOR};
+  background-color: ${({ backgroundColor }) => backgroundColor || PANE_COLOR};
   padding: 1rem;
   margin-bottom: 10rem;
   ${({ borderRight }) =>
@@ -172,11 +178,6 @@ const App = () => {
     [filteredTranslations],
   );
 
-  const topLengths = useMemo(
-    () => getTopLengths(translationByCity),
-    [translationByCity],
-  );
-
   const selectedRecord = useMemo(
     () =>
       selectedRecordId
@@ -192,7 +193,7 @@ const App = () => {
   return (
     <Wrapper>
       {filterOpen && (
-        <Pane borderRight={true}>
+        <Pane borderRight={true} widthPercentage={16}>
           <CollapseFiltersButton
             onClick={() => setFilterOpen(false)}
             data-tooltip-id={TOOLTIP_FILTERS_HIDE}
@@ -227,7 +228,6 @@ const App = () => {
             setPosition={setPosition}
             markers={
               <CityMarkers
-                topLengths={topLengths}
                 cities={cities}
                 data={translationByCity}
                 selectedCity={selectedCity}
@@ -254,16 +254,18 @@ const App = () => {
         </ControlsRow>
         <HeatLegend
           offsetRight={
-            Math.min((selectedCity ? 1 : 0) + (selectedRecord ? 1 : 0), 1.75) *
+            Math.min(
+              (selectedCity ? 1.2 : 0) + (selectedRecord ? 1.9 : 0),
+              2.6,
+            ) *
             0.14 *
             windowWidth
           }
           total={filteredTranslations?.length || 0}
-          topLengths={topLengths}
         />
       </MapSection>
       {!isEmpty(selectedCity) && (
-        <Pane borderRight={false}>
+        <Pane borderRight={false} backgroundColor={PANE_COLOR_ALT}>
           <CollapseFiltersButton
             onClick={() => setSelectedCity(undefined)}
             data-tooltip-id={TOOLTIP_CLOSE_CITY_DETAILS}
@@ -280,7 +282,7 @@ const App = () => {
         </Pane>
       )}
       {!isEmpty(selectedRecord) && (
-        <Pane borderRight={false}>
+        <Pane borderRight={false} widthPercentage={40}>
           <CollapseFiltersButton
             onClick={() => setSelectedRecordId(undefined)}
             data-tooltip-id={TOOLTIP_CLOSE_RECORD_DETAILS}

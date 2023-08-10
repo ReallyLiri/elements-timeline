@@ -1,5 +1,5 @@
 import { Translation } from "../data/data";
-import { sortBy, uniqueId } from "lodash";
+import { sortBy } from "lodash";
 import React, { useMemo } from "react";
 import styled from "styled-components";
 import { PANE_COLOR } from "../data/colors";
@@ -12,7 +12,6 @@ type CityDetailsProps = {
 };
 
 const Title = styled.div`
-  font-weight: bolder;
   background-color: rgba(0, 0, 0, 0.6);
   color: ${PANE_COLOR};
   width: fit-content;
@@ -38,12 +37,12 @@ const DeLys = styled.span`
 
 const RowTitle = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   gap: 0.5rem;
   cursor: pointer;
-  border-radius: 0.5rem;
   width: fit-content;
+  border-radius: 0.5rem;
   padding: 0.5rem;
   &:hover {
     background-color: rgba(0, 0, 0, 0.6);
@@ -59,14 +58,18 @@ export const CityDetails = ({
   const sortedData = useMemo(() => sortBy(data, "year"), [data]);
   return (
     <>
-      <Title>{city}</Title>
-      <Subtitle>{data?.length} records</Subtitle>
+      <Title className="gothic">{city}</Title>
+      <Subtitle>{data?.length || 0} records</Subtitle>
       {sortedData.map((translation) => (
         <>
           <div key={translation.id}>
             <Separator />
             <RowTitle onClick={() => setSelectedRecordId(translation.id)}>
-              <DeLys>⚜</DeLys> {translation.year} {translation.translator}
+              <div className="gothic">{translation.year}</div>
+              <div>
+                <span className="gothic">{translation.translator[0]}</span>
+                {translation.translator.substring(1)}
+              </div>
             </RowTitle>
           </div>
         </>

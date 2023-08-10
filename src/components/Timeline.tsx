@@ -65,7 +65,7 @@ const YearLabel = styled.div`
 `;
 
 const PLAY_STEP_YEARS = 10;
-const PLAY_STEP_SEC = 2;
+const PLAY_STEP_SEC = 1;
 
 export const Timeline = ({ minYear, maxYear, rangeChanged }: TimelineProps) => {
   const [value, setValue] = useLocalStorage<[number, number]>(

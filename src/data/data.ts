@@ -19,6 +19,7 @@ type RawTranslation = {
 export type Translation = Omit<RawTranslation, "year" | "city"> & {
   rawCity: string;
   city: string | undefined;
+  rawYear: string;
   year: number | undefined;
   booksExpanded: number[];
 };
@@ -47,12 +48,14 @@ export const loadCitiesAsync = async (): Promise<Record<string, Point>> => {
 export const loadDataAsync = async (): Promise<Translation[]> => {
   return (await parseCsvAsync<RawTranslation>("/data/data.csv")).map((t) => {
     const city = t.city === BLANK_CITY ? undefined : t.city;
+    const year = t.year === BLANK_YEAR ? undefined : t.year;
     return {
       ...t,
       rawCity: city || "Unknown",
       city: city?.split(" and ")[0].split("/")[0],
       translator: trimEnd(t.translator, " (?)"),
-      year: t.year === BLANK_YEAR ? undefined : parseInt(t.year),
+      rawYear: year || "Unknown",
+      year: year ? parseInt(t.year) : undefined,
       booksExpanded: parseRange(t.books),
     };
   });

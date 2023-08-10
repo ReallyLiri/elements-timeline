@@ -14,6 +14,7 @@ export const MARKER_STROKE_HL = "rgba(0, 0, 0, 0.65)";
 export const TRANSPARENT_WHITE = css`rgba(255, 255, 255, 0.65)`;
 
 export const PANE_COLOR = "#d5c99e";
+export const PANE_COLOR_ALT = "#ACA280FF";
 export const PANE_BORDER = "#615730FF";
 
 export const RANGE_FILL = "#282722";

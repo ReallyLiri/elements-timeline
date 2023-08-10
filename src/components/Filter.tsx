@@ -12,7 +12,7 @@ type FilterProps = {
 export const Filter = ({ label, value, setValue, options }: FilterProps) => {
   return (
     <>
-      <div>{label}</div>
+      <div className="gothic">{label}</div>
       <Select
         value={value}
         options={options}
