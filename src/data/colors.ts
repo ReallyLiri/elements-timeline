@@ -1,5 +1,4 @@
 import { css } from "styled-components";
-import exp from "constants";
 
 export const SEA_COLOR = "#465966";
 export const LAND_COLOR = "#c7b1ae";

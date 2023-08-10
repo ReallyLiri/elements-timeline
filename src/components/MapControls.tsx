@@ -1,12 +1,12 @@
 import React, { useCallback } from "react";
 import {
   MdMyLocation,
+  MdQuestionMark,
   MdZoomInMap,
   MdZoomOutMap,
-  MdQuestionMark,
 } from "react-icons/md";
 import styled from "styled-components";
-import { ButtonStyle, SEA_COLOR, TRANSPARENT_WHITE } from "../data/colors";
+import { ButtonStyle } from "../data/colors";
 import {
   TOOLTIP_HELP,
   TOOLTIP_RESET,

@@ -1,7 +1,4 @@
 import React, {
-  ComponentPropsWithoutRef,
-  ReactElement,
-  ReactNode,
   useCallback,
   useEffect,
   useMemo,
@@ -9,17 +6,13 @@ import React, {
   useState,
 } from "react";
 import { Marker, Point } from "react-simple-maps";
-import { FLOATING_CITY, Translation } from "../data/data";
+import { Translation } from "../data/data";
 import {
   MARKER_1,
-  MARKER_2,
-  MARKER_3,
-  MARKER_4,
   MARKER_5,
   MARKER_STROKE,
   MARKER_STROKE_HL,
 } from "../data/colors";
-import { uniq } from "lodash";
 import styled from "styled-components";
 import { getHeatColor, getTopLengths } from "./HeatMap";
 import { CityName } from "./CityDetails";
@@ -73,7 +66,7 @@ export const CityMarkers = ({
   }, []);
 
   const handleCircleHoverStop = useCallback(
-    (event: Event) => setHoveredCity(undefined),
+    () => setHoveredCity(undefined),
     [],
   );
 
