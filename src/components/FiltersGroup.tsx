@@ -1,4 +1,4 @@
-import { Translation } from "../data/data";
+import { FLOATING_CITY, Translation } from "../data/data";
 import React, { useMemo } from "react";
 import { capitalize, get, uniq } from "lodash";
 import { Filter, FilterValue } from "./Filter";
@@ -39,7 +39,7 @@ export const FiltersGroup = ({
         byFilter[field] = uniq(
           data
             .map((t) => get(t, field)?.toString() || "")
-            .filter((v) => v)
+            .filter((v) => v && v !== FLOATING_CITY)
             .sort(),
         ).map(toOption);
       }

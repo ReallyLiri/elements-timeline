@@ -1,4 +1,5 @@
 import Select from "react-select";
+import { LAND_COLOR, SEA_COLOR } from "../data/colors";
 
 export type FilterValue = { label: string; value: string };
 
@@ -26,6 +27,28 @@ export const Filter = ({
         options={options}
         isMulti
         onChange={(value) => setValue(value)}
+        styles={{
+          control: (styles, { isFocused }) => ({
+            ...styles,
+            boxShadow: isFocused ? `0 0 0 1px ${SEA_COLOR}` : undefined,
+            borderColor: isFocused ? SEA_COLOR : undefined,
+            ":hover": {
+              ...styles[":hover"],
+              borderColor: SEA_COLOR,
+            },
+          }),
+          option: (styles, { isFocused }) => ({
+            ...styles,
+            backgroundColor: isFocused ? LAND_COLOR : undefined,
+          }),
+          multiValueRemove: (styles, { data }) => ({
+            ...styles,
+            ":hover": {
+              backgroundColor: SEA_COLOR,
+              color: "white",
+            },
+          }),
+        }}
       />
     </>
   );
