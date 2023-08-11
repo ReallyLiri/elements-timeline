@@ -33,9 +33,9 @@ export const tourSteps = [
           <i>Translations over time and location</i>
         </div>
         <div>
-          This web app can be used to query and investigate the recorded
-          translations of the Elements. Use the navigation arrows to continue
-          the tour.
+          This web app can be used to query and investigate recorded
+          translations of Euclid's Elements. Use the navigation arrows to
+          continue the tour.
         </div>
       </Wrapper>
     ),
@@ -44,15 +44,15 @@ export const tourSteps = [
     selector: `#${CITY_MARKER_ID}Paris`,
     content: (
       <Wrapper>
-        <div>Hover on any city to view its name and record count.</div>
-        <div>Click the city to explore the relevant translations.</div>
+        <div>Hover over any city to view its name and record count.</div>
+        <div>Click the city to explore relevant translations.</div>
       </Wrapper>
     ),
   },
   {
     selector: `#${FILTER_INDEXED_ID}0`,
     content: (
-      <Wrapper>Use filters to refine the presented translations.</Wrapper>
+      <Wrapper>Use the filters to refine the presented translations.</Wrapper>
     ),
   },
   {
@@ -72,10 +72,10 @@ export const tourSteps = [
     selector: `#${TIMELINE_RANGE_ID}`,
     content: (
       <Wrapper>
-        <div>Set the years range for which translations will be displayed.</div>
+        <div>Set years range for the displayed translations.</div>
         <div>
-          Any translation recorded between the lower bound year to the upper
-          bound will be included.
+          Translations recorded between the lower bound year and the upper bound
+          are included.
         </div>
       </Wrapper>
     ),
@@ -84,7 +84,8 @@ export const tourSteps = [
     selector: `#${TIMELINE_PLAY_ID}`,
     content: (
       <Wrapper>
-        Use the play/pause button to automatically advance on the time range.
+        Use the play/pause button to automatically advance within the time
+        range.
       </Wrapper>
     ),
   },
