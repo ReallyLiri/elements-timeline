@@ -132,35 +132,35 @@ id,type,city,year,translator,language,books
 131,CLAVIUS,Wittenberg,1634,Rhodius,Latin,1-13
 132,CLAVIUS,Wittenberg,1661,Rhodius,Latin,1-13
 133,CLAVIUS,Paris,1612,Puteanus,Latin,10
-134,CLAVIUS,Douai,1620,Montensis after Clavius,Latin,1-6
-135,CLAVIUS,Douai,1625,Montensis after Clavius,Latin,1-6
-136,CLAVIUS,Douai,1633,Montensis after Clavius,Latin,1-6
-137,CLAVIUS,Ferrara,1628,Doino after Clavius,Latin,1-6
-138,CLAVIUS,Venice,1641,Doino after Clavius,Latin,1-6
-139,CLAVIUS,Venice,1647,Doino after Clavius,Latin,1-6
+134,CLAVIUS,Douai,1620,Montensis,Latin,1-6
+135,CLAVIUS,Douai,1625,Montensis,Latin,1-6
+136,CLAVIUS,Douai,1633,Montensis,Latin,1-6
+137,CLAVIUS,Ferrara,1628,Doino,Latin,1-6
+138,CLAVIUS,Venice,1641,Doino,Latin,1-6
+139,CLAVIUS,Venice,1647,Doino,Latin,1-6
 140,CLAVIUS,Paris,1634,Hérigone,French,1-15
 141,CLAVIUS,Paris,1639,Hérigone,French,1-6
 142,CLAVIUS,Paris,1644,Hérigone,French,1-6
 143,CLAVIUS,Paris,1644,Hérigone,French,1-15
-144,CLAVIUS,Paris,1643,Fournier after Clavius,Latin,1-6
-145,CLAVIUS,Paris,1644,Fournier after Clavius,Latin,1-6
-146,CLAVIUS,Paris,1654,Fournier after Clavius,Latin,1-6
-147,CLAVIUS,London,1654,Fournier after Clavius,Latin,1-6
-148,CLAVIUS,Cambridge,1665,Fournier after Clavius,Latin,1-6
-149,CLAVIUS,Paris,1654,Fournier after Clavius,French,1-6
-150,CLAVIUS,Genoa,1644,anonymous after Clavius,Latin,1-6
-151,CLAVIUS,Antwerp,1645,Richard after Clavius,Latin,1-16
+144,CLAVIUS,Paris,1643,Fournier,Latin,1-6
+145,CLAVIUS,Paris,1644,Fournier,Latin,1-6
+146,CLAVIUS,Paris,1654,Fournier,Latin,1-6
+147,CLAVIUS,London,1654,Fournier,Latin,1-6
+148,CLAVIUS,Cambridge,1665,Fournier,Latin,1-6
+149,CLAVIUS,Paris,1654,Fournier,French,1-6
+150,CLAVIUS,Genoa,1644,Anonymous,Latin,1-6
+151,CLAVIUS,Antwerp,1645,Richard,Latin,1-16
 152,CLAVIUS,Utrecht,n.d.,Nienrode,Dutch,1-15
-153,CLAVIUS,Lyon,1660,Dechales after Clavius,Latin,"1-6, 11-12"
-154,CLAVIUS,Lyon,1672,Dechales after Clavius,French,"1-6, 11-12"
-155,CLAVIUS,Lyon,1674,Dechales after Clavius,Latin,"1-6, 11-12"
-156,CLAVIUS,Lyon,1690,Dechales after Clavius,Latin,1-14
-157,CLAVIUS,Lyon,1675,Dechales after Clavius,Latin,"1-6, 11-12"
-158,CLAVIUS,Paris,1677,Dechales after Clavius,French,"1-6, 11-12"
-159,CLAVIUS,Paris,1682,Dechales after Clavius,French,"1-6, 11-12"
-160,CLAVIUS,Paris,1683,Dechales after Clavius,French,"1-6, 11-12"
-161,CLAVIUS,Paris,1690,Dechales after Clavius,French,"1-6, 11-12"
-162,CLAVIUS,Amsterdam,1700,Dechales after Clavius,French,"1-6, 11-12"
+153,CLAVIUS,Lyon,1660,Dechales,Latin,"1-6, 11-12"
+154,CLAVIUS,Lyon,1672,Dechales,French,"1-6, 11-12"
+155,CLAVIUS,Lyon,1674,Dechales,Latin,"1-6, 11-12"
+156,CLAVIUS,Lyon,1690,Dechales,Latin,1-14
+157,CLAVIUS,Lyon,1675,Dechales,Latin,"1-6, 11-12"
+158,CLAVIUS,Paris,1677,Dechales,French,"1-6, 11-12"
+159,CLAVIUS,Paris,1682,Dechales,French,"1-6, 11-12"
+160,CLAVIUS,Paris,1683,Dechales,French,"1-6, 11-12"
+161,CLAVIUS,Paris,1690,Dechales,French,"1-6, 11-12"
+162,CLAVIUS,Amsterdam,1700,Dechales,French,"1-6, 11-12"
 163,CLAVIUS,London,1685,Williams,English,"1-6, 11-12"
 164,CLAVIUS,London,1703,Williams,English,"1-6, 11-12"
 165,CLAVIUS,Oxford,1685,anonymous,English,"1-6, 11-12"
@@ -173,8 +173,8 @@ id,type,city,year,translator,language,books
 172,CLAVIUS,Leiden/Amsterdam,1673,Melder,Latin,1-6
 173,CLAVIUS,Paris,1682,Rohault,French,1-6
 174,CLAVIUS,Paris,1690,Rohault,French,1-6
-175,CLAVIUS,Bologna,1684,anonymous after Clavius,Latin,1-6
-176,CLAVIUS,Florence,1690,anonymous,Italian,"1-6, 11-12"
+175,CLAVIUS,Bologna,1684,Anonymous,Latin,1-6
+176,CLAVIUS,Florence,1690,Anonymous,Italian,"1-6, 11-12"
 177,CLAVIUS,Leiden,1691,Coetsius,Latin,1-6
 178,CLAVIUS,Leiden,1692,Coetsius,Latin,1-6
 179,CLAVIUS,Amsterdam,1691,Coetsius,Dutch,1-6
