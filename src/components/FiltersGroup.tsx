@@ -58,6 +58,7 @@ export const FiltersGroup = ({
       {fields.map((field, index) => (
         <Filter
           id={`${FILTER_INDEXED_ID}${index}`}
+          field={field}
           key={field}
           label={capitalize(field)}
           value={filters[field]}

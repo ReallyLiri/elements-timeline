@@ -1,17 +1,88 @@
 import Select from "react-select";
-import { LAND_COLOR, SEA_COLOR } from "../data/colors";
+import {
+  LAND_COLOR,
+  PANE_COLOR,
+  SEA_COLOR,
+  TRANSPARENT_BLACK,
+  TRANSPARENT_WHITE,
+} from "../data/colors";
 import styled from "styled-components";
+import { Translation } from "../data/data";
+import { MdQuestionMark } from "react-icons/md";
+import { ReactElement, useEffect, useRef, useState } from "react";
+import { useHover } from "usehooks-ts";
+import { useElementSize } from "../data/useElementSize";
+import { Link } from "./Link";
+import { Tooltip } from "react-tooltip";
 
 export type FilterValue = { label: string; value: string };
 
 type FilterProps = {
   id: string;
+  field: keyof Translation;
   label: string;
   include: boolean;
   setInclude: (include: boolean) => void;
   value: FilterValue[] | undefined;
   setValue: (value: readonly FilterValue[] | undefined) => void;
   options: readonly FilterValue[];
+};
+
+const HelpTipButton = styled.div`
+  margin: 0 -0.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: ${TRANSPARENT_WHITE};
+  color: ${SEA_COLOR};
+  cursor: pointer;
+  height: 0.5rem;
+  width: 0.5rem;
+  font-size: 0.8rem;
+`;
+
+const StyledQuestionMark = styled(MdQuestionMark)`
+  transform: translate(-2px, -2px);
+`;
+
+const HelpFloatingTip = styled.div`
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem;
+  z-index: 100;
+  a {
+    color: ${PANE_COLOR};
+  }
+`;
+
+const HelpTip = ({ children }: { children: ReactElement }) => {
+  const HELP_TIP_ID = "help-tip";
+  return (
+    <>
+      <HelpTipButton id={HELP_TIP_ID}>
+        <StyledQuestionMark />
+      </HelpTipButton>
+      <Tooltip anchorSelect={`#${HELP_TIP_ID}`} clickable>
+        <HelpFloatingTip>{children}</HelpFloatingTip>
+      </Tooltip>
+    </>
+  );
+};
+
+const OptionalHelpTip = ({ field }: { field: keyof Translation }) => {
+  if (field === "type") {
+    return (
+      <HelpTip>
+        <div>
+          Classification according to{" "}
+          <Link
+            url="http://www.bibsoc.org.uk/sites/bibsoc.org.uk/files/Euclid_v1.pdf"
+            text="Euclid in print"
+          />
+        </div>
+      </HelpTip>
+    );
+  }
+  return undefined;
 };
 
 const Switch = styled.div`
@@ -50,6 +121,7 @@ const Filler = styled.div`
 
 export const Filter = ({
   id,
+  field,
   label,
   value,
   setValue,
@@ -61,6 +133,7 @@ export const Filter = ({
     <>
       <Row>
         <div className="gothic">{label}</div>
+        <OptionalHelpTip field={field} />
         <Filler />
         <Switch>
           <SwitchOption
@@ -99,7 +172,7 @@ export const Filter = ({
             ...styles,
             backgroundColor: isFocused ? LAND_COLOR : undefined,
           }),
-          multiValueRemove: (styles, { data }) => ({
+          multiValueRemove: (styles) => ({
             ...styles,
             ":hover": {
               backgroundColor: SEA_COLOR,

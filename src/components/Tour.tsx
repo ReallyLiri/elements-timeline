@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { SEA_COLOR } from "../data/colors";
+import { Link } from "./Link";
 
 export const COLLAPSE_FILTER_BUTTON_ID = "collapse-filter-btn";
 export const FILTER_INDEXED_ID = "filter-";
@@ -96,13 +97,10 @@ export const tourSteps = [
         <Title>Credits and License</Title>
         <div>
           All details can be found at{" "}
-          <a
-            href="https://github.com/ReallyLiri/elements-timeline/blob/main/README.md"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            elements-timeline Github repository.
-          </a>
+          <Link
+            url="https://github.com/ReallyLiri/elements-timeline/blob/main/README.md"
+            text="elements-timeline Github repository."
+          />
         </div>
       </Wrapper>
     ),
