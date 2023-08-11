@@ -1,6 +1,6 @@
 import { FLOATING_CITY, Translation } from "../data/data";
 import React, { useMemo } from "react";
-import { capitalize, get, uniq } from "lodash";
+import { capitalize, get, isNil, uniq } from "lodash";
 import { Filter, FilterValue } from "./Filter";
 import { ReactComponent as Deco } from "../svg/deco2.svg";
 import styled from "styled-components";
@@ -13,6 +13,10 @@ type FiltersGroupProps = {
   setFilters: React.Dispatch<
     React.SetStateAction<Record<string, FilterValue[] | undefined>>
   >;
+  filtersInclude: Record<string, boolean>;
+  setFiltersInclude: React.Dispatch<
+    React.SetStateAction<Record<string, boolean>>
+  >;
 };
 
 const StyledDeco = styled(Deco)``;
@@ -24,6 +28,8 @@ export const FiltersGroup = ({
   fields,
   filters,
   setFilters,
+  filtersInclude,
+  setFiltersInclude,
 }: FiltersGroupProps) => {
   const optionsByFilter = useMemo(() => {
     const byFilter: Record<string, FilterValue[]> = {};
@@ -62,6 +68,10 @@ export const FiltersGroup = ({
             }))
           }
           options={optionsByFilter[field]}
+          include={isNil(filtersInclude[field]) ? true : filtersInclude[field]}
+          setInclude={(include) =>
+            setFiltersInclude((f) => ({ ...f, [field]: include }))
+          }
         />
       ))}
       <StyledDeco />

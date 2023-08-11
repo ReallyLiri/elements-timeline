@@ -7,7 +7,7 @@ import {
   loadDataAsync,
   Translation,
 } from "./data/data";
-import { get, groupBy, isEmpty } from "lodash";
+import { get, groupBy, isEmpty, isNil } from "lodash";
 import { CityMarkers } from "./components/Markers";
 import { MapControls } from "./components/MapControls";
 import { useElementSize } from "./data/useElementSize";
@@ -127,6 +127,7 @@ const filterRecord = (
   t: Translation,
   range: [number, number],
   filters: Record<string, FilterValue[] | undefined>,
+  filtersInclude: Record<string, boolean>,
 ): boolean => {
   if (t.city === FLOATING_CITY) {
     return true;
@@ -143,12 +144,14 @@ const filterRecord = (
     if (isEmpty(values)) {
       return true;
     }
-    if (field === "books") {
-      return values!
-        .map((v) => parseInt(v))
-        .every((n) => t.booksExpanded.includes(n));
-    }
-    return values!.includes(get(t, field).toString());
+    const match =
+      field === "books"
+        ? values!
+            .map((v) => parseInt(v))
+            .every((n) => t.booksExpanded.includes(n))
+        : values!.includes(get(t, field).toString());
+    const include = isNil(filtersInclude[field]) ? true : filtersInclude[field];
+    return include ? match : !match;
   });
 };
 
@@ -182,6 +185,9 @@ const App = () => {
   const [filters, setFilters] = useLocalStorage<
     Record<string, FilterValue[] | undefined>
   >("filters", {});
+  const [filtersInclude, setFiltersInclude] = useLocalStorage<
+    Record<string, boolean>
+  >("filter-include", {});
   const [toured, setToured] = useLocalStorage<boolean>("toured", false);
   const { setIsOpen: setTourOpen } = useTour();
 
@@ -203,8 +209,8 @@ const App = () => {
   }, [data]);
 
   const filteredTranslations = useMemo(
-    () => data.filter((t) => filterRecord(t, range, filters)),
-    [data, range, filters],
+    () => data.filter((t) => filterRecord(t, range, filters, filtersInclude)),
+    [data, range, filters, filtersInclude],
   );
 
   const translationByCity: Record<string, Translation[]> = useMemo(
@@ -241,6 +247,8 @@ const App = () => {
             fields={["city", "type", "language", "translator", "books"]}
             filters={filters}
             setFilters={setFilters}
+            filtersInclude={filtersInclude}
+            setFiltersInclude={setFiltersInclude}
           />
         </Pane>
       )}
