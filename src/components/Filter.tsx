@@ -1,6 +1,6 @@
 import Select from "react-select";
 import { LAND_COLOR, SEA_COLOR } from "../data/colors";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export type FilterValue = { label: string; value: string };
 
