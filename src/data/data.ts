@@ -33,8 +33,8 @@ type City = {
 export const FLOATING_CITY = "-";
 const FLOATING_CITY_ENTRY: City = {
   city: FLOATING_CITY,
-  lon: -22,
-  lat: 50,
+  lon: -16,
+  lat: 42,
 };
 
 const parseCsvAsync = async <T>(url: string) => {

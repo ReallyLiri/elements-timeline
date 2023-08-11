@@ -153,11 +153,16 @@ const filterRecord = (
 };
 
 const App = () => {
-  const { height, width: windowWidth } = useWindowSize();
+  const { height } = useWindowSize();
   const [data, setData] = useState<Translation[]>([]);
   const [cities, setCities] = useState<Record<string, Point>>({});
   const [zoom, setZoom] = useLocalStorage<number>("zoom", 1);
-  const [mapSectionRef, { width: mapWidth }, refreshSize] = useElementSize();
+  const {
+    ref: mapSectionRef,
+    size: { width: mapWidth },
+    location: [mapX],
+    refresh: refreshSize,
+  } = useElementSize();
   const [position, setPosition] = useLocalStorage<Point>(
     "position",
     DEFAULT_POSITION,
@@ -284,14 +289,7 @@ const App = () => {
           />
         </ControlsRow>
         <HeatLegend
-          offsetRight={
-            Math.min(
-              (selectedCity ? 1.35 : 0) + (selectedRecord ? 2.15 : 0),
-              2.9,
-            ) *
-            0.14 *
-            windowWidth
-          }
+          offsetRight={mapX + mapWidth}
           total={filteredTranslations?.length || 0}
         />
       </MapSection>
