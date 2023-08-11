@@ -88,4 +88,23 @@ export const tourSteps = [
       </Wrapper>
     ),
   },
+
+  {
+    selector: "body",
+    content: (
+      <Wrapper>
+        <Title>Credits and License</Title>
+        <div>
+          All details can be found at{" "}
+          <a
+            href="https://github.com/ReallyLiri/elements-timeline/blob/main/README.md"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            elements-timeline Github repository.
+          </a>
+        </div>
+      </Wrapper>
+    ),
+  },
 ];
