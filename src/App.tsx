@@ -115,6 +115,7 @@ const Pane = styled.div<{
   gap: 1rem;
   height: calc(100vh - 2rem);
   width: ${({ widthPercentage }) => widthPercentage || 20}%;
+  min-width: 256px;
   overflow-x: auto;
   background-color: ${({ backgroundColor }) => backgroundColor || PANE_COLOR};
   padding: 1rem;
@@ -320,7 +321,7 @@ const App = () => {
         </Pane>
       )}
       {!isEmpty(selectedRecord) && (
-        <Pane borderRight={false} widthPercentage={40}>
+        <Pane borderRight={false} widthPercentage={20}>
           <CollapseFiltersButton
             onClick={() => setSelectedRecordId(undefined)}
             data-tooltip-id={TOOLTIP_CLOSE_RECORD_DETAILS}
