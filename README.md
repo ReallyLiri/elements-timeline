@@ -27,4 +27,4 @@ This project utilizes translations of Euclid's Elements from the early modern pe
 
 ## License
 
-This project is open source. Feel free to use, modify, and distribute as long as proper credit is given.
+This project is under the [CC BY-NC (4.0) license/https://creativecommons.org/licenses/by-nc/4.0/]. Permission is granted to copy, transmit and reuse the text and its contents, subject only to the conditions that the original authors are acknowledged and that no commercial use is made of it. 
