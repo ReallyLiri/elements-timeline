@@ -129,9 +129,6 @@ const filterRecord = (
   filters: Record<string, FilterValue[] | undefined>,
   filtersInclude: Record<string, boolean>,
 ): boolean => {
-  if (t.city === FLOATING_CITY) {
-    return true;
-  }
   if (
     range[0] > 0 &&
     range[1] > 0 &&
@@ -139,7 +136,11 @@ const filterRecord = (
   ) {
     return false;
   }
-  return Object.keys(filters).every((field) => {
+  const fields = Object.keys(filters) as (keyof Translation)[];
+  return fields.every((field) => {
+    if ((field === "year" || field === "city") && t.city === FLOATING_CITY) {
+      return true;
+    }
     const values = filters[field]?.map((v) => v.value);
     if (isEmpty(values)) {
       return true;
@@ -149,7 +150,7 @@ const filterRecord = (
         ? values!
             .map((v) => parseInt(v))
             .every((n) => t.booksExpanded.includes(n))
-        : values!.includes(get(t, field).toString());
+        : values!.includes(get(t, field)?.toString() || "");
     const include = isNil(filtersInclude[field]) ? true : filtersInclude[field];
     return include ? match : !match;
   });

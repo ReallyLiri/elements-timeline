@@ -1,4 +1,5 @@
 import React, {
+  ReactElement,
   useCallback,
   useEffect,
   useMemo,
@@ -12,11 +13,13 @@ import {
   MARKER_5,
   MARKER_STROKE,
   MARKER_STROKE_HL,
+  SEA_COLOR,
 } from "../data/colors";
 import styled from "styled-components";
 import { getHeatColor, getTopLengths } from "./HeatMap";
 import { CityName } from "./CityDetails";
 import { CITY_MARKER_ID } from "./Tour";
+import { TOOLTIP_HELP, TOOLTIP_MARKER_ARROW } from "./Tooltips";
 
 type CityMarkersProps = {
   cities: Record<string, Point>;
@@ -42,6 +45,26 @@ const StyledText = styled.text`
   stroke-linejoin: round;
   cursor: pointer;
 `;
+
+const ArrowStyle = styled.text`
+  font-size: 2rem;
+  font-weight: bolder;
+  cursor: default;
+  fill: ${SEA_COLOR};
+`;
+
+const Arrow = () => (
+  <ArrowStyle id={TOOLTIP_MARKER_ARROW} x={10} y={5}>
+    ⟶
+  </ArrowStyle>
+);
+
+const OptionalArrow = ({ city }: { city: string }) => {
+  if (city === "Beijing") {
+    return <Arrow />;
+  }
+  return undefined;
+};
 
 export const CityMarkers = ({
   cities,
@@ -111,7 +134,7 @@ export const CityMarkers = ({
               ref={(element) => setRef(element, city)}
               r={8}
             />
-            ;
+            <OptionalArrow city={city} />
           </Marker>
         ))}
       {hoveredCity && (
