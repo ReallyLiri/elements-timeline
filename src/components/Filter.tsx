@@ -3,15 +3,12 @@ import {
   LAND_COLOR,
   PANE_COLOR,
   SEA_COLOR,
-  TRANSPARENT_BLACK,
   TRANSPARENT_WHITE,
 } from "../data/colors";
 import styled from "styled-components";
 import { Translation } from "../data/data";
 import { MdQuestionMark } from "react-icons/md";
-import { ReactElement, useEffect, useRef, useState } from "react";
-import { useHover } from "usehooks-ts";
-import { useElementSize } from "../data/useElementSize";
+import { ReactElement } from "react";
 import { Link } from "./Link";
 import { Tooltip } from "react-tooltip";
 

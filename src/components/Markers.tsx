@@ -1,5 +1,4 @@
 import React, {
-  ReactElement,
   useCallback,
   useEffect,
   useMemo,
@@ -19,7 +18,7 @@ import styled from "styled-components";
 import { getHeatColor, getTopLengths } from "./HeatMap";
 import { CityName } from "./CityDetails";
 import { CITY_MARKER_ID } from "./Tour";
-import { TOOLTIP_HELP, TOOLTIP_MARKER_ARROW } from "./Tooltips";
+import { TOOLTIP_MARKER_ARROW } from "./Tooltips";
 
 type CityMarkersProps = {
   cities: Record<string, Point>;

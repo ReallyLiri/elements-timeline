@@ -1,5 +1,11 @@
 # Early Modern Printed Euclid's Elements Translations: Interactive Map
 
+Publicly available at [https://elements-timeline.netlify.app](https://elements-timeline.netlify.app)
+
+![screen1](https://i.imgur.com/OjCudjO.png)
+
+![screen2](https://i.imgur.com/jtqqgBO.png)
+
 ## Description
 
 This open-source web application offers insights into the printed translations of Euclid's Elements from the early modern European period. Through an interactive map interface, users can explore and visualize these translations. The application provides filtering options for refining displayed translations and a drill-down feature for detailed analysis. Contributions, collaborations and usage are welcome with proper attribution.
@@ -27,4 +33,4 @@ This project utilizes translations of Euclid's Elements from the early modern pe
 
 ## License
 
-This project is under the [CC BY-NC (4.0) license/https://creativecommons.org/licenses/by-nc/4.0/]. Permission is granted to copy, transmit and reuse the text and its contents, subject only to the conditions that the original authors are acknowledged and that no commercial use is made of it. 
+This project is under the [CC BY-NC (4.0) license/https://creativecommons.org/licenses/by-nc/4.0/]. Permission is granted to copy, transmit and reuse the text and its contents, subject only to the conditions that the original authors are acknowledged and that no commercial use is made of it.

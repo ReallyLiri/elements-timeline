@@ -1,10 +1,12 @@
 {
   "name": "elements-timeline",
-  "version": "0.1.0",
+  "version": "1.0",
   "private": false,
   "main": "index.js",
-  "author": "ReallyLiri",
-  "license": "MIT",
+  "author": "ReallyLiri and MiaJosko",
+  "license": "CC BY-NC (4.0)",
+  "repository": "https://github.com/ReallyLiri/elements-timeline",
+  "homepage": "https://elements-timeline.netlify.app",
   "dependencies": {
     "@reactour/tour": "^3.5.0",
     "@types/node": "^20.4.6",
@@ -52,10 +54,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/lodash": "^4.14.196",
     "@types/papaparse": "^5.3.7",
-    "@types/react-icons": "^3.0.0",
-    "@types/react-select": "^5.0.1",
     "@types/react-simple-maps": "^3.0.0",
-    "@types/react-tooltip": "^4.2.4",
     "prettier": "^3.0.1"
   }
 }
