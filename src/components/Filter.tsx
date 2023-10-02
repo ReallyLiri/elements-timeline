@@ -66,7 +66,7 @@ const HelpTip = ({ children }: { children: ReactElement }) => {
 };
 
 const OptionalHelpTip = ({ field }: { field: keyof Translation }) => {
-  if (field === "type") {
+  if (field === "class") {
     return (
       <HelpTip>
         <div>

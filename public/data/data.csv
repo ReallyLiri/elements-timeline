@@ -1,231 +1,266 @@
-id,type,city,year,translator,language,books
-1,CAMPANUS,Venice,1482,Ratdolt,Latin,1-15
-2,CAMPANUS,Vicenza,1491,Achates,Latin,1-15
-3,CAMPANUS,Frankfurt,1506,Lacher,Latin,1-4
-4,CAMPANUS,Venice,1509,Scipio Vegio,Latin,1-15
-5,ZAMBERTI/GRYNAEUS (THEON),Venice,1505,Zamberti,Latin,1-15
-6,ZAMBERTI/GRYNAEUS (THEON),Venice,1510,Zamberti,Latin,1-15
-7,ZAMBERTI/GRYNAEUS (THEON),Basel,1533,Grynaeus,Greek,1-15
-8,ZAMBERTI/GRYNAEUS (THEON),Paris,1536,Fine,Latin and Greek,1-6
-9,ZAMBERTI/GRYNAEUS (THEON),Paris,1544,Fine,Latin and Greek,1-6
-10,ZAMBERTI/GRYNAEUS (THEON),Paris,1551,Fine,Latin and Greek,1-6
-11,ZAMBERTI/GRYNAEUS (THEON),Strasbourg,1538,Rihel,Greek,1
-12,ZAMBERTI/GRYNAEUS (THEON),Strasbourg,1559,Rihel,Greek,1
-13,ZAMBERTI/GRYNAEUS (THEON),Paris,1545,Ramus,Latin,1-15
-14,ZAMBERTI/GRYNAEUS (THEON),Paris,1549,Ramus,Latin,1-15
-15,ZAMBERTI/GRYNAEUS (THEON),Paris,1558,Ramus,Latin,1-15
-16,ZAMBERTI/GRYNAEUS (THEON),Rome,1545,Cajani,Latin,1-15
-17,ZAMBERTI/GRYNAEUS (THEON),Rome,1545,Cajani,Italian,1-15
-18,ZAMBERTI/GRYNAEUS (THEON),Leipzig,1549,Rhaeticus/Camerarius,Latin and Greek,1-6
-19,ZAMBERTI/GRYNAEUS (THEON),Leipzig,1577,Camerarius/Steinmetz,Latin and Greek,1-6
-20,ZAMBERTI/GRYNAEUS (THEON),Basel,1550,Scheybl,Latin,1-6
-21,ZAMBERTI/GRYNAEUS (THEON),Augsburg,1555,Scheybl,German,7-9
-22,ZAMBERTI/GRYNAEUS (THEON),Basel,1562,Holzman,German,1-6
-23,ZAMBERTI/GRYNAEUS (THEON),Wittenberg,1564,Sthen,Latin and Greek,7
-24,ZAMBERTI/GRYNAEUS (THEON),Seville,1576,Zamorano,Spanish,1-6
-25,ZAMBERTI/GRYNAEUS (THEON),Ansbach,1610,Marius,German,1-6
-26,ZAMBERTI/GRYNAEUS (THEON),London,1620,Briggs,Latin and Greek,1-6
-27,ZAMBERTI/GRYNAEUS (THEON),Alcala,1637,Carduchi,Spanish,1-6
-28,D’ÉTAPLES,Paris,1516,d’Etaples,Latin,1-15
-29,D’ÉTAPLES,Basel,1537,Herlin,Latin,1-15
-30,D’ÉTAPLES,Venice,1543,Tartaglia,Latin,1-15
-31,D’ÉTAPLES,Venice,1565,Tartaglia,Latin,1-15 + De levi
-32,D’ÉTAPLES,Venice,1569,Tartaglia,Latin,1-15
-33,D’ÉTAPLES,Venice,1585,Tartaglia,Latin,1-15
-34,D’ÉTAPLES,Venice,1586,Tartaglia,Latin,1-15
-35,D’ÉTAPLES,Cologne,1556,Nabod,Latin,1 and selection from 2–15
-36,D’ÉTAPLES,Lyon,1557,Peletier,Latin,1-6
-37,D’ÉTAPLES,Geneva,1610,Peletier,Latin and Greek,1-6
-38,D’ÉTAPLES,Geneva,1611,de Tournes,French,1-6
-39,D’ÉTAPLES,Geneva,1628,de Tournes,French,1-6
-40,MONDORÉ,Paris,1551,Mondoré,Latin,10
-41,MONDORÉ,Paris,1552,Mondoré,Latin,10
-42,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1557,Gracilis/Magnienus,Latin and Greek,1-15
-43,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1558,Gracilis/Magnienus,Latin and Greek,1-15
-44,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1573,Gracilis/Magnienus,Latin and Greek,1-15
-45,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1598,Gracilis/Magnienus,Latin and Greek,1-15
-46,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1564,Gracilis/Magnienus,Latin and Greek,1-15
-47,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1580,Gracilis/Magnienus,Latin,1-15
-48,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1587,Gracilis/Magnienus,Latin,1-15
-49,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1600,Gracilis/Magnienus,Latin,1-15
-50,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1612,Gracilis/Magnienus,Latin,1-15
-51,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1607,Gracilis/Magnienus,Latin,1-16
-52,MAGNIENUS/GRACILIS and DASYPODIUS,Cologne,1627,Gracilis/Magnienus,Latin,1-15
-53,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1564,Forcadel,French,1-6
-54,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1565,Forcadel,French,7-9
-55,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1566,Forcadel,French,1-6
-56,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1564,Dasypodius,Latin and Greek,1-13
-57,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1564,Dasypodius,Latin and Greek,1-13
-58,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1564,Dasypodius,Latin and Greek,1-13
-59,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1566,Herlin and Dasypodius,Latin and Greek,1-6
-60,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1570,Dasypodius,Latin and Greek,1
-61,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1571,Dasypodius,Latin and Greek,1
-62,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1570,Dasypodius,Latin and Greek,1-15
-63,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1571,Dasypodius,Latin and Greek,1-15
-64,MAGNIENUS/GRACILIS and DASYPODIUS,Strasbourg,1599,Dasypodius,Latin and Greek,1
-65,MAGNIENUS/GRACILIS and DASYPODIUS,Arnhem,1603,Dybvad,Latin,1-6
-66,MAGNIENUS/GRACILIS and DASYPODIUS,Arnhem,1605,Dybvad,Latin,7-9
-67,MAGNIENUS/GRACILIS and DASYPODIUS,Arnhem,1605,Dybvad,Latin,10
-68,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1610,Dounot,French,1-15
-69,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1613,Dounot,French,1-15
-70,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1615,Henrion,French,1-15
-71,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1621,Henrion,French,1-15
-72,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1623,Henrion,French,1-15
-73,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1630,Henrion,French,1-6
-74,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1631,Henrion,French,1-15
-75,MAGNIENUS/GRACILIS and DASYPODIUS,Rouen,1649,Henrion,French,1-15
-76,MAGNIENUS/GRACILIS and DASYPODIUS,Paris,1632,Henrion,French,1-15
-77,MAGNIENUS/GRACILIS and DASYPODIUS,Rouen,1676,Henrion,French,1-15
-78,MAGNIENUS/GRACILIS and DASYPODIUS,Rouen and Paris,1677,Henrion,French,1-15
-79,MAGNIENUS/GRACILIS and DASYPODIUS,Rouen and Paris,1683,Henrion,French,1-15
-80,MAGNIENUS/GRACILIS and DASYPODIUS,Rouen and Paris,1685,Henrion,French,1-15
-81,MAGNIENUS/GRACILIS and DASYPODIUS,Bologna,1651,Ricci,Italian,1-6
-82,MAGNIENUS/GRACILIS and DASYPODIUS,Bologna,1651,Ricci,Italian,1-6
-83,MAGNIENUS/GRACILIS and DASYPODIUS,Bologna,1686,Ricci,Italian,1-6
-84,MAGNIENUS/GRACILIS and DASYPODIUS,Milan,1671,Caravaggi,Italian,1-6
-85,MAGNIENUS/GRACILIS and DASYPODIUS,Milan,1702,Caravaggi,Italian,1-6
-86,FOIX,Paris,1566,Foix,Latin,1-16
-87,FOIX,Paris,1678,Foix,Latin,1-18
-88,FOIX,Cologne,1602,Foix,Latin,1-18
-89,FOIX,Paris,1602,Foix,Latin,1-18
-90,FOIX,London,1570,Billingsley,English,1-16
-91,FOIX,Paris,1598,Errard,French,1-6
-92,FOIX,Paris,1605,Errard,French,1-9
-93,FOIX,Paris,1629,Errard,French,1-9
-94,FOIX,Paris,1626,Mersenne (?),Latin,1-18
-95,FOIX,Paris,1644,Mersenne,Latin,1-18
-96,COMMANDINO,Pesaro,1572,Commandino,Latin,1-15
-97,COMMANDINO,Pesaro,1619,Commandino,Latin,1-15
-98,COMMANDINO,Naples,1679,Commandino,Latin,1-6
-99,COMMANDINO,Oxford,1701,Keill,Latin,"1-6, 11-12"
-100,COMMANDINO,Naples,1702,Porpora,Latin,1-6
-101,COMMANDINO,Urbino,1575,Commandino/Spacciuoli,Italian,1-15
-102,COMMANDINO,Pesaro,1619,Commandino/Spacciuoli,Italian,1-15
-103,COMMANDINO,Naples,1679,Fioravanti,Italian,1-6
-104,COMMANDINO,Ingolstadt,1617,Lanz,Latin,1-6
-105,COMMANDINO,Bologna,1629,Lanz,Latin,1-6
-106,COMMANDINO,Leiden,1617,van Schooten,Dutch,1-15
-107,COMMANDINO,Amsterdam,1662,van Schooten,Dutch,1-16
-108,COMMANDINO,Paris,1622,le Mardelé,French,1-15
-109,COMMANDINO,Paris,1632,le Mardelé,French,1-15
-110,COMMANDINO,Lyon,1645,le Mardelé,French,1-15
-111,COMMANDINO,Lyon,1646,le Mardelé,French,1-15
-112,COMMANDINO,Hamburg,1633,Willemszen,Dutch,1-6
-113,COMMANDINO,Hamburg,1638,Willemszen,Dutch,1-6
-114,COMMANDINO,Amsterdam,1660,Willemszen,Dutch,1-6
-115,COMMANDINO,Madrid,1665,Najera and Rocha,Spanish,"5, 7"
-116,CLAVIUS,Rome,1574,Clavius,Latin,1-16
-117,CLAVIUS,Beijing,1607,Ricci and Xu Guangqi,Chinese,1-6
-118,CLAVIUS,Beijing,1611,Ricci and Xu Guangqi,Chinese,1-6
-119,CLAVIUS,Beijing,1629,Ricci and Xu Guangqi,Chinese,1-6
-120,CLAVIUS,Rome,1589,Clavius,Latin,1-16
-121,CLAVIUS,Cologne,1591,Clavius,Latin,1-16
-122,CLAVIUS,Rome,1603,Clavius,Latin,1-16
-123,CLAVIUS,Frankfurt,1607,Clavius,Latin,1-16
-124,CLAVIUS,Frankfurt,1654,Clavius,Latin,1-16
-125,CLAVIUS,Mainz,1611,Clavius,Latin,1-16
-126,CLAVIUS,Rome,1629,Grienberger,Latin,1-6
-127,CLAVIUS,Graz,1636,Grienberger,Latin,1-6
-128,CLAVIUS,Rome,1655,Grienberger,Latin,1-6
-129,CLAVIUS,n.p.,1650,anonymous,Latin,1-6
-130,CLAVIUS,Wittenberg,1609,Rhodius,Latin,1-13
-131,CLAVIUS,Wittenberg,1634,Rhodius,Latin,1-13
-132,CLAVIUS,Wittenberg,1661,Rhodius,Latin,1-13
-133,CLAVIUS,Paris,1612,Puteanus,Latin,10
-134,CLAVIUS,Douai,1620,Montensis,Latin,1-6
-135,CLAVIUS,Douai,1625,Montensis,Latin,1-6
-136,CLAVIUS,Douai,1633,Montensis,Latin,1-6
-137,CLAVIUS,Ferrara,1628,Doino,Latin,1-6
-138,CLAVIUS,Venice,1641,Doino,Latin,1-6
-139,CLAVIUS,Venice,1647,Doino,Latin,1-6
-140,CLAVIUS,Paris,1634,Hérigone,French,1-15
-141,CLAVIUS,Paris,1639,Hérigone,French,1-6
-142,CLAVIUS,Paris,1644,Hérigone,French,1-6
-143,CLAVIUS,Paris,1644,Hérigone,French,1-15
-144,CLAVIUS,Paris,1643,Fournier,Latin,1-6
-145,CLAVIUS,Paris,1644,Fournier,Latin,1-6
-146,CLAVIUS,Paris,1654,Fournier,Latin,1-6
-147,CLAVIUS,London,1654,Fournier,Latin,1-6
-148,CLAVIUS,Cambridge,1665,Fournier,Latin,1-6
-149,CLAVIUS,Paris,1654,Fournier,French,1-6
-150,CLAVIUS,Genoa,1644,Anonymous,Latin,1-6
-151,CLAVIUS,Antwerp,1645,Richard,Latin,1-16
-152,CLAVIUS,Utrecht,n.d.,Nienrode,Dutch,1-15
-153,CLAVIUS,Lyon,1660,Dechales,Latin,"1-6, 11-12"
-154,CLAVIUS,Lyon,1672,Dechales,French,"1-6, 11-12"
-155,CLAVIUS,Lyon,1674,Dechales,Latin,"1-6, 11-12"
-156,CLAVIUS,Lyon,1690,Dechales,Latin,1-14
-157,CLAVIUS,Lyon,1675,Dechales,Latin,"1-6, 11-12"
-158,CLAVIUS,Paris,1677,Dechales,French,"1-6, 11-12"
-159,CLAVIUS,Paris,1682,Dechales,French,"1-6, 11-12"
-160,CLAVIUS,Paris,1683,Dechales,French,"1-6, 11-12"
-161,CLAVIUS,Paris,1690,Dechales,French,"1-6, 11-12"
-162,CLAVIUS,Amsterdam,1700,Dechales,French,"1-6, 11-12"
-163,CLAVIUS,London,1685,Williams,English,"1-6, 11-12"
-164,CLAVIUS,London,1703,Williams,English,"1-6, 11-12"
-165,CLAVIUS,Oxford,1685,anonymous,English,"1-6, 11-12"
-166,CLAVIUS,London,1696,anonymous,English,"1-6, 11-12"
-167,CLAVIUS,Oxford/London,1700,anonymous,English,"1-6, 11-12"
-168,CLAVIUS,London,1661,Leeke and Serle,English,1-16
-169,CLAVIUS,Würzburg,1661,Schott,Latin,1-6
-170,CLAVIUS,Frankfurt,1674,Schott,Latin,1-6
-171,CLAVIUS,Bamberg,1677,Schott,Latin,1-6
-172,CLAVIUS,Leiden/Amsterdam,1673,Melder,Latin,1-6
-173,CLAVIUS,Paris,1682,Rohault,French,1-6
-174,CLAVIUS,Paris,1690,Rohault,French,1-6
-175,CLAVIUS,Bologna,1684,Anonymous,Latin,1-6
-176,CLAVIUS,Florence,1690,Anonymous,Italian,"1-6, 11-12"
-177,CLAVIUS,Leiden,1691,Coetsius,Latin,1-6
-178,CLAVIUS,Leiden,1692,Coetsius,Latin,1-6
-179,CLAVIUS,Amsterdam,1691,Coetsius,Dutch,1-6
-180,CLAVIUS,Siena,1691,Astorinus,Latin,1-15
-181,CLAVIUS,Naples,1701,Astorinus,Latin,1-15
-182,CLAVIUS,Paris,1693,Ozanam,French,"1-6, 11-12"
-183,CLAVIUS,Paris,1697,Ozanam,French,"1-6, 11-12"
-184,CLAVIUS,Amsterdam,1697,Ozanam,French,"1-6, 11-12"
-185,CLAVIUS,Vienna,1694,Pirckenstein,German,"1-6, 11-12"
-186,CLAVIUS,Lübeck,1699,Pirckenstein,German,"1-6, 11-12"
-187,CLAVIUS,Amsterdam,1695,Vooght,Dutch,1-16
-188,MAUROLICUS,Venice,1575,Maurolicus,Latin,13-15
-189,ps-TUSI,Rome,1594,ps-Tusi,Arabic,1-13
-190,DOU,Leiden,1606,Dou,Dutch,1-6
-191,DOU,Leiden,1607,Dou,Dutch,1-6
-192,DOU,Amsterdam,1616,Dou,Dutch,1-6
-193,DOU,Amsterdam,1626,Dou,Dutch,1-6
-194,DOU,Rotterdam,1632,Dou,Dutch,1-6
-195,DOU,Rotterdam/Utrecht,1647,Dou,Dutch,1-6
-196,DOU,Rotterdam,1661,Dou,Dutch,1-6
-197,DOU,Rotterdam,1681,Dou,Dutch,1-6
-198,DOU,Amsterdam,1700,Dou,Dutch,1-6
-199,DOU,Amsterdam,1701,Dou,Dutch,1-6
-200,DOU,Amsterdam,1618,Curtius,German,1-6
-201,DOU,Amsterdam,1634,Curtius,German,1-6
-202,DOU,London,1651,Rudd,English,1-6
-203,TACQUET,Antwerp,1654,Tacquet,Latin,"1-6, 11-12"
-204,TACQUET,Antwerp,1665,Tacquet,Latin,"1-6, 11-12"
-205,TACQUET,Antwerp,1672,Tacquet,Latin,"1-6, 11-12"
-206,TACQUET,Antwerp,1683,Tacquet,Latin,"1-6, 11-12"
-207,TACQUET,Amsterdam,1701,Tacquet,Latin,"1-6, 11-12"
-208,TACQUET,Padua,1694,Tacquet,Latin,"1-6, 11-12"
-209,TACQUET,Cambridge,1703,Whiston,Latin,"1-6, 11-12"
-210,TACQUET,Brussels,1688,Fernandez,Spanish,"1-6, 11-12"
-211,TACQUET,Brussels,1701,Fernandez,Spanish,"1-6, 11-12"
-212,TACQUET,Brussels,1689,Kresa,Spanish,"1-6, 11-12"
-213,TACQUET,Kiel,1697,Reyher,German,1-6
-214,TACQUET,Kiel,1699,Reyher,German,1-6
-215,HÉRIGONE/BARROW,Paris,1634,Hérigone,Latin,1-15
-216,HÉRIGONE/BARROW,Paris,1644,Hérigone,Latin,1-15
-217,HÉRIGONE/BARROW,Cambridge,1655,Barrow,Latin,1-15
-218,HÉRIGONE/BARROW,London,1659,Barrow,Latin,1-15
-219,HÉRIGONE/BARROW,London,1678,Barrow,Latin,1-15
-220,HÉRIGONE/BARROW,London,1685,Barrow,Latin,1-15
-221,HÉRIGONE/BARROW,London,1687,Barrow,Latin,1-15
-222,HÉRIGONE/BARROW,Osnabrück,1676,Barrow,Latin,1-15
-223,HÉRIGONE/BARROW,London,1660,Barrow,English,1-15
-224,HÉRIGONE/BARROW,London,1660,Barrow,English,1-15
-225,HÉRIGONE/BARROW,London,1686,Barrow,English,1-15
-226,HÉRIGONE/BARROW,London,1705,Barrow,English,1-15
-227,HÉRIGONE/BARROW,London,1732,Barrow,English,1-15
-228,HÉRIGONE/BARROW,London,1751,Barrow,English,1-15
-229,HÉRIGONE/BARROW,London,1680-1681,Perkins,English,"1-6, 11-12"
-230,GREGORY,Oxford,1703,Gregory,Latin and Greek,1-15
+id,city,year,bookSizeBlob,bookSize,volumesCount,contentBlob,elementsBooks,additionalContent,start,end,summaryID,wClass,translator,language,summaryBooks
+1,venice,1482,folio,folio,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,560,588,1,CAMPANUS,Ratdolt,Latin,1-15
+2,vicenza,1491,folio,folio,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,610,627,2,CAMPANUS,Achates,Latin,1-15
+3,venice,1505,folio,folio,1,elements 1 15; phaenomena; optica; catoptrica; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15","phaenomena, optica, catoptrica, data",695,739,5,ZAMBERTI/GRYNAEUS (THEON),Zamberti,Latin,1-15
+4,frankfurt,1506,quarto,quarto,1,elements 1 4,"1, 2, 3, 4",,740,751,3,CAMPANUS,Lacher,Latin,1-4
+5,venice,1509,folio in 8s,folio in 8s,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,762,801,4,CAMPANUS,Scipio Vegio,Latin,1-15
+6,venice,1510,folio,folio,1,elements 1 15; phaenomena; optica; catoptrica; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15","phaenomena, optica, catoptrica, data",802,835,6,ZAMBERTI/GRYNAEUS (THEON),Zamberti,Latin,1-15
+7,paris,1516,folio,folio,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,849,894,28,D’ÉTAPLES,d’Etaples,Latin,1-15
+8,paris,1536,folio,folio,1,elements 1 6,"1, 2, 3, 4, 5, 6",,1022,1046,8,ZAMBERTI/GRYNAEUS (THEON),Fine,Latin and Greek,1-6
+9,basel,1537,folio,folio,1,elements 1 15; phaenomena; catoptrica; optica; data; de levi et ponderoso,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15","phaenomena, catoptrica, optica, data, de levi et ponderoso",1047,1081,29,D’ÉTAPLES,Herlin,Latin,1-15
+10,strasbourg,1538,quarto,quarto,1,elements 1,1,,1098,1114,11,ZAMBERTI/GRYNAEUS (THEON),Rihel,Greek,1
+11,venice,1543,folio,folio,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,1115,1149,30,D’ÉTAPLES,Tartaglia,Latin,1-15
+12,paris,1544,folio,folio,1,elements 1 6,"1, 2, 3, 4, 5, 6",,1150,1165,9,ZAMBERTI/GRYNAEUS (THEON),Fine,Latin and Greek,1-6
+13,paris,1545,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,1166,1178,13,ZAMBERTI/GRYNAEUS (THEON),Ramus,Latin,1-15
+14,leipzig,1549,octavo,octavo,1,elements 1 6 (enunciations),"1, 2, 3, 4, 5, 6",,1256,1269,18,ZAMBERTI/GRYNAEUS (THEON),Rhaeticus/Camerarius,Latin and Greek,1-6
+15,paris,1549,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,1270,1282,14,ZAMBERTI/GRYNAEUS (THEON),Ramus,Latin,1-15
+16,basel,1550,folio,folio,1,elements 1 6,"1, 2, 3, 4, 5, 6",,1283,1316,20,ZAMBERTI/GRYNAEUS (THEON),Scheybl,Latin,1-6
+17,paris,1551,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,1317,1333,10,ZAMBERTI/GRYNAEUS (THEON),Fine,Latin and Greek,1-6
+18,paris,1551,quarto,quarto,1,elements 10,10,,1334,1345,40,MONDORÉ,Mondoré,Latin,10
+19,paris,1552,quarto,quarto,1,elements 10,10,,1346,1356,41,MONDORÉ,Mondoré,Latin,10
+20,augsburg,1555,quarto,quarto,1,elements 7 9,"7, 8, 9",,1357,1381,21,ZAMBERTI/GRYNAEUS (THEON),Scheybl,German,7-9
+21,lyon,1557,folio,folio,1,elements 1 6,"1, 2, 3, 4, 5, 6",,1392,1411,36,D’ÉTAPLES,Peletier,Latin,1-6
+22,paris,1557,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,1412,1433,42,MAGNIENUS/GRACILIS and DASYPODIUS,Gracilis/Magnienus,Latin and Greek,1-15
+23,strasbourg,1559,octavo,octavo,1,elements 1,1,,1565,1576,12,ZAMBERTI/GRYNAEUS (THEON),Rihel,Greek,1
+24,basel,1562,folio,folio,1,elements 1 6,"1, 2, 3, 4, 5, 6",,1577,1606,22,ZAMBERTI/GRYNAEUS (THEON),Holzman,German,1-6
+25,cologne,1564,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,1607,1621,46,MAGNIENUS/GRACILIS and DASYPODIUS,Gracilis/Magnienus,Latin and Greek,1-15
+26,paris,1564,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,1622,1655,53,MAGNIENUS/GRACILIS and DASYPODIUS,Forcadel,French,1-6
+27,wittenberg,1564,octavo,octavo,1,elements 7,7,,1716,1742,23,ZAMBERTI/GRYNAEUS (THEON),Sthen,Latin and Greek,7
+28,paris,1565,quarto,quarto,1,elements 7 9,"7, 8, 9",,1743,1758,54,MAGNIENUS/GRACILIS and DASYPODIUS,Forcadel,French,7-9
+29,venice,1565,octavo,octavo,1,elements 1 15; de levi et ponderoso,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",de levi et ponderoso,1774,1796,31,D’ÉTAPLES,Tartaglia,Latin,1-15 + De levi
+30,paris,1566,folio,folio,1,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,1797,1828,86,FOIX,Foix,Latin,1-16
+31,paris,1566,octavo,octavo,1,elements 1 6 (enunciations),"1, 2, 3, 4, 5, 6",,1829,1839,55,MAGNIENUS/GRACILIS and DASYPODIUS,Forcadel,French,1-6
+32,strasbourg,1566,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,1859,1884,59,MAGNIENUS/GRACILIS and DASYPODIUS,Herlin and Dasypodius,Latin and Greek,1-6
+33,venice,1569,octavo,octavo,1,elements 1 15; de levi et ponderoso,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",de levi et ponderoso,1885,1908,32,D’ÉTAPLES,Tartaglia,Latin,1-15
+34,london,1570,folio,folio,1,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,1936,1974,90,FOIX,Billingsley,English,1-16
+35,strasbourg,1570,octavo,octavo,1,elements 1,1,,1975,1994,60,MAGNIENUS/GRACILIS and DASYPODIUS,Dasypodius,Latin and Greek,1
+36,strasbourg,1570,octavo,octavo,1,elements 1 15; optics; catoptrics; introductio harmonica; sectio canonis; phaenomena (enunciations in greek and latin),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15","optics, catoptrics, introductio harmonica, sectio canonis, phaenomena (enunciations in greek and latin)",1995,2015,62,MAGNIENUS/GRACILIS and DASYPODIUS,Dasypodius,Latin and Greek,1-15
+37,strasbourg,1571,octavo,octavo,1,elements 1,1,,2016,2030,61,MAGNIENUS/GRACILIS and DASYPODIUS,Dasypodius,Latin and Greek,1
+38,strasbourg,1571,octavo,octavo,1,elements 1 15; optics; catoptrics; introductio harmonica; sectio canonis; phaenomena; data (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15","optics, catoptrics, introductio harmonica, sectio canonis, phaenomena, data (enunciations)",2031,2054,63,MAGNIENUS/GRACILIS and DASYPODIUS,Dasypodius,Latin and Greek,1-15
+39,pesaro,1572,folio,folio,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,2055,2075,96,COMMANDINO,Commandino,Latin,1-15
+40,paris,1573,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,2118,2139,44,MAGNIENUS/GRACILIS and DASYPODIUS,Gracilis/Magnienus,Latin and Greek,1-15
+41,rome,1574,"two volumes, octavo",octavo,2,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,2140,2162,116,CLAVIUS,Clavius,Latin,1-16
+42,urbino,1575,folio,folio,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,2163,2184,101,COMMANDINO,Commandino/Spacciuoli,Italian,1-15
+43,venice,1575,quarto,quarto,1,elements 13 15,"13, 14, 15",,2185,2207,188,MAUROLICUS,Maurolicus,Latin,13-15
+44,seville,1576,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,2208,2228,24,ZAMBERTI/GRYNAEUS (THEON),Zamorano,Spanish,1-6
+45,leipzig,1577,octavo,octavo,1,elements 1 6 (enunciations only in 4 6),"1, 2, 3, 4, 5, 6",,2229,2247,19,ZAMBERTI/GRYNAEUS (THEON),Camerarius/Steinmetz,Latin and Greek,1-6
+46,cologne,1580,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,2276,2291,47,MAGNIENUS/GRACILIS and DASYPODIUS,Gracilis/Magnienus,Latin,1-15
+47,venice,1585,quarto,quarto,1,elements 1 15; de levi et ponderoso,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",de levi et ponderoso,2315,2334,33,D’ÉTAPLES,Tartaglia,Latin,1-15
+48,venice,1586,quarto,quarto,1,elements 1 15; de levi et ponderoso,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",de levi et ponderoso,2335,2356,34,D’ÉTAPLES,Tartaglia,Latin,1-15
+49,cologne,1587,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,2357,2380,48,MAGNIENUS/GRACILIS and DASYPODIUS,Gracilis/Magnienus,Latin,1-15
+50,rome,1589,"two volumes, octavo",octavo,2,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,2381,2405,120,CLAVIUS,Clavius,Latin,1-16
+51,cologne,1591,"two volumes, ?quarto in 8s",?quarto in 8s,2,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,2406,2435,121,CLAVIUS,Clavius,Latin,1-16
+52,rome,1594,folio,folio,1,elements 1 13,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13",,2482,2523,189,ps-TUSI,ps-Tusi,Arabic,1-13
+53,paris,1598,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,2524,2540,45,MAGNIENUS/GRACILIS and DASYPODIUS,Gracilis/Magnienus,Latin and Greek,1-15
+54,paris,1598,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,2541,2558,91,FOIX,Errard,French,1-6
+55,strasbourg,1599,octavo,octavo,1,elements 1 (enunciations),1,,2570,2582,64,MAGNIENUS/GRACILIS and DASYPODIUS,Dasypodius,Latin and Greek,1
+56,cologne,1600,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,2583,2598,49,MAGNIENUS/GRACILIS and DASYPODIUS,Gracilis/Magnienus,Latin,1-15
+57,cologne,1602,folio,folio,1,elements 1 18,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18",,2599,2621,88,FOIX,Foix,Latin,1-18
+58,paris,1602,folio,folio,1,elements 1 18,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18",,2622,2643,89,FOIX,Foix,Latin,1-18
+59,arnhem,1603,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,2644,2660,65,MAGNIENUS/GRACILIS and DASYPODIUS,Dybvad,Latin,1-6
+60,rome,1603,"two volumes, octavo",octavo,2,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,2661,2685,122,CLAVIUS,Clavius,Latin,1-16
+61,arnhem,1605,quarto,quarto,1,elements 7 9,"7, 8, 9",,2721,2730,66,MAGNIENUS/GRACILIS and DASYPODIUS,Dybvad,Latin,7-9
+62,arnhem,1605,quarto,quarto,1,elements 10,10,,2731,2740,67,MAGNIENUS/GRACILIS and DASYPODIUS,Dybvad,Latin,10
+63,paris,1605,octavo,octavo,1,elements 1 9,"1, 2, 3, 4, 5, 6, 7, 8, 9",,2741,2755,92,FOIX,Errard,French,1-9
+64,leiden,1606,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,2756,2773,190,DOU,Dou,Dutch,1-6
+65,beijing,1607,,,-1,elements 1 6,"1, 2, 3, 4, 5, 6",,2774,2788,117,CLAVIUS,Ricci and Xu Guangqi,Chinese,1-6
+66,cologne,1607,octavo,octavo,1,elements 1 16 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,2789,2808,51,MAGNIENUS/GRACILIS and DASYPODIUS,Gracilis/Magnienus,Latin,1-16
+67,frankfurt,1607,"two volumes, octavo",octavo,2,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,2839,2865,123,CLAVIUS,Clavius,Latin,1-16
+68,leiden,1607,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,2866,2879,191,DOU,Dou,Dutch,1-6
+69,wittenberg,1609,octavo,octavo,1,elements 1 13,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13",,2909,2921,130,CLAVIUS,Rhodius,Latin,1-13
+70,geneva,1610,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,2922,2942,37,D’ÉTAPLES,Peletier,Latin and Greek,1-6
+71,ansbach,1610,folio,folio,1,elements 1 6,"1, 2, 3, 4, 5, 6",,2943,2968,25,ZAMBERTI/GRYNAEUS (THEON),Marius,German,1-6
+72,paris,1610,quarto,quarto,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,2969,2987,68,MAGNIENUS/GRACILIS and DASYPODIUS,Dounot,French,1-15
+73,beijing,1611,,,-1,elements 1 6,"1, 2, 3, 4, 5, 6",,2988,2994,118,CLAVIUS,Ricci and Xu Guangqi,Chinese,1-6
+74,geneva,1611,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,2995,3011,38,D’ÉTAPLES,de Tournes,French,1-6
+75,mainz,1611,folio,folio,1,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,3012,3043,125,CLAVIUS,Clavius,Latin,1-16
+76,cologne,1612,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3044,3059,50,MAGNIENUS/GRACILIS and DASYPODIUS,Gracilis/Magnienus,Latin,1-15
+77,paris,1612,folio,folio,1,elements 10,10,,3060,3074,133,CLAVIUS,Puteanus,Latin,10
+78,paris,1613,quarto,quarto,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3075,3092,69,MAGNIENUS/GRACILIS and DASYPODIUS,Dounot,French,1-15
+79,paris,1615,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3093,3119,70,MAGNIENUS/GRACILIS and DASYPODIUS,Henrion,French,1-15
+80,amsterdam,1616,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3120,3137,192,DOU,Dou,Dutch,1-6
+81,ingolstadt,1617,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3138,3151,104,COMMANDINO,Lanz,Latin,1-6
+82,leiden,1617,duodecimo,duodecimo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3152,3165,106,COMMANDINO,van Schooten,Dutch,1-15
+83,utrecht,-1,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3166,3191,152,CLAVIUS,Nienrode,Dutch,1-15
+84,amsterdam,1618,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3192,3215,200,DOU,Curtius,German,1-6
+85,douai,1620,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3259,3271,134,CLAVIUS,Montensis,Latin,1-6
+86,london,1620,folio,folio,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3272,3294,26,ZAMBERTI/GRYNAEUS (THEON),Briggs,Latin and Greek,1-6
+87,paris,1621,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3295,3308,71,MAGNIENUS/GRACILIS and DASYPODIUS,Henrion,French,1-15
+88,paris,1622,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3309,3333,108,COMMANDINO,le Mardelé,French,1-15
+89,paris,1623,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3334,3366,72,MAGNIENUS/GRACILIS and DASYPODIUS,Henrion,French,1-15
+90,douai,1625,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3367,3380,135,CLAVIUS,Montensis,Latin,1-6
+91,amsterdam,1626,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3407,3425,193,DOU,Dou,Dutch,1-6
+92,paris,1626,octavo,octavo,1,elements 1 18; optica; phaenomena (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18","optica, phaenomena (enunciations)",3426,3440,94,FOIX,Mersenne (?),Latin,1-18
+93,ferrara,1628,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3472,3482,137,CLAVIUS,Doino,Latin,1-6
+94,geneva,1628,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3483,3498,39,D’ÉTAPLES,de Tournes,French,1-6
+95,beijing,1629,,,-1,elements 1 6,"1, 2, 3, 4, 5, 6",,3499,3506,119,CLAVIUS,Ricci and Xu Guangqi,Chinese,1-6
+96,bologna,1629,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3507,3528,105,COMMANDINO,Lanz,Latin,1-6
+97,paris,1629,quarto,quarto,1,elements 1 9,"1, 2, 3, 4, 5, 6, 7, 8, 9",,3529,3541,93,FOIX,Errard,French,1-9
+98,rome,1629,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3542,3561,126,CLAVIUS,Grienberger,Latin,1-6
+99,paris,1630,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3562,3587,73,MAGNIENUS/GRACILIS and DASYPODIUS,Henrion,French,1-6
+100,paris,1631,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3588,3612,74,MAGNIENUS/GRACILIS and DASYPODIUS,Henrion,French,1-15
+101,rotterdam,1632,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3663,3679,194,DOU,Dou,Dutch,1-6
+102,douai,1633,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3680,3693,136,CLAVIUS,Montensis,Latin,1-6
+103,hamburg,1633,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3694,3707,112,COMMANDINO,Willemszen,Dutch,1-6
+104,amsterdam,1634,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3708,3725,201,DOU,Curtius,German,1-6
+105,paris,1634,"four volumes, octavo",octavo,4,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,3726,3761,215,HÉRIGONE/BARROW,Hérigone,French and Latin,1-15
+106,wittenberg,1634,octavo,octavo,1,elements 1 13,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13",,3762,3774,131,CLAVIUS,Rhodius,Latin,1-13
+107,graz,1636,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3775,3794,127,CLAVIUS,Grienberger,Latin,1-6
+108,alcala,1637,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3795,3816,27,ZAMBERTI/GRYNAEUS (THEON),Carduchi,Spanish,1-6
+109,hamburg,1638,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3817,3827,113,COMMANDINO,Willemszen,Dutch,1-6
+110,paris,1639,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3828,3849,141,CLAVIUS,Hérigone,French,1-6
+111,venice,1641,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3850,3861,138,CLAVIUS,Doino,Latin,1-6
+112,paris,1643,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3862,3876,144,CLAVIUS,Fournier,Latin,1-6
+113,genoa,1644,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3877,3890,150,CLAVIUS,Anonymous,Latin,1-6
+114,paris,1644,"volumes, octavo",octavo,-1,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,3920,3936,216,HÉRIGONE/BARROW,Hérigone,French and Latin,1-15
+115,paris,1644,quarto,quarto,1,elements 1 18 (enunciations); phaenomena; data (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18","phaenomena, data (enunciations)",3937,3951,95,FOIX,Mersenne,Latin,1-18
+116,antwerp,1645,folio,folio,1,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,3952,3979,151,CLAVIUS,Richard,Latin,1-16
+117,lyon,1645,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3980,3995,110,COMMANDINO,le Mardelé,French,1-15
+118,lyon,1646,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3996,4011,111,COMMANDINO,le Mardelé,French,1-15
+119,rotterdam,1647,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4012,4029,195,DOU,Dou,Dutch,1-6
+120,utrecht,1647,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4030,4047,231,DOU,Dou,Dutch,1-6
+121,venice,1647,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4048,4061,139,CLAVIUS,Doino,Latin,1-6
+122,rouen,1649,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,4062,4080,75,MAGNIENUS/GRACILIS and DASYPODIUS,Henrion,French,1-15
+123,n.p.,1650,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4081,4090,129,CLAVIUS,anonymous,Latin,1-6
+124,london,1651,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4114,4132,202,DOU,Rudd,English,1-6
+125,antwerp,1654,octavo,octavo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4155,4173,203,TACQUET,Tacquet,Latin,"1-6, 11-12"
+126,frankfurt,1654,"two volumes, octavo",octavo,2,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,4174,4199,124,CLAVIUS,Clavius,Latin,1-16
+127,london,1654,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4200,4216,147,CLAVIUS,Fournier,Latin,1-6
+128,cambridge,1655,sexto,sexto,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,4246,4261,217,HÉRIGONE/BARROW,Barrow,Latin,1-15
+129,rome,1655,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4262,4274,128,CLAVIUS,Grienberger,Latin,1-6
+130,london,1659,octavo,octavo,1,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,4291,4314,218,HÉRIGONE/BARROW,Barrow,Latin,1-15
+131,amsterdam,1660,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4315,4325,114,COMMANDINO,Willemszen,Dutch,1-6
+132,london,1660,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,4326,4348,223,HÉRIGONE/BARROW,Barrow,English,1-15
+133,lyon,1660,octodecimo,octodecimo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4349,4363,153,CLAVIUS,Dechales,Latin,"1-6, 11-12"
+134,london,1661,folio,folio,1,elements 1 16; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",data,4364,4404,168,CLAVIUS,Leeke and Serle,English,1-16
+135,rotterdam,1661,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4405,4424,196,DOU,Dou,Dutch,1-6
+136,wittenberg,1661,octavo,octavo,1,elements 1 13,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13",,4425,4438,132,CLAVIUS,Rhodius,Latin,1-13
+137,würzburg,1661,folio,folio,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4439,4468,169,CLAVIUS,Schott,Latin,1-6
+138,amsterdam,1662,duodecimo,duodecimo,1,elements 1 16 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,4469,4503,107,COMMANDINO,van Schooten,Dutch,1-16
+139,antwerp,1665,octavo,octavo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4504,4521,204,TACQUET,Tacquet,Latin,"1-6, 11-12"
+140,cambridge,1665,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4522,4543,148,CLAVIUS,Fournier,Latin,1-6
+141,madrid,1665,folio,folio,1,"elements 5, 7","5, 7",,4544,4562,115,COMMANDINO,Najera and Rocha,Spanish,"5, 7"
+142,milan,1671,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4563,4576,84,MAGNIENUS/GRACILIS and DASYPODIUS,Caravaggi,Italian,1-6
+143,antwerp,1672,octavo,octavo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4577,4593,205,TACQUET,Tacquet,Latin,"1-6, 11-12"
+144,lyon,1672,duodecimo,duodecimo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4594,4606,154,CLAVIUS,Dechales,French,"1-6, 11-12"
+145,frankfurt,1674,folio,folio,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4618,4642,170,CLAVIUS,Schott,Latin,1-6
+146,lyon,1674,"three volumes, quarto",quarto,3,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4643,4663,155,CLAVIUS,Dechales,Latin,"1-6, 11-12"
+147,lyon,1675,sexto,sexto,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4664,4680,157,CLAVIUS,Dechales,Latin,"1-6, 11-12"
+148,osnabrück,1676,octavo,octavo,1,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,4681,4704,222,HÉRIGONE/BARROW,Barrow,Latin,1-15
+149,rouen,1676,"two volumes, octavo",octavo,2,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,4705,4728,77,MAGNIENUS/GRACILIS and DASYPODIUS,Henrion,French,1-15
+150,bamberg,1677,folio,folio,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4729,4750,171,CLAVIUS,Schott,Latin,1-6
+151,rouen and paris,1677,octavo,octavo,1,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,4751,4767,78,MAGNIENUS/GRACILIS and DASYPODIUS,Henrion,French,1-15
+152,paris,1677,duodecimo,duodecimo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4768,4785,158,CLAVIUS,Dechales,French,"1-6, 11-12"
+153,london,1678,octavo,octavo,1,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,4786,4810,219,HÉRIGONE/BARROW,Barrow,Latin,1-15
+154,naples,1679,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4811,4819,98,COMMANDINO,Fioravanti,Latin,1-6
+155,london,1680,"two volumes, quarto",quarto,2,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4820,4867,229,HÉRIGONE/BARROW,Perkins,English,"1-6, 11-12"
+156,rotterdam,1681,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4868,4887,197,DOU,Dou,Dutch,1-6
+157,paris,1682,duodecimo,duodecimo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4888,4903,159,CLAVIUS,Dechales,French,"1-6, 11-12"
+158,paris,1682,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4904,4916,173,CLAVIUS,Rohault,French,1-6
+159,paris,1683,duodecimo,duodecimo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4945,4959,160,CLAVIUS,Dechales,French,"1-6, 11-12"
+160,rouen and paris,1683,"two volumes, octavo",octavo,2,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,4960,4973,79,MAGNIENUS/GRACILIS and DASYPODIUS,Henrion,French,1-15
+161,bologna,1684,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4974,4987,175,CLAVIUS,Anonymous,Latin,1-6
+162,london,1685,octavo,octavo,1,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,4988,5000,220,HÉRIGONE/BARROW,Barrow,Latin,1-15
+163,london,1685,duodecimo,duodecimo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5001,5024,163,CLAVIUS,Williams,English,"1-6, 11-12"
+164,oxford,1685,quarto,quarto,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5025,5040,165,CLAVIUS,anonymous,English,"1-6, 11-12"
+165,rouen and paris,1685,"two volumes, octavo",octavo,2,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,5041,5064,80,MAGNIENUS/GRACILIS and DASYPODIUS,Henrion,French,1-15
+166,bologna,1686,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,5065,5076,83,MAGNIENUS/GRACILIS and DASYPODIUS,Ricci,Italian,1-6
+167,london,1686,duodecimo,duodecimo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,5077,5087,225,HÉRIGONE/BARROW,Barrow,English,1-15
+168,london,1687,octavo,octavo,1,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,5088,5097,221,HÉRIGONE/BARROW,Barrow,Latin,1-15
+169,brussels,1688,octavo,octavo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5098,5115,210,TACQUET,Fernandez,Spanish,"1-6, 11-12"
+170,brussels,1689,quarto,quarto,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5116,5132,212,TACQUET,Kresa,Spanish,"1-6, 11-12"
+171,florence,1690,duodecimo,duodecimo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5133,5157,176,CLAVIUS,Anonymous,Italian,"1-6, 11-12"
+172,lyon,1690,"four volumes, quarto",quarto,4,elements 1 14,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14",,5169,5196,156,CLAVIUS,Dechales,Latin,1-14
+173,paris,1690,duodecimo,duodecimo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5197,5213,161,CLAVIUS,Dechales,French,"1-6, 11-12"
+174,leiden,1691,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,5214,5229,177,CLAVIUS,Coetsius,Latin,1-6
+175,siena,1691,duodecimo,duodecimo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,5230,5242,180,CLAVIUS,Astorinus,Latin,1-15
+176,leiden,1692,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,5243,5252,178,CLAVIUS,Coetsius,Latin,1-6
+177,paris,1693,"five volumes, octavo",octavo,5,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5253,5273,182,CLAVIUS,Ozanam,French,"1-6, 11-12"
+178,padua,1694,octavo,octavo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5274,5290,208,TACQUET,Tacquet,Latin,"1-6, 11-12"
+179,vienna,1694,quarto,quarto,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5291,5304,185,CLAVIUS,Pirckenstein,German,"1-6, 11-12"
+180,amsterdam,1695,quarto,quarto,1,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,5305,5322,187,CLAVIUS,Vooght,Dutch,1-16
+181,london,1696,octavo,octavo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5323,5336,166,CLAVIUS,anonymous,English,"1-6, 11-12"
+182,amsterdam,1697,"five volumes, octavo",octavo,5,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5337,5350,184,CLAVIUS,Ozanam,French,"1-6, 11-12"
+183,paris,1697,"five volumes, octavo",octavo,5,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5367,5382,183,CLAVIUS,Ozanam,French,"1-6, 11-12"
+184,amsterdam,1700,duodecimo,duodecimo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5413,5428,162,CLAVIUS,Dechales,French,"1-6, 11-12"
+185,amsterdam,1700,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,5429,5447,198,DOU,Dou,Dutch,1-6
+186,oxford/london,1700,octavo,octavo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5448,5463,167,CLAVIUS,anonymous,English,"1-6, 11-12"
+187,amsterdam,1701,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,5464,5485,199,DOU,Dou,Dutch,1-6
+188,amsterdam,1701,octavo,octavo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5486,5498,207,TACQUET,Tacquet,Latin,"1-6, 11-12"
+189,brussels,1701,octavo,octavo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5499,5515,211,TACQUET,Fernandez,Spanish,"1-6, 11-12"
+190,naples,1701,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,5516,5526,181,CLAVIUS,Astorinus,Latin,1-15
+191,oxford,1701,octavo,octavo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5527,5541,99,COMMANDINO,Keill,Latin,"1-6, 11-12"
+192,milan,1702,sexto,sexto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,5554,5562,85,MAGNIENUS/GRACILIS and DASYPODIUS,Caravaggi,Italian,1-6
+193,naples,1702,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,5563,5570,100,COMMANDINO,Porpora,Latin,1-6
+194,cambridge,1703,octavo,octavo,1,"elements 1 6, 11-12","1, 2, 3, 4, 5, 6, 11, 12",,5571,5591,209,TACQUET,Whiston,Latin,"1-6, 11-12"
+195,london,1703,duodecimo,duodecimo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5592,5604,164,CLAVIUS,Williams,English,"1-6, 11-12"
+196,oxford,1703,folio,folio,1,elements 1 15; data; introductio harmonica; sectio canonis; phaenomena; optica; catoptrica; de divisionibus; de levi et ponderoso,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15","data, introductio harmonica, sectio canonis, phaenomena, optica, catoptrica, de divisionibus, de levi et ponderoso",5605,6567,230,GREGORY,Gregory,Latin and Greek,1-15
+197,basel,1533,folio,folio,1,elements 1 13,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13",,967,1004,7,ZAMBERTI/GRYNAEUS (THEON),Grynaeus,Greek,1-15
+198,rome,1545,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,1179,1193,16,ZAMBERTI/GRYNAEUS (THEON),Cajani,Latin,1-15
+199,rome,1545,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,1194,1210,17,ZAMBERTI/GRYNAEUS (THEON),Cajani,Italian,1-15
+200,cologne,1556,octavo,octavo,1,elements 1 (enunciations); elements 2 15 (selection of enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,1382,1391,35,D’ÉTAPLES,Nabod,Latin,1 and selection from 2–15
+201,paris,1558,octavo,octavo,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,1538,1551,43,MAGNIENUS/GRACILIS and DASYPODIUS,Gracilis/Magnienus,Latin and Greek,1-15
+202,paris,1558,quarto,quarto,1,elements 1 15 (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,1552,1564,15,ZAMBERTI/GRYNAEUS (THEON),Ramus,Latin,1-15
+203,strasbourg,1564,octavo,octavo,1,elements 1,1,,1656,1677,56,MAGNIENUS/GRACILIS and DASYPODIUS,Dasypodius,Latin and Greek,1-13
+204,strasbourg,1564,octavo,octavo,1,elements 2,2,,1678,1699,57,MAGNIENUS/GRACILIS and DASYPODIUS,Dasypodius,Latin and Greek,1-13
+205,strasbourg,1564,octavo,octavo,1,elements 3 13 (enunciations),"3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13",,1700,1715,58,MAGNIENUS/GRACILIS and DASYPODIUS,Dasypodius,Latin and Greek,1-13
+206,pesaro,1619,folio,folio,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3216,3234,97,COMMANDINO,Commandino,Latin,1-15
+207,pesaro,1619,folio,folio,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3235,3258,102,COMMANDINO,Commandino/Spacciuoli,Italian,1-15
+208,cologne,1627,octavo,octavo,1,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,3451,3471,52,MAGNIENUS/GRACILIS and DASYPODIUS,Gracilis/Magnienus,Latin,1-15
+209,paris,1632,quarto,quarto,1,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,3613,3642,76,MAGNIENUS/GRACILIS and DASYPODIUS,Henrion,French,1-15
+210,paris,1632,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3643,3662,109,COMMANDINO,le Mardelé,French,1-15
+211,paris,1644,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3891,3909,142,CLAVIUS,Hérigone,French,1-6
+212,paris,1644,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3910,3919,145,CLAVIUS,Fournier,Latin,1-6
+213,bologna,1651,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4091,4102,82,MAGNIENUS/GRACILIS and DASYPODIUS,Ricci,Italian,1-6
+214,bologna,1651,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4103,4113,81,MAGNIENUS/GRACILIS and DASYPODIUS,Ricci,Italian,1-6
+215,paris,1654,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4217,4231,146,CLAVIUS,Fournier,Latin,1-6
+216,paris,1654,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4232,4245,149,CLAVIUS,Fournier,French,1-6
+217,leiden and amsterdam,1673,sexto,sexto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,4607,4617,172,CLAVIUS,Melder,Latin,1-6
+218,lausanne,1683,duodecimo,duodecimo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4931,4944,206,TACQUET,Tacquet,Latin,"1-6, 11-12"
+219,the hague,1690,"volumes, duodecimo",duodecimo,-1,elements 1 6,"1, 2, 3, 4, 5, 6",,5158,5168,174,CLAVIUS,Rohault,French,1-6
+220,"kiel, hamburg and leipzig",1697,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,5351,5366,213,TACQUET,Reyher,German,1-6
+221,kiel and leipzig,1699,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,5383,5399,214,TACQUET,Reyher,German,1-6
+222,lübeck and frankfurt,1699,quarto,quarto,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,5400,5412,186,CLAVIUS,Pirckenstein,German,"1-6, 11-12"
+223,venice,1491,"two parts, folio",folio,2,geometria,,geometria,589,609,0,,,,
+224,venice,1498,"three parts, folio",folio,3,geometria,,geometria,628,646,0,,,,
+225,venice,1498,folio,folio,1,elements 14,14,,647,669,0,,Giorgio Valla,Latin,
+226,paris,1500,folio,folio,1,geometria (extract),,geometria (extract),670,694,0,,,,
+227,paris,1507,folio,folio,1,geometria,,geometria,752,761,0,,,,
+228,paris,1511,folio,folio,1,geometria,,geometria,836,848,0,,,,
+229,paris,1516,folio,folio,1,geometria,,geometria,895,907,0,,,,
+230,paris,1521,folio,folio,1,geometria,,geometria,908,929,0,,,,
+231,paris,1527,folio,folio,1,geometria,,geometria,930,948,0,,,,
+232,paris,1531,folio,folio,1,geometria,,geometria,949,966,0,,,,
+233,paris,1534,folio,folio,1,geometria,,geometria,1005,1021,0,,,,
+234,paris,1538,folio,folio,1,geometria,,geometria,1082,1097,0,,,,
+235,basel,1546,folio,folio,1,elements 1 15; phaenomena; catoptrica; optica; data; de levi et ponderoso,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15","phaenomena, catoptrica, optica, data, de levi et ponderoso",1211,1228,0,D’ÉTAPLES,Herlin,Latin,
+236,basel,1546,folio,folio,1,geometria,,geometria,1229,1255,0,,,,
+237,paris,1557,quarto,quarto,1,optica; catoptrica,,"optica, catoptrica",1434,1460,0,,,,
+238,paris,1557,quarto,quarto,1,introductio harmonica; sectio canonis,,"introductio harmonica, sectio canonis",1461,1478,0,,,,
+239,strasbourg,1557,quarto,quarto,1,catoptrica,,catoptrica,1479,1493,0,,,,
+240,basel,1558,folio,folio,1,elements 1 15; phaenomena; catoptrica; optica; data; de levi et ponderoso,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15","phaenomena, catoptrica, optica, data, de levi et ponderoso",1494,1516,0,D’ÉTAPLES,Herlin,Latin,
+241,messina,1558,folio in 6s,folio in 6s,1,phaenomena (enunciations),,phaenomena (enunciations),1517,1537,0,,,,
+242,paris,1565,quarto,quarto,1,de levi et ponderoso,,de levi et ponderoso,1759,1773,0,,,,
+243,paris,1566,octavo,octavo,1,introductio harmonica; sectio canonis,,"introductio harmonica, sectio canonis",1840,1858,0,,,,
+244,basel,1570,folio,folio,1,geometria,,geometria,1909,1935,0,,,,
+245,strasbourg,1572,octavo,octavo,1,phaenomena (enunciations),,phaenomena (enunciations),2076,2096,0,,,,
+246,florence,1573,quarto,quarto,1,optica; catoptrica,,"optica, catoptrica",2097,2117,0,,,,
+247,paris,1578,folio,folio,1,elements 1 18,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18",,2248,2275,0,FOIX,Foix,Latin,
+248,madrid,1585,quarto,quarto,1,optica; catoptrica,,"optica, catoptrica",2292,2314,0,,,,
+249,rome,1591,quarto,quarto,1,phaenomena,,phaenomena,2436,2453,0,,,,
+250,rome,1593,folio,folio,1,introductio harmonica; sectio canonis,,"introductio harmonica, sectio canonis",2454,2481,0,,,,
+251,leiden,1599,quarto,quarto,1,optica; catoptrica (enunciations),,"optica, catoptrica (enunciations)",2559,2569,0,,,,
+252,venice,1603,folio,folio,1,introductio harmonica; sectio canonis,,"introductio harmonica, sectio canonis",2686,2704,0,,,,
+253,paris,1604,quarto,quarto,1,optica; catoptrica,,"optica, catoptrica",2705,2720,0,,,,
+254,cologne,1607,folio,folio,1,introductio harmonica; sectio canonis,,"introductio harmonica, sectio canonis",2809,2838,0,,,,
+255,leipzig,1607,octavo,octavo,1,optica; catoptrica (enunciations),,"optica, catoptrica (enunciations)",2880,2891,0,,,,
+256,rome,1609,quarto,quarto,1,phaenomena,,phaenomena,2892,2908,0,,,,
+257,paris,1625,quarto,quarto,1,data,,data,3381,3406,0,,,,
+258,paris,1626,16mo,16mo,1,phaenomena,,phaenomena,3441,3450,0,,,,
+259,amsterdam,1652,"two volumes, quarto",quarto,2,introductio harmonica; sectio canonis,,"introductio harmonica, sectio canonis",4133,4154,0,,,,
+260,cambridge,1657,octavo,octavo,1,data,,data,4275,4290,0,,,,
+261,amsterdam,1683,octavo,octavo,1,"elements 1 6, 11 12","1, 2, 3, 4, 5, 6, 11, 12",,4917,4930,0,TACQUET,Tacquet,Latin,
+262,amsterdam,1702,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,5542,5553,0,CLAVIUS,Coetsius,Dutch,
+263,London,1705,,,-1,1-15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,-1,-1,226,HÉRIGONE/BARROW,Barrow,English,1-15
+264,London,1732,,,-1,1-15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,-1,-1,227,HÉRIGONE/BARROW,Barrow,English,1-15
+265,London,1751,,,-1,1-15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,-1,-1,228,HÉRIGONE/BARROW,Barrow,English,1-15

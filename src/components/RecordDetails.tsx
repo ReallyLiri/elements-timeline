@@ -2,6 +2,7 @@ import { Translation } from "../data/data";
 import styled from "styled-components";
 import { TRANSPARENT_WHITE } from "../data/colors";
 import { ReactComponent as Deco } from "../svg/deco1.svg";
+import { isEmpty } from "lodash";
 
 type RecordDetailsProps = {
   data: Translation;
@@ -14,12 +15,13 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-const Highlight = styled.span`
+const Highlight = styled.p`
   font-weight: bolder;
   background-color: ${TRANSPARENT_WHITE};
   width: fit-content;
-  padding: 0 2px;
+  padding: 2px 4px;
   border-radius: 2px;
+  margin: 0;
   margin-left: 0.5rem;
 `;
 
@@ -47,8 +49,17 @@ export const RecordDetails = ({ data }: RecordDetailsProps) => {
       <Row title="Language" value={data.language} />
       <Row title="Translator" value={data.translator} />
       <Row title="City" value={data.rawCity} />
-      <Row title="Books" value={data.books} />
-      <Row title="Type" value={data.type} />
+      <Row title="Type" value={data.class} />
+      <Row title="Books" value={data.booksExpanded.join(", ")} />
+      {data.volumesCount && (
+        <Row title="Volumes" value={data.volumesCount.toString()} />
+      )}
+      {!isEmpty(data.additionalContent) && (
+        <Row
+          title="Additional Contents"
+          value={data.additionalContent.join(", ")}
+        />
+      )}
       <BottomDeco />
     </Wrapper>
   );

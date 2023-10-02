@@ -7,7 +7,7 @@ import {
   loadDataAsync,
   Translation,
 } from "./data/data";
-import { get, groupBy, isEmpty, isNil } from "lodash";
+import { groupBy, isArray, isEmpty, isNil } from "lodash";
 import { CityMarkers } from "./components/Markers";
 import { MapControls } from "./components/MapControls";
 import { useElementSize } from "./data/useElementSize";
@@ -146,12 +146,14 @@ const filterRecord = (
     if (isEmpty(values)) {
       return true;
     }
-    const match =
-      field === "books"
-        ? values!
-            .map((v) => parseInt(v))
-            .every((n) => t.booksExpanded.includes(n))
-        : values!.includes(get(t, field)?.toString() || "");
+    const fieldValue = t[field];
+    const match = isArray(fieldValue)
+      ? values!.every(
+          (v) =>
+            fieldValue.includes(parseInt(v) as never) ||
+            fieldValue.includes(v?.toString() as never),
+        )
+      : values!.includes(fieldValue?.toString() || "");
     const include = isNil(filtersInclude[field]) ? true : filtersInclude[field];
     return include ? match : !match;
   });
@@ -246,7 +248,19 @@ const App = () => {
           </CollapseFiltersButton>
           <FiltersGroup
             data={data}
-            fields={["city", "type", "language", "translator", "books"]}
+            fields={{
+              city: {},
+              class: {},
+              language: {},
+              translator: {},
+              booksExpanded: { displayName: "books", isArray: true },
+              bookSize: { displayName: "size" },
+              volumesCount: { displayName: "volumes" },
+              additionalContent: {
+                displayName: "additional content",
+                isArray: true,
+              },
+            }}
             filters={filters}
             setFilters={setFilters}
             filtersInclude={filtersInclude}

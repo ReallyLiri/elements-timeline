@@ -3,7 +3,8 @@ import { sortBy } from "lodash";
 import React, { useMemo } from "react";
 import styled from "styled-components";
 import { PANE_COLOR, TRANSPARENT_BLACK } from "../data/colors";
-import { ReactComponent as Deco } from "../svg/deco3.svg";
+import { ReactComponent as TopDeco } from "../svg/deco3.svg";
+import { ReactComponent as BottomDeco } from "../svg/deco2.svg";
 
 type CityDetailsProps = {
   city: string;
@@ -47,10 +48,16 @@ const RowTitle = styled.div`
   }
 `;
 
-const StyledDeco = styled(Deco)`
+const StyledTopDeco = styled(TopDeco)`
   transform: rotate(180deg);
   fill: rgba(0, 0, 0, 0.6);
   margin-top: -0.8rem;
+`;
+
+const StyledBottomDeco = styled(BottomDeco)`
+  fill: rgba(0, 0, 0, 0.6);
+  height: 400px;
+  width: 100%;
 `;
 
 export const CityName = (city: string) =>
@@ -65,7 +72,7 @@ export const CityDetails = ({
   return (
     <>
       <Title className="gothic">{CityName(city)}</Title>
-      <StyledDeco height={64} />
+      <StyledTopDeco height={64} />
       <Subtitle>{data?.length || 0} records</Subtitle>
       {sortedData.map((translation) => (
         <>
@@ -83,6 +90,9 @@ export const CityDetails = ({
           </div>
         </>
       ))}
+      <div>
+        <StyledBottomDeco viewBox="0 0 80 360" />
+      </div>
     </>
   );
 };
