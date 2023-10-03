@@ -25,8 +25,13 @@ type FilterProps = {
   options: readonly FilterValue[];
 };
 
+const FilterTitle = styled.div`
+  font-size: 1.6rem;
+  margin-bottom: -0.5rem;
+`;
+
 const HelpTipButton = styled.div`
-  margin: 0 -0.5rem;
+  margin: 0.5rem -0.5rem 0 -0.5rem;
   padding: 0.5rem;
   border-radius: 50%;
   background-color: ${TRANSPARENT_WHITE};
@@ -46,6 +51,7 @@ const HelpFloatingTip = styled.div`
   width: fit-content;
   padding: 1rem;
   z-index: 100;
+
   a {
     color: ${PANE_COLOR};
   }
@@ -87,6 +93,7 @@ const Switch = styled.div`
   flex-direction: row;
   font-size: 0.8rem;
   height: fit-content;
+  align-self: end;
 
   div:first-child {
     border-radius: 5px 0 0 5px;
@@ -110,6 +117,7 @@ const Row = styled.div`
   gap: 1rem;
   align-items: center;
   margin-bottom: -0.5rem;
+  text-wrap: nowrap;
 `;
 
 const Filler = styled.div`
@@ -129,9 +137,11 @@ export const Filter = ({
   return (
     <>
       <Row>
-        <div className="gothic">{label}</div>
+        <FilterTitle className="gothic">{label}</FilterTitle>
         <OptionalHelpTip field={field} />
         <Filler />
+      </Row>
+      <Row>
         <Switch>
           <SwitchOption
             selected={include}
@@ -164,6 +174,19 @@ export const Filter = ({
               ...styles[":hover"],
               borderColor: SEA_COLOR,
             },
+          }),
+          menu: (styles) => ({
+            ...styles,
+            paddingBottom: "20px",
+            backgroundColor: "unset",
+            boxShadow: "unset",
+          }),
+          menuList: (styles) => ({
+            ...styles,
+            backgroundColor: "white",
+            borderRadius: "4px",
+            boxShadow:
+              "0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)",
           }),
           option: (styles, { isFocused }) => ({
             ...styles,

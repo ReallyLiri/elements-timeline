@@ -139,8 +139,8 @@ const filterRecord = (
   }
   const fields = Object.keys(filters) as (keyof Translation)[];
   return fields.every((field) => {
-    if ((field === "year" || field === "city") && t.city === FLOATING_CITY) {
-      return true;
+    if (field === "year" && t.city === FLOATING_CITY) {
+      return false;
     }
     const values = filters[field]?.map((v) => v.value);
     if (isEmpty(values)) {
@@ -157,6 +157,32 @@ const filterRecord = (
     const include = isNil(filtersInclude[field]) ? true : filtersInclude[field];
     return include ? match : !match;
   });
+};
+
+const bookSizeCompare = (a: string, b: string): number => {
+  const order = [
+    "folio",
+    "folio in 8s",
+    "quarto",
+    "quarto in 8s",
+    "sexto",
+    "octavo",
+    "duodecimo",
+    "octodecimo",
+  ];
+  a = a.toLocaleLowerCase();
+  b = b.toLocaleLowerCase();
+  const aIndex = order.indexOf(a);
+  const bIndex = order.indexOf(b);
+  if (aIndex === -1 && bIndex === -1) {
+    return a.localeCompare(b);
+  } else if (aIndex === -1) {
+    return 1;
+  } else if (bIndex === -1) {
+    return -1;
+  } else {
+    return aIndex - bIndex;
+  }
 };
 
 const App = () => {
@@ -250,14 +276,17 @@ const App = () => {
             data={data}
             fields={{
               city: {},
-              class: {},
+              class: { displayName: "Wardhaugh Class" },
               language: {},
               translator: {},
-              booksExpanded: { displayName: "books", isArray: true },
-              bookSize: { displayName: "size" },
-              volumesCount: { displayName: "volumes" },
+              booksExpanded: { displayName: "Elements Books", isArray: true },
+              bookSize: {
+                displayName: "Edition Format",
+                customCompareFn: bookSizeCompare,
+              },
+              volumesCount: { displayName: "Number of Volumes" },
               additionalContent: {
-                displayName: "additional content",
+                displayName: "Additional Content",
                 isArray: true,
               },
             }}

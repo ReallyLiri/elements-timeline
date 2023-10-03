@@ -103,7 +103,7 @@ id,city,year,bookSizeBlob,bookSize,volumesCount,contentBlob,elementsBooks,additi
 102,douai,1633,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3680,3693,136,CLAVIUS,Montensis,Latin,1-6
 103,hamburg,1633,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3694,3707,112,COMMANDINO,Willemszen,Dutch,1-6
 104,amsterdam,1634,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3708,3725,201,DOU,Curtius,German,1-6
-105,paris,1634,"four volumes, octavo",octavo,4,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,3726,3761,215,HÉRIGONE/BARROW,Hérigone,French and Latin,1-15
+105,paris,1634,"four volumes, octavo",octavo,4,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,3726,3761,215,HÉRIGONE/BARROW,Hérigone,Latin and French,1-15
 106,wittenberg,1634,octavo,octavo,1,elements 1 13,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13",,3762,3774,131,CLAVIUS,Rhodius,Latin,1-13
 107,graz,1636,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3775,3794,127,CLAVIUS,Grienberger,Latin,1-6
 108,alcala,1637,quarto,quarto,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3795,3816,27,ZAMBERTI/GRYNAEUS (THEON),Carduchi,Spanish,1-6
@@ -112,7 +112,7 @@ id,city,year,bookSizeBlob,bookSize,volumesCount,contentBlob,elementsBooks,additi
 111,venice,1641,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3850,3861,138,CLAVIUS,Doino,Latin,1-6
 112,paris,1643,octavo,octavo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3862,3876,144,CLAVIUS,Fournier,Latin,1-6
 113,genoa,1644,duodecimo,duodecimo,1,elements 1 6,"1, 2, 3, 4, 5, 6",,3877,3890,150,CLAVIUS,Anonymous,Latin,1-6
-114,paris,1644,"volumes, octavo",octavo,-1,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,3920,3936,216,HÉRIGONE/BARROW,Hérigone,French and Latin,1-15
+114,paris,1644,"volumes, octavo",octavo,-1,elements 1 15; data,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",data,3920,3936,216,HÉRIGONE/BARROW,Hérigone,Latin and French,1-15
 115,paris,1644,quarto,quarto,1,elements 1 18 (enunciations); phaenomena; data (enunciations),"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18","phaenomena, data (enunciations)",3937,3951,95,FOIX,Mersenne,Latin,1-18
 116,antwerp,1645,folio,folio,1,elements 1 16,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16",,3952,3979,151,CLAVIUS,Richard,Latin,1-16
 117,lyon,1645,octavo,octavo,1,elements 1 15,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",,3980,3995,110,COMMANDINO,le Mardelé,French,1-15

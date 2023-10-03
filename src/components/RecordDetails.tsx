@@ -22,7 +22,6 @@ const Highlight = styled.p`
   padding: 2px 4px;
   border-radius: 2px;
   margin: 0;
-  margin-left: 0.5rem;
 `;
 
 const TopDeco = styled(Deco)``;
@@ -32,9 +31,41 @@ const BottomDeco = styled(Deco)`
   margin-top: 1rem;
 `;
 
-const Row = ({ title, value }: { title: string; value: string }) => (
+const formatBooks = (books: number[]) => {
+  const result: string[] = [];
+  let start = books[0];
+  let end = books[0];
+  for (let i = 1; i < books.length; i++) {
+    if (books[i] === end + 1) {
+      end = books[i];
+    } else {
+      if (start === end) {
+        result.push(start.toString());
+      } else {
+        result.push(`${start}-${end}`);
+      }
+      start = end = books[i];
+    }
+  }
+  if (start === end) {
+    result.push(start.toString());
+  } else {
+    result.push(`${start}-${end}`);
+  }
+  return result;
+};
+
+const Row = ({
+  title,
+  value,
+  disableHover,
+}: {
+  title: string;
+  value: string;
+  disableHover?: boolean;
+}) => (
   <div>
-    <div className="gothic" title={title}>
+    <div className="gothic" title={disableHover ? undefined : title}>
       {title}
     </div>
     <Highlight title={value}>{value}</Highlight>
@@ -49,10 +80,15 @@ export const RecordDetails = ({ data }: RecordDetailsProps) => {
       <Row title="Language" value={data.language} />
       <Row title="Translator" value={data.translator} />
       <Row title="City" value={data.rawCity} />
-      <Row title="Type" value={data.class} />
-      <Row title="Books" value={data.booksExpanded.join(", ")} />
+      <Row title="Wardhaugh Class" value={data.class} />
+      <Row
+        title="Elements Books"
+        value={formatBooks(data.booksExpanded).join(", ")}
+        disableHover
+      />
+      {data.bookSize && <Row title="Edition Format" value={data.bookSize} />}
       {data.volumesCount && (
-        <Row title="Volumes" value={data.volumesCount.toString()} />
+        <Row title="Number of Volumes" value={data.volumesCount.toString()} />
       )}
       {!isEmpty(data.additionalContent) && (
         <Row

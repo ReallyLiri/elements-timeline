@@ -7,6 +7,7 @@ import { FILTER_INDEXED_ID } from "./Tour";
 type FilterConfig = {
   isArray?: boolean;
   displayName?: string;
+  customCompareFn?: (a: any, b: any) => number;
 };
 
 type FiltersGroupProps = {
@@ -41,7 +42,7 @@ export const FiltersGroup = ({
         byFilter[field] = uniq(
           data
             .flatMap((t) => t[field] as any[])
-            .sort((a, b) => a - b)
+            .sort(config.customCompareFn || ((a, b) => a - b))
             .map((n) => n.toString()),
         ).map(toOption);
       } else {
@@ -49,7 +50,7 @@ export const FiltersGroup = ({
           data
             .map((t) => t[field]?.toString() || "")
             .filter((v) => v && v !== FLOATING_CITY)
-            .sort(),
+            .sort(config.customCompareFn),
         ).map(toOption);
       }
     });
@@ -63,7 +64,7 @@ export const FiltersGroup = ({
           id={`${FILTER_INDEXED_ID}${index}`}
           field={field}
           key={field}
-          label={startCase(fields[field]?.displayName || field)}
+          label={fields[field]?.displayName || startCase(field)}
           value={filters[field]}
           setValue={(values) =>
             setFilters((f) => ({

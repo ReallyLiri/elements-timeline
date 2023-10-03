@@ -75,7 +75,7 @@ export const loadDataAsync = async (): Promise<Translation[]> => {
         city:
           !city || !year
             ? FLOATING_CITY_ENTRY.city
-            : startCase(city.split(" and ")[0].split("/")[0]),
+            : startCase(city.split(" and ")[0].split("/")[0].split(",")[0]),
         translator: trimEnd(t.translator, " (?)"),
         rawYear: year || "Unknown",
         year: year ? parseInt(t.year) : undefined,
@@ -89,7 +89,9 @@ export const loadDataAsync = async (): Promise<Translation[]> => {
         additionalContent: isEmpty(t.additionalContent)
           ? []
           : t.additionalContent!.split(", ").map((s) => startCase(s)),
-        bookSize: startCase(t.bookSize),
+        bookSize: startCase(t.bookSize)
+          .replace(" In ", " in ")
+          .replace("8 S", "8s"),
         class: t.wClass,
       };
     })
