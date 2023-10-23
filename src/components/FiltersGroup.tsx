@@ -1,14 +1,18 @@
 import { FLOATING_CITY, Translation } from "../data/data";
 import React, { useMemo } from "react";
-import { capitalize, get, isNil, uniq } from "lodash";
+import { isNil, startCase, uniq } from "lodash";
 import { Filter, FilterValue } from "./Filter";
-import { ReactComponent as Deco } from "../svg/deco2.svg";
-import styled from "styled-components";
 import { FILTER_INDEXED_ID } from "./Tour";
+
+type FilterConfig = {
+  isArray?: boolean;
+  displayName?: string;
+  customCompareFn?: (a: any, b: any) => number;
+};
 
 type FiltersGroupProps = {
   data: Translation[];
-  fields: Partial<keyof Translation>[];
+  fields: Partial<Record<keyof Translation, FilterConfig>>;
   filters: Record<string, FilterValue[] | undefined>;
   setFilters: React.Dispatch<
     React.SetStateAction<Record<string, FilterValue[] | undefined>>
@@ -18,8 +22,6 @@ type FiltersGroupProps = {
     React.SetStateAction<Record<string, boolean>>
   >;
 };
-
-const StyledDeco = styled(Deco)``;
 
 const toOption = (v: string) => ({ label: v, value: v });
 
@@ -31,36 +33,38 @@ export const FiltersGroup = ({
   filtersInclude,
   setFiltersInclude,
 }: FiltersGroupProps) => {
+  const keys = Object.keys(fields).map((field) => field as keyof Translation);
   const optionsByFilter = useMemo(() => {
     const byFilter: Record<string, FilterValue[]> = {};
-    fields.forEach((field) => {
-      if (field === "books") {
+    keys.forEach((field) => {
+      const config = fields[field]!;
+      if (config.isArray) {
         byFilter[field] = uniq(
           data
-            .flatMap((t) => t.booksExpanded)
-            .sort((a, b) => a - b)
+            .flatMap((t) => t[field] as any[])
+            .sort(config.customCompareFn || ((a, b) => a - b))
             .map((n) => n.toString()),
         ).map(toOption);
       } else {
         byFilter[field] = uniq(
           data
-            .map((t) => get(t, field)?.toString() || "")
+            .map((t) => t[field]?.toString() || "")
             .filter((v) => v && v !== FLOATING_CITY)
-            .sort(),
+            .sort(config.customCompareFn),
         ).map(toOption);
       }
     });
     return byFilter;
-  }, [data, fields]);
+  }, [data, fields, keys]);
 
   return (
     <>
-      {fields.map((field, index) => (
+      {keys.map((field, index) => (
         <Filter
           id={`${FILTER_INDEXED_ID}${index}`}
           field={field}
           key={field}
-          label={capitalize(field)}
+          label={fields[field]?.displayName || startCase(field)}
           value={filters[field]}
           setValue={(values) =>
             setFilters((f) => ({
@@ -75,7 +79,6 @@ export const FiltersGroup = ({
           }
         />
       ))}
-      <StyledDeco />
     </>
   );
 };

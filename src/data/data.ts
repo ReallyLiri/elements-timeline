@@ -1,27 +1,36 @@
 import Papa from "papaparse";
 import { Point } from "react-simple-maps";
 import { groupByMap } from "./util";
-import { trimEnd } from "lodash";
+import { isEmpty, isNil, startCase, trimEnd } from "lodash";
 
 const BLANK_CITY = "n.p.";
 const BLANK_YEAR = "n.d.";
 
 type RawTranslation = {
   id: string;
-  type: string;
+  wClass: string;
   city: string;
   year: string;
   translator: string;
   language: string;
-  books: string;
+  elementsBooks: string;
+  bookSize: string;
+  volumesCount: string;
+  additionalContent: string | undefined;
 };
 
-export type Translation = Omit<RawTranslation, "year" | "city"> & {
+export type Translation = Omit<
+  RawTranslation,
+  "year" | "city" | "volumesCount" | "additionalContent" | "wClass"
+> & {
   rawCity: string;
   city: string | undefined;
   rawYear: string;
   year: number | undefined;
+  class: string;
   booksExpanded: number[];
+  volumesCount: number | undefined;
+  additionalContent: string[];
 };
 
 type City = {
@@ -54,43 +63,37 @@ export const loadCitiesAsync = async (): Promise<Record<string, Point>> => {
 };
 
 export const loadDataAsync = async (): Promise<Translation[]> => {
-  return (await parseCsvAsync<RawTranslation>("/data/data.csv")).map((t) => {
-    const city = t.city === BLANK_CITY ? undefined : t.city;
-    const year = t.year === BLANK_YEAR ? undefined : t.year;
-    return {
-      ...t,
-      rawCity: city || "Unknown",
-      city:
-        !city || !year
-          ? FLOATING_CITY_ENTRY.city
-          : city.split(" and ")[0].split("/")[0],
-      translator: trimEnd(t.translator, " (?)"),
-      rawYear: year || "Unknown",
-      year: year ? parseInt(t.year) : undefined,
-      booksExpanded: parseRange(t.books),
-    };
-  });
-};
-
-const parseRange = (range: string): number[] => {
-  const parts = range.split(/[ ,]+/);
-  const result: number[] = [];
-
-  for (const part of parts) {
-    if (part.includes("-")) {
-      const range = part.split("-");
-      const start = parseInt(range[0]);
-      const end = parseInt(range[1]);
-      for (let i = start; i <= end; i++) {
-        result.push(i);
-      }
-    } else if (part !== "") {
-      const num = parseInt(part);
-      if (!isNaN(num)) {
-        result.push(num);
-      }
-    }
-  }
-
-  return result;
+  return (await parseCsvAsync<RawTranslation>("/data/data.csv"))
+    .filter((t) => !isEmpty(t.elementsBooks))
+    .map((t) => {
+      const city = t.city === BLANK_CITY ? undefined : t.city;
+      const year =
+        t.year === BLANK_YEAR || t.year === "-1" ? undefined : t.year;
+      return {
+        ...t,
+        rawCity: startCase(city) || "Unknown",
+        city:
+          !city || !year
+            ? FLOATING_CITY_ENTRY.city
+            : startCase(city.split(" and ")[0].split("/")[0].split(",")[0]),
+        translator: trimEnd(t.translator, " (?)"),
+        rawYear: year || "Unknown",
+        year: year ? parseInt(t.year) : undefined,
+        booksExpanded: isEmpty(t.elementsBooks)
+          ? []
+          : t.elementsBooks.split(", ").map((s) => parseInt(s)),
+        volumesCount:
+          isEmpty(t.volumesCount) || t.volumesCount === "-1"
+            ? undefined
+            : parseInt(t.volumesCount),
+        additionalContent: isEmpty(t.additionalContent)
+          ? []
+          : t.additionalContent!.split(", ").map((s) => startCase(s)),
+        bookSize: startCase(t.bookSize)
+          .replace(" In ", " in ")
+          .replace("8 S", "8s"),
+        class: t.wClass,
+      };
+    })
+    .filter((t) => isNil(t.year) || t.year <= 1703);
 };
