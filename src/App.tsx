@@ -288,6 +288,7 @@ const App = () => {
               additionalContent: {
                 displayName: "Additional Content",
                 isArray: true,
+                customCompareFn: (a, b) => a.localeCompare(b),
               },
             }}
             filters={filters}
