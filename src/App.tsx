@@ -142,18 +142,18 @@ const filterRecord = (
     if (field === "year" && t.city === FLOATING_CITY) {
       return false;
     }
-    const values = filters[field]?.map((v) => v.value);
-    if (isEmpty(values)) {
+    const filterValues = filters[field]?.map((v) => v.value);
+    if (isEmpty(filterValues)) {
       return true;
     }
     const fieldValue = t[field];
     const match = isArray(fieldValue)
-      ? values!.every(
+      ? filterValues!.some(
           (v) =>
             fieldValue.includes(parseInt(v) as never) ||
             fieldValue.includes(v?.toString() as never),
         )
-      : values!.includes(fieldValue?.toString() || "");
+      : filterValues!.includes(fieldValue?.toString() || "");
     const include = isNil(filtersInclude[field]) ? true : filtersInclude[field];
     return include ? match : !match;
   });
