@@ -78,7 +78,7 @@ const OptionalHelpTip = ({ field }: { field: keyof Translation }) => {
         <div>
           Classification according to{" "}
           <Link
-            url="http://www.bibsoc.org.uk/sites/bibsoc.org.uk/files/Euclid_v1.pdf"
+            url="https://bibsoc.org.uk/euclid-print-1482-1703/"
             text="Euclid in print"
           />
         </div>
