@@ -30,7 +30,7 @@ Publicly available at [https://elements-timeline.netlify.app](https://elements-t
 
 ## Credits
 
-This project utilizes translations of Euclid's Elements from the early modern period sourced from [Euclid in print, 1482–1703: A catalogue of the editions of the Elements and other Euclidian Works/http://www.bibsoc.org.uk/sites/bibsoc.org.uk/files/Euclid_v1.pdf]. 
+This project utilizes translations of Euclid's Elements from the early modern period sourced from [Euclid in print, 1482–1703: A catalogue of the editions of the Elements and other Euclidian Works](https://bibsoc.org.uk/euclid-print-1482-1703/). 
 
 ## License
 
