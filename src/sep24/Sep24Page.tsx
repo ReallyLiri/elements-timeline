@@ -1,117 +1,115 @@
-import styled from "styled-components";
-import { MARKER_4, PANE_COLOR, SEA_COLOR } from "../data/colors";
-import { Link } from "react-router-dom";
-import { Proposition, PropositionStep } from "./Proposition";
+import styled, {css} from "styled-components";
+import {MARKER_4, PANE_COLOR, SEA_COLOR} from "../data/colors";
+import {Link} from "react-router-dom";
+import {Proposition} from "./Proposition";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  height: 100vh;
-  width: 100vw;
-  color: white;
-  padding: 6rem 0;
-  background-color: ${SEA_COLOR};
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    padding: 6rem 0;
+    background-color: ${SEA_COLOR};
+    gap: 1rem;
 `;
 
 const Title = styled.div`
-  font-size: 2rem;
-  font-weight: bold;
+    font-size: 2rem;
+    font-weight: bold;
 `;
 
 const SubTitle = styled.div`
-  font-size: 1.5rem;
-  color: ${PANE_COLOR};
+    font-size: 1.5rem;
+    color: ${PANE_COLOR};
+`;
+
+const LinkStyle = css`
+    font-size: 1.5rem;
+    color: ${MARKER_4};
+`
+
+const StyledAnchor = styled.a`
+    ${LinkStyle};
 `;
 
 const StyledLink = styled(Link)`
-  font-size: 1.5rem;
-  color: ${MARKER_4};
+    ${LinkStyle};
 `;
 
-const PropositionVer1PathPrefix = "/b2p5/ver1/";
-const PropositionVer1: PropositionStep[] = [
-  {
-    text: "Proposition 1: A line segment can be extended indefinitely in a straight line.",
-    img: [
-      PropositionVer1PathPrefix + "p1.png",
-      PropositionVer1PathPrefix + "p2.png",
-      PropositionVer1PathPrefix + "p3.png",
-    ],
-  },
-  {
-    text: "",
-    img: [
-      PropositionVer1PathPrefix + "p4.png",
-      PropositionVer1PathPrefix + "p5.png",
-      PropositionVer1PathPrefix + "p6.png",
-      PropositionVer1PathPrefix + "p7.png",
-      PropositionVer1PathPrefix + "p8.png",
-    ],
-  },
-  {
-    text: "",
-    img: [
-      PropositionVer1PathPrefix + "p9.png",
-      PropositionVer1PathPrefix + "p10.png",
-      PropositionVer1PathPrefix + "p11.png",
-    ],
-  },
-  {
-    text: "",
-    img: [
-      PropositionVer1PathPrefix + "p12.png",
-      PropositionVer1PathPrefix + "p13.png",
-      PropositionVer1PathPrefix + "p14.png",
-      PropositionVer1PathPrefix + "p15.png",
-      PropositionVer1PathPrefix + "p16.png",
-      PropositionVer1PathPrefix + "p17.png",
-      PropositionVer1PathPrefix + "p18.png",
-      PropositionVer1PathPrefix + "p19.png",
-    ],
-  },
-  {
-    text: "",
-    img: [
-      PropositionVer1PathPrefix + "p20.png",
-      PropositionVer1PathPrefix + "p21.png",
-      PropositionVer1PathPrefix + "p22.png",
-      PropositionVer1PathPrefix + "p23.png",
-    ],
-  },
-  {
-    text: "",
-    img: [
-      PropositionVer1PathPrefix + "p24.png",
-      PropositionVer1PathPrefix + "p25.png",
-      PropositionVer1PathPrefix + "p26.png",
-      PropositionVer1PathPrefix + "p27.png",
-      PropositionVer1PathPrefix + "p28.png",
-      PropositionVer1PathPrefix + "p29.png",
-      PropositionVer1PathPrefix + "p30.png",
-      PropositionVer1PathPrefix + "p31.png",
-      PropositionVer1PathPrefix + "p32.png",
-    ],
-  },
-  {
-    text: "",
-    img: PropositionVer1PathPrefix + "p99final.png",
-  },
+const Block = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 0.5rem;
+`
+
+const PropositionVer1PathPrefix = "/b2p5/ver1/p";
+const PropositionVer1Text = [
+    "If a straight line is cut into equal and unequal segments,",
+    "then the rectangle contained by the unequal segments of the whole,",
+    "together with the square on the straight line between the points of section,",
+    "equals the square on the half."
 ];
+const PropositionVer1Mapping: Record<number, number> = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 1,
+    5: 1,
+    6: 1,
+    7: 1,
+    8: 1,
+    9: 1,
+    10: 1,
+    11: 1,
+    13: 2,
+    14: 2,
+    15: 2,
+    16: 2,
+    17: 2,
+    18: 2,
+    19: 2,
+    20: 2,
+    21: 2,
+    22: 2,
+    23: 2,
+    24: 3,
+    25: 3,
+    26: 3,
+    27: 3,
+    28: 3,
+    29: 3,
+    30: 3,
+    31: 3,
+    32: 3,
+    33: 3,
+    34: 3,
+    35: 3,
+    36: 3,
+    37: 4,
+}
 
 export const Sep24Page = () => {
-  return (
-    <Container>
-      <Title>Transformation of Mathematical Knowledge</Title>
-      <SubTitle>Mia Joskowicz, September 2024</SubTitle>
-      <div />
-      <StyledLink to="/">Elements Timeline Map</StyledLink>
-      <div />
-      <div>Other stuffs?</div>
-      <div />
-      <Proposition steps={PropositionVer1} />
-    </Container>
-  );
+    return (
+        <Container>
+            <Title>Transformation of Mathematical Knowledge</Title>
+            <SubTitle>Mia Joskowicz, September 2024</SubTitle>
+            <div/>
+            <div/>
+            <StyledAnchor href="/presentation/TransformationOfMathematicalKnowledge.pdf" target="_blank" rel="noopener noreferrer">Presentation Slides</StyledAnchor>
+            <div/>
+            <div/>
+            <Block>
+                <StyledLink to="/">Elements Timeline Map</StyledLink>
+                <div>Best viewed on desktop</div>
+            </Block>
+            <div/>
+            <div/>
+            <Proposition title="Proposition 5, Book II" description={PropositionVer1Text} stepImagePrefix={PropositionVer1PathPrefix} stepsToDescriptionIndex={PropositionVer1Mapping}/>
+        </Container>
+    );
 };
