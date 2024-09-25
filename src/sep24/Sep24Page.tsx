@@ -3,31 +3,49 @@ import {MARKER_4, PANE_COLOR, SEA_COLOR} from "../data/colors";
 import {Link} from "react-router-dom";
 import {Proposition} from "./Proposition";
 
+const Wrapper = styled.div`
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    margin-bottom: 1rem;
+`;
+
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    height: 100vh;
-    width: 100vw;
     color: white;
-    padding: 6rem 0;
+    padding: 4rem 1rem;
+    @media only screen and (max-width: 500px) {
+        padding: 2rem 1rem;
+    }
     background-color: ${SEA_COLOR};
     gap: 1rem;
+    text-align: center;
 `;
 
 const Title = styled.div`
     font-size: 2rem;
+    @media only screen and (max-width: 500px) { 
+        font-size: 1.5rem;
+    }
     font-weight: bold;
 `;
 
 const SubTitle = styled.div`
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    @media only screen and (max-width: 500px) {
+        font-size: 1.1rem;
+    }
     color: ${PANE_COLOR};
 `;
 
 const LinkStyle = css`
     font-size: 1.5rem;
+    @media only screen and (max-width: 500px) {
+        font-size: 1.2rem;
+    }
     color: ${MARKER_4};
 `
 
@@ -95,9 +113,11 @@ const PropositionVer1Mapping: Record<number, number> = {
 
 export const Sep24Page = () => {
     return (
+        <Wrapper>
         <Container>
             <Title>Transformation of Mathematical Knowledge</Title>
-            <SubTitle>Mia Joskowicz, September 2024</SubTitle>
+            <SubTitle>German Editions of Euclid’s Elements in the 16th-17th Centuries</SubTitle>
+            <div>Mia Joskowicz, September 2024</div>
             <div/>
             <div/>
             <StyledAnchor href="/presentation/TransformationOfMathematicalKnowledge.pdf" target="_blank" rel="noopener noreferrer">Presentation Slides</StyledAnchor>
@@ -111,5 +131,6 @@ export const Sep24Page = () => {
             <div/>
             <Proposition title="Proposition 5, Book II" description={PropositionVer1Text} stepImagePrefix={PropositionVer1PathPrefix} stepsToDescriptionIndex={PropositionVer1Mapping}/>
         </Container>
+        </Wrapper>
     );
 };

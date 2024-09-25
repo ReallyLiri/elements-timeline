@@ -11,12 +11,17 @@ type PropositionProps = {
 
 const Title = styled.div`
     font-size: 1.5rem;
+    @media only screen and (max-width: 500px) {
+        font-size: 1.2rem;
+    }
     font-weight: bold;
     color: ${PANE_COLOR};
 `;
 
 const StepTitle = styled.div<{ selected: boolean }>`
-    color: ${(props) => (props.selected ?  MARKER_5 :  "white" )};
+    text-align: start;
+    color: ${(props) => (props.selected ? MARKER_5 : "white")};
+    line-height: 1.5rem;
 `;
 
 const Descriptions = styled.div`
@@ -39,36 +44,10 @@ const Button = styled.button<{ hide: boolean }>`
 `;
 
 const Image = styled.img`
-    height: 20rem;
+    max-height: 20rem;
+    height: auto;
+    max-width: 100vw;
 `;
-
-type AnimatedImageProps = {
-    images: string[];
-    reset: any;
-};
-
-const AnimatedImage = ({images, reset}: AnimatedImageProps) => {
-    const [index, setIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (index === images.length - 1) {
-                clearInterval(interval);
-                return;
-            }
-            setIndex((index + 1) % images.length);
-        }, 1000);
-        return () => clearInterval(interval);
-    }, [images.length, index]);
-
-    useEffect(() => {
-        if (reset > 0) {
-            setIndex(0);
-        }
-    }, [reset]);
-
-    return <Image src={images[index]} alt=""/>;
-};
 
 export const Proposition = ({title, stepImagePrefix, description, stepsToDescriptionIndex}: PropositionProps) => {
     const steps = Object.keys(stepsToDescriptionIndex);
