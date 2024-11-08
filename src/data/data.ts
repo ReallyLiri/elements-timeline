@@ -73,7 +73,7 @@ export const loadDataAsync = async (): Promise<Translation[]> => {
         ...t,
         rawCity: startCase(city) || "Unknown",
         city:
-          !city || !year
+          !city
             ? FLOATING_CITY_ENTRY.city
             : startCase(city.split(" and ")[0].split("/")[0].split(",")[0]),
         translator: trimEnd(t.translator, " (?)"),
