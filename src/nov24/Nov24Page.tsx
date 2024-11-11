@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 import {MARKER_4, PANE_COLOR, SEA_COLOR} from "../data/colors";
 import {Link} from "react-router-dom";
-import {Proposition5Book2V1} from "./Proposition5Book2V1";
+import {Proposition5Book2V1} from "../sep24/Proposition5Book2V1";
 
 const Wrapper = styled.div`
     height: 100vh;
@@ -65,26 +65,26 @@ const Block = styled.div`
     gap: 0.5rem;
 `
 
-export const Sep24Page = () => {
+export const Nov24Page = () => {
     return (
         <Wrapper>
-        <Container>
-            <Title>Transformation of Mathematical Knowledge</Title>
-            <SubTitle>German Editions of Euclid’s Elements in the 16th-17th Centuries</SubTitle>
-            <div>Mia Joskowicz, September 2024</div>
-            <div/>
-            <div/>
-            <StyledAnchor href="/presentation/TransformationOfMathematicalKnowledge.pdf" target="_blank" rel="noopener noreferrer">Presentation Slides</StyledAnchor>
-            <div/>
-            <div/>
-            <Block>
-                <StyledLink to="/">Elements Timeline Map</StyledLink>
-                <div>Best viewed on desktop</div>
-            </Block>
-            <div/>
-            <div/>
-            <Proposition5Book2V1/>
-        </Container>
+            <Container>
+                <Title>French Translations of Euclid's Elements in the first half of the 17th century</Title>
+                <SubTitle>A Study of a Book in the Education Sphere</SubTitle>
+                <div>Mia Joskowicz, November 2024</div>
+                <div/>
+                <div/>
+                <StyledAnchor href="/presentation/TransformationOfMathematicalKnowledge.pdf" target="_blank" rel="noopener noreferrer">Presentation Slides</StyledAnchor>
+                <div/>
+                <div/>
+                <Block>
+                    <StyledLink to="/">Elements Timeline Map</StyledLink>
+                    <div>Best viewed on desktop</div>
+                </Block>
+                <div/>
+                <div/>
+                <Proposition5Book2V1/>
+            </Container>
         </Wrapper>
     );
 };

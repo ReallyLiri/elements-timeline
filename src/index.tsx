@@ -9,6 +9,7 @@ import { TourProvider } from "@reactour/tour";
 import { tourSteps } from "./components/Tour";
 import { PANE_COLOR_ALT } from "./data/colors";
 import { Sep24Page } from "./sep24/Sep24Page";
+import {Nov24Page} from "./nov24/Nov24Page";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -33,6 +34,7 @@ root.render(
           </TourProvider>
         } />
         <Route path={"/sep24"} element={<Sep24Page />} />
+        <Route path={"/nov24"} element={<Nov24Page />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
